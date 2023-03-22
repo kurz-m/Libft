@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:22:37 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/21 17:29:16 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/22 16:51:28 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,8 @@ static void	ft_alloc_words(char **dst, const char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
-	size_t	n;
 	size_t	words;
 
-	n = 0;
 	words = ft_words(s, c);
 	ptr = (char **) ft_calloc(words + 1, sizeof(char *));
 	if (!ptr)
