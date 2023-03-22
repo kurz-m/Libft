@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/03/22 09:06:29 by makurz           ###   ########.fr        #
+#    Updated: 2023/03/22 09:10:37 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,3 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
-
-
-
