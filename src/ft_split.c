@@ -6,11 +6,12 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:22:37 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/23 07:33:40 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/23 07:40:55 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static size_t	ft_words(char const *s, char c)
 {
@@ -66,25 +67,31 @@ static int	ft_alloc_words(char **dst, const char *s, char c)
 
 static int	ft_free_words(char **dst, int allocated)
 {
+	while (allocated)
+	{
+		free(dst[allocated]);
+		--allocated;
+	}
+	free(dst);
 	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**ptr;
+	char	**dst;
 	int		shield;
 	size_t	words;
 
 	shield = 0;
 	words = ft_words(s, c);
-	ptr = (char **) ft_calloc(words + 1, sizeof(char *));
-	if (!ptr)
+	dst = (char **) ft_calloc(words + 1, sizeof(char *));
+	if (!dst)
 		return (0);
-	shield = ft_alloc_words(ptr, s, c);
+	shield = ft_alloc_words(dst, s, c);
 	if (shield)
 	{
-		ft_free_words(ptr, shield);
+		ft_free_words(dst, shield);
 		return (0);
 	}
-	return (ptr);
+	return (dst);
 }
