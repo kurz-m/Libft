@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:24:46 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/20 16:35:24 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/22 10:02:22 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	dstsize = len_s1 + len_s2 + 1;
 	dst = (char *) malloc(sizeof(char) * dstsize);
 	if (!dst)
-		return (NULL);
+		return (0);
 	dst = ft_memcpy(dst, s1, len_s1 + 1);
 	ft_strlcat(dst, s2, dstsize);
 	return (dst);

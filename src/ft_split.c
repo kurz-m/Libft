@@ -6,12 +6,11 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:22:37 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/23 09:26:01 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/23 09:36:49 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static size_t	ft_words(char const *s, char c)
 {
@@ -67,7 +66,7 @@ static int	ft_alloc_words(char **dst, const char *s, char c)
 
 static int	ft_free_words(char **dst, int allocated)
 {
-	while (allocated)
+	while (allocated--)
 	{
 		free(dst[allocated]);
 		--allocated;

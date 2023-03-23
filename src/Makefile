@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/03/22 14:55:00 by makurz           ###   ########.fr        #
+#    Updated: 2023/03/23 14:27:50 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ SRCS =	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c	\
 
 OBJS = $(SRCS:%.c=%.o)
 
-BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c
+BONUS_SRCS =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c		\
+				ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c	\
+				ft_lstmap.c
 
 BONUS_OBJS = $(BONUS_SRCS:%.c=%.o)
 
@@ -37,7 +39,7 @@ $(NAME): $(SRCS) $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	@rm -f $(NAME)
