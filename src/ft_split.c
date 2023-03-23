@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:22:37 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/22 16:51:28 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/23 07:33:40 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static size_t	ft_words(char const *s, char c)
 	return (n);
 }
 
-static void	ft_alloc_words(char **dst, const char *s, char c)
+static int	ft_alloc_words(char **dst, const char *s, char c)
 {
 	int		n;
 	int		start;
@@ -53,23 +53,38 @@ static void	ft_alloc_words(char **dst, const char *s, char c)
 		else if (start >= 0 && (s[i] == c || !s[i]))
 		{
 			dst[n] = ft_substr(s, start, i - start);
+			if (!dst)
+				return (n);
 			start = -1;
 			++n;
 		}
 		++i;
 	}
 	dst[n] = 0;
+	return (0);
+}
+
+static int	ft_free_words(char **dst, int allocated)
+{
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
+	int		shield;
 	size_t	words;
 
+	shield = 0;
 	words = ft_words(s, c);
 	ptr = (char **) ft_calloc(words + 1, sizeof(char *));
 	if (!ptr)
 		return (0);
-	ft_alloc_words(ptr, s, c);
+	shield = ft_alloc_words(ptr, s, c);
+	if (shield)
+	{
+		ft_free_words(ptr, shield);
+		return (0);
+	}
 	return (ptr);
 }
