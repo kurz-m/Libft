@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:22:37 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/23 07:40:55 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/23 09:26:01 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	ft_alloc_words(char **dst, const char *s, char c)
 		else if (start >= 0 && (s[i] == c || !s[i]))
 		{
 			dst[n] = ft_substr(s, start, i - start);
-			if (!dst)
+			if (!dst[n])
 				return (n);
 			start = -1;
 			++n;
