@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 10:44:57 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/22 12:24:22 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/22 17:01:33 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
-	
+
 	new = (t_list *) malloc(sizeof(t_list));
 	if (!new)
 		return (0);
