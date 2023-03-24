@@ -31,7 +31,7 @@ These functions check whether *c*, which must have the value of an
 
 ### stdlib
 1. [atoi](./src/ft_atoi.c) - convert a string to an integer
-2. [calloc](./src/ft_calloc.c) - allocates memory and that memory is set to zero
+2. [calloc](./src/ft_calloc.c) - allocates memory and the allocated memory is set to zero
 3. [itoa](./src/ft_itoa.c) - convert an integer to a string
 
 ### strings
