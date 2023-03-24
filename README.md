@@ -23,17 +23,27 @@ The library contains the following functions categorized by their use.
 These functions check whether *c*, which must have the value of an
 <u>unsigned char</u> or **EOF**, falls into a certain character class.
 1. [isalnum](./src/ft_isalnum.c) - checks for an alphanumeric character
-2. isalpha - checks for an alphabetic character
-3. isascii - checks if *c* fits into the ASCII character set
-4. isdigit - checks for a digit (0 through 0)
-5. isprint - checks for any printable character including space
-6. tolower - converts lowercase letters to uppercase
-7. toupper - converts uppercase letters to lowercase
+2. [isalpha](./src/ft_isalpha.c) - checks for an alphabetic character
+3. [isascii](./src/ft_isascii.c) - checks if *c* fits into the ASCII character set
+4. [isdigit](./src/ft_isdigit.c) - checks for a digit (0 through 0)
+5. [isprint](./src/ft_isprint.c) - checks for any printable character including space
+6. [tolower](./src/ft_tolower.c) - converts lowercase letters to uppercase
+7. [toupper](./src/ft_toupper.c) - converts uppercase letters to lowercase
 
 ### stdlib
-1. atoi - convert a string to an integer
-2. calloc - allocates memory and that memory is set to zero
-3. itoa - convert an integer to a string
+1. [atoi](./src/ft_atoi.c) - convert a string to an integer
+2. [calloc](./src/ft_calloc.c) - allocates memory and that memory is set to zero
+3. [itoa](./src/ft_itoa.c) - convert an integer to a string
+
+### strings
+to come
+
+### linked list
+to come
+
+### output
+to come 
+
 ## Usage
 To use the library in your project, include the header file `libft.h` and link against the compiled library.
 
