@@ -45,4 +45,10 @@ if [[ $1 == "all" || $1 == "bonus" ]]; then
 	done
 fi
 
+if [[ $# -eq 1 || $1 != "bonus" ]]; then
+		${CC} ${CFLAGS} test_${1}.c -o test_${1}.o ${LFLAGS}
+		chmod +x test_${1}.o
+		./test_${1}.o
+fi
 
+rm -f test_*.o
