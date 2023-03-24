@@ -1,32 +1,48 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    run_tests.sh                                       :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/19 16:27:21 by makurz            #+#    #+#              #
-#    Updated: 2023/03/24 09:26:27 by makurz           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+#!/bin/bash
 
 # make && make clean && cc -o main_test.out main.c -L.. -lft -L. -lft_test && ./main_test.out
-# Check if all files of a given list are within the current directory
-# Usage: ./check_files.sh
 
-# List of files to check
-file_list=(
-	"file1.txt"
-	"file2.txt"
-	"file3.txt"
-)
+CC="cc"
+CFLAGS="-Wall -Werror -Wextra"
+LFLAGS="-L../src/ -lft"
+
+# List of mandatory tests
+if [[ $# -eq 0 || $1 == "all" ]]; then
+	while IFS= read -r -d '' file; do
+		MANDATORY_TESTS+=("$file")
+	done < <(find . -maxdepth 1 -name 'test_*.c' -print0)
+	for i in "${!MANDATORY_TESTS[@]}"; do
+		MANDATORY_OBJECTS[$i]=$(echo "${MANDATORY_TESTS[$i]}" | sed 's/\.c$/.o/')
+	done
+fi
+# List of bonus tests
+if [[ $1 == "all" || $1 == "bonus" ]]; then
+	while IFS= read -r -d '' file; do
+		BONUS_TESTS+=("$file")
+	done < <(find . -maxdepth 1 -name 'test_*.c' -print0)
+	for i in "${!BONUS_TESTS[@]}"; do
+		BONUS_OBJECTS[$i]=$(echo "${BONUS_TESTS[$i]}" | sed 's/\.c$/.o/')
+	done
+fi
 
 # Loop through each file in the list
-for file_name in "${file_list[@]}"; do
-	# Check if file exists in the current directory
-	if [ -f "$file_name" ]; then
-		echo -e "\e[32m$file_name okej\e[0m"
-	else
-		echo -e "\e[31m$file_name missing\e[0m"
-	fi
-done
+if [[ $# -eq 0 || $1 == "all" ]]; then
+	for n in "${!MANDATORY_TESTS[@]}"; do
+		# Check if file exists in the parent directory
+		# echo "${CC} ${CFLAGS} ${MANDATORY_TESTS[$n]} -o ${MANDATORY_OBJECTS[$n]} ${LFLAGS}"
+		${CC} ${CFLAGS} ${MANDATORY_TESTS[$n]} -o ${MANDATORY_OBJECTS[$n]} ${LFLAGS}
+	done
+	for MANDATORY in "${MANDATORY_OBJECTS[@]}"; do
+		chmod +x ${MANDATORY}
+		${MANDATORY}
+	done
+fi
+
+if [[ $1 == "all" || $1 == "bonus" ]]; then
+	# Check if bonus files exists in parent directory
+	for n in "${!BONUS_TESTS[@]}"; do
+		${CC} ${CFLAGS} ${BONUS_TESTS[$n]} -o ${BONUS_OBJECTS[$n]} ${LFLAGS}
+	done
+fi
+
+
