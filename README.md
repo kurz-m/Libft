@@ -4,17 +4,16 @@
 Libft is a library that displays a variety of standard libc functions, functions to manipulate strings and manipulate linked lists.
 
 ## Table of Contents
-- [Installation](#installation)
 - [Functions](#functions)
+  - [ctype](#ctype)
+  - [stdlib](#stdlib)
+  - [strings](#strings)
+  - [linked list](#linked list)
+  - [output](#output)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
-
-## Installation
-To install the library, follow these steps:
-1. Clone the repository: `git clone https://github.com/kurz-m/Libft.git`
-2. Navigate to the repository: `cd Libft/src`
-3. Compile the library: `make all`
 
 ## Functions
 The library contains the following functions categorized by their use.
@@ -43,6 +42,12 @@ to come
 
 ### output
 to come 
+
+## Installation
+To install the library, follow these steps:
+1. Clone the repository: `git clone https://github.com/kurz-m/Libft.git`
+2. Navigate to the repository: `cd Libft/src`
+3. Compile the library: `make all`
 
 ## Usage
 To use the library in your project, include the header file `libft.h` and link against the compiled library.
