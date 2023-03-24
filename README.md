@@ -8,7 +8,7 @@ Libft is a library that displays a variety of standard libc functions, functions
   - [ctype](#ctype)
   - [stdlib](#stdlib)
   - [strings](#strings)
-  - [linked list](#linked list)
+  - [linked list](#linked-list)
   - [output](#output)
 - [Installation](#installation)
 - [Usage](#usage)
