@@ -12,6 +12,8 @@
 
 #include "libft_bear.h"
 
+// #define malloc(size) limited_malloc(size)
+
 static size_t	total_allocated = 0;
 
 void *limited_malloc(size_t)
