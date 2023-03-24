@@ -6,6 +6,11 @@ CC="cc"
 CFLAGS="-Wall -Werror -Wextra"
 LFLAGS="-L../src/ -lft"
 
+# Check for the library file
+if [ ! -f "../src/libft.a" ]; then
+	(cd ../src && make)
+fi
+
 # List of mandatory tests
 if [[ $# -eq 0 || $1 == "all" ]]; then
 	while IFS= read -r -d '' file; do
@@ -52,3 +57,4 @@ if [[ $# -eq 1 || $1 != "bonus" ]]; then
 fi
 
 rm -f test_*.o
+(cd ../src && make clean)
