@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:22:37 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/23 09:36:49 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/24 16:07:12 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,7 @@ static int	ft_alloc_words(char **dst, const char *s, char c)
 static int	ft_free_words(char **dst, int allocated)
 {
 	while (allocated--)
-	{
 		free(dst[allocated]);
-		--allocated;
-	}
 	free(dst);
 	return (0);
 }
