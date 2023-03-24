@@ -10,8 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-# Check if all files of a given list are within the current directory
-# Usage: ./check_files.sh
+# Check which files are present in the directory with the libft.h header file
+
+SRC_PATH=$(dirname $(find .. -name "libft.h"))
 
 # List of files to check
 mandatory_files=(
@@ -51,11 +52,9 @@ mandatory_files=(
 	"ft_putnbr_fd.c"
 )
 
-# Loop through each file in the list
 if [[ $# -eq 0 || $1 == "all" ]]; then
 	for file_name in "${mandatory_files[@]}"; do
-		# Check if file exists in the parent directory
-		if [ -f "../$file_name" ]; then
+		if [ -f "${SRC_PATH}/$file_name" ]; then
 			echo "\033[32m\xE2\x9C\x93\033[0m $file_name"
 		else
 			echo "\033[31mx\033[0m $file_name missing"
@@ -76,9 +75,8 @@ bonus_files=(
 )
 
 if [[ $1 == "all" || $1 == "bonus" ]]; then
-	# Check if bonus files exists in parent directory
 	for bonus_file in "${bonus_files[@]}"; do
-		if [ -f "../$bonus_file" ]; then
+		if [ -f "${SRC_PATH}/$bonus_file" ]; then
 			echo "\033[32m\xE2\x9C\x93\033[0m $bonus_file"
 		else
 			echo "\033[31mx\033[0m $bonus_file missing"
