@@ -22,9 +22,9 @@ The library contains the following functions categorized by their use.
 ### ctype
 These functions check whether *c*, which must have the value of an
 <u>unsigned char</u> or **EOF**, falls into a certain character class.
-1. isalnum - checks for an alphanumeric character
+1. [isalnum](./src/ft_isalnum.c) - checks for an alphanumeric character
 2. isalpha - checks for an alphabetic character
-3. isascii - checks if <c>c</u> fits into the ASCII character set
+3. isascii - checks if *c* fits into the ASCII character set
 4. isdigit - checks for a digit (0 through 0)
 5. isprint - checks for any printable character including space
 6. tolower - converts lowercase letters to uppercase
