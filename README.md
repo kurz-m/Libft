@@ -15,7 +15,7 @@
     </a>
      &nbsp&nbspwith&nbsp&nbsp
     <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=vim" />
+        <img src="https://skillicons.dev/icons?i=neovim" />
     </a>
 </p>
 
