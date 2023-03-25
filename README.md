@@ -9,7 +9,10 @@
 </p>
 
 <p align="center">
-    This repository is coded with: [![My Skills](https://skillicons.dev/icons?i=c)](https://skillicons.dev)
+    This repository is coded with: 
+    <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=git,kubernetes,docker,c,vim" />
+    </a>
 </p>
 
 ---
