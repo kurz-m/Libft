@@ -3,6 +3,16 @@
         📓 Libft
     </p>
 </h1>
+<h1 align="center">
+    <p>
+        <b><i>Repo for the Libft project at 42 Heilbronn</i></b>
+    </p>
+    <p>
+        Programs written in 
+        [![My Skills](https://skillicons.dev/icons?i=c)](https://skillicons.dev)
+    </p>
+</h1>
+---
 ## Description
 Libft is a library that displays a variety of standard libc functions, functions to manipulate strings and manipulate linked lists.
 
