@@ -84,13 +84,29 @@ These functions check whether *c*, which must have the value of an
 
 ## Installation
 To install the library, follow these steps:
-1. Clone the repository: `git clone https://github.com/kurz-m/Libft.git`
-2. Navigate to the repository: `cd Libft/src`
-3. Compile the library: `make all`
+1. Clone the repository: 
+```shell
+% git clone https://github.com/kurz-m/Libft.git
+```
+
+2. Navigate to the repository: 
+```shell
+% cd Libft/src
+```
+
+3. Compile the library:
+```shell
+% make all
+```
 
 ## 🧰 Usage
-To use the library in your project, include the header file `libft.h` and link against the compiled library.
-
+To use the library in your project, include the header file and link against the compiled library.
+```C
+#include "libft.h"
+```
+```shell
+% cc [your-program.c] -L[path/to/library] -lft
+```
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request if you would like to contribute.
 
