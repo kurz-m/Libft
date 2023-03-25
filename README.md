@@ -1,5 +1,8 @@
-# Libft
-
+<h1 align="center">
+<p>
+📓 Libft
+</p>
+</h1>
 ## Description
 Libft is a library that displays a variety of standard libc functions, functions to manipulate strings and manipulate linked lists.
 
