@@ -1,18 +1,18 @@
 <h1 align="center">
-<p>
-📓 Libft
-</p>
+    <p>
+        📓 Libft
+    </p>
 </h1>
 ## Description
 Libft is a library that displays a variety of standard libc functions, functions to manipulate strings and manipulate linked lists.
 
 ## Table of Contents
 - [Functions](#functions)
-  - [ctype](#ctype)
-  - [stdlib](#stdlib)
-  - [strings](#strings)
-  - [linked list](#linked-list)
-  - [output](#output)
+    - [ctype](#ctype)
+    - [stdlib](#stdlib)
+    - [strings](#strings)
+    - [linked list](#linked-list)
+    - [output](#output)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
