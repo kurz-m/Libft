@@ -9,9 +9,13 @@
 </p>
 
 <p align="center">
-    This repository is <u>coded</u> with: 
+    This repository is coded in&nbsp&nbsp
     <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=c,vim" />
+        <img src="https://skillicons.dev/icons?i=c" />
+    </a>
+     &nbsp&nbspwith&nbsp&nbsp
+    <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=vim" />
     </a>
 </p>
 
@@ -107,10 +111,14 @@ To install the library, follow these steps:
 ```
 
 ## 🧰 Usage
-To use the library in your project, include the header file and link against the compiled library.
+### Instructions
+1. Include the header file
 ```C
 #include "libft.h"
 ```
+
+2. Link against the compiled library
+
 ```shell
 % cc [your-program.c] -L[path/to/library] -lft
 ```
