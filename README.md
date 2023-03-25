@@ -8,7 +8,9 @@
     <b><i>Repo for the Libft project at 42 Heilbronn</i></b>
 </p>
 
-[![My Skills](https://skillicons.dev/icons?i=c)](https://skillicons.dev)
+<p align="center">
+    This repository is coded with: [![My Skills](https://skillicons.dev/icons?i=c)](https://skillicons.dev)
+</p>
 
 ---
 
@@ -47,25 +49,25 @@ These functions check whether *c*, which must have the value of an
 3. [itoa](./src/ft_itoa.c) - convert an integer to a string
 
 ### strings
-1. [bzero](./src/ft_bzero.c) - 
-2. [memchr](./src/ft_memchr.c) - 
-3. [memcmp](./src/ft_memcpy.c) - 
-4. [memmove](./src/ft_memmove.c) - 
-5. [memset](./src/ft_memset.c) - 
-6. [split](./src/ft_split.c) - 
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15.
-16.
-17.
-18.
-19.
+1. [bzero](./src/ft_bzero.c) - zeros **n** bytes of the memory
+2. [memchr](./src/ft_memchr.c) - scans memory for specified byte
+3. [memcmp](./src/ft_memcmp.c) - compares memory areas
+4. [memcpy](./src/ft_memcpy.c) - copies memory area
+5. [memmove](./src/ft_memmove.c) - copies memory area in a non-destructive manner
+6. [memset](./src/ft_memset.c) - fills memory with a constant byte
+7. [split](./src/ft_split.c) - splits a string at a specified delimiter into a new array of strings
+8. [strchr](./src/ft_strchr.c)
+9. [strdup](./src/ft_strdup.c)
+10. [striteri](./src/ft_striteri.c)
+11. [strjoin](./src/ft_strjoin.c)
+12. [strlcat](./src/ft_strlcat.c) 
+13. [strlen](./src/ft_strlen.c)
+14. [strmapi](./src/ft_strmapi.c)
+15. [strncmp](./src/ft_strncmp.c)
+16. [strnstr](./src/ft_strnstr.c)
+17. [strrchr](./src/ft_strrchr.c)
+18. [strtrim](./src/ft_strtrim.c)
+19. [substr](./src/ft_substr.c)
 
 ### linked list
 1.
