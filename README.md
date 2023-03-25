@@ -3,12 +3,13 @@
         📓 Libft
     </p>
 </h1>
-<h1 align="center">
-    <p>
-        <b><i>Repo for the Libft project at 42 Heilbronn</i></b>
-    </p>
-</h1>
+
+<p align="center">
+    <b><i>Repo for the Libft project at 42 Heilbronn</i></b>
+</p>
+
 ---
+
 ## 💾 About
 > The task of the Libft project is to code a C library with basic functions (see below) I can use in later projects of the core curriculum.
 
