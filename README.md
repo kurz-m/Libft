@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-    This repository is coded with: 
+    This repository is <u>coded</u> with: 
     <a href="https://skillicons.dev">
         <img src="https://skillicons.dev/icons?i=c,vim" />
     </a>
