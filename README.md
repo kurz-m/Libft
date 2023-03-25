@@ -20,7 +20,7 @@ The library contains the following functions categorized by their use.
 
 ### ctype
 These functions check whether *c*, which must have the value of an
-<u>unsigned char</u> or **EOF**, falls into a certain character class.
+**unsigned char** or **EOF**, falls into a certain character class.
 1. [isalnum](./src/ft_isalnum.c) - checks for an alphanumeric character
 2. [isalpha](./src/ft_isalpha.c) - checks for an alphabetic character
 3. [isascii](./src/ft_isascii.c) - checks if *c* fits into the ASCII character set
@@ -35,13 +35,42 @@ These functions check whether *c*, which must have the value of an
 3. [itoa](./src/ft_itoa.c) - convert an integer to a string
 
 ### strings
-to come
+1. [bzero](./src/ft_bzero.c) - 
+2. [memchr](./src/ft_memchr.c) - 
+3. [memcmp](./src/ft_memcpy.c) - 
+4. [memmove](./src/ft_memmove.c) - 
+5. [memset](./src/ft_memset.c) - 
+6. [split](./src/ft_split.c) - 
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
 
 ### linked list
-to come
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
 
 ### output
-to come 
+1.
+2.
+3.
+4.
 
 ## Installation
 To install the library, follow these steps:
