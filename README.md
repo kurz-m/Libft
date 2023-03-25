@@ -9,8 +9,8 @@
     </p>
 </h1>
 ---
-## Description
-Libft is a library that displays a variety of standard libc functions, functions to manipulate strings and manipulate linked lists.
+## 💾 About
+> The task of the Libft project is to code a C library with basic functions (see below) I can use in later projects of the core curriculum.
 
 ## Table of Contents
 - [Functions](#functions)
@@ -87,7 +87,7 @@ To install the library, follow these steps:
 2. Navigate to the repository: `cd Libft/src`
 3. Compile the library: `make all`
 
-## Usage
+## 🧰 Usage
 To use the library in your project, include the header file `libft.h` and link against the compiled library.
 
 ## Contributing
