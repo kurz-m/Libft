@@ -8,6 +8,8 @@
     <b><i>Repo for the Libft project at 42 Heilbronn</i></b>
 </p>
 
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
+
 ---
 
 ## 💾 About
