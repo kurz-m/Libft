@@ -17,6 +17,10 @@
     <a href="https://skillicons.dev">
         <img src="https://skillicons.dev/icons?i=neovim" />
     </a>
+     &nbsp&nbspand&nbsp&nbsp
+    <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=vscode" />
+    </a>
 </p>
 
 ---
