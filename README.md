@@ -7,10 +7,6 @@
     <p>
         <b><i>Repo for the Libft project at 42 Heilbronn</i></b>
     </p>
-    <p>
-        Programs written in 
-        [![My Skills](https://skillicons.dev/icons?i=c)](https://skillicons.dev)
-    </p>
 </h1>
 ---
 ## Description
