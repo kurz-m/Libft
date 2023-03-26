@@ -67,35 +67,35 @@ These functions check whether *c*, which must have the value of an
 5. [memmove](./src/ft_memmove.c) - copies memory area in a non-destructive manner
 6. [memset](./src/ft_memset.c) - fills memory with a constant byte
 7. [split](./src/ft_split.c) - splits a string at a specified delimiter into a new array of strings
-8. [strchr](./src/ft_strchr.c)
-9. [strdup](./src/ft_strdup.c)
-10. [striteri](./src/ft_striteri.c)
-11. [strjoin](./src/ft_strjoin.c)
-12. [strlcat](./src/ft_strlcat.c) 
-13. [strlen](./src/ft_strlen.c)
-14. [strmapi](./src/ft_strmapi.c)
-15. [strncmp](./src/ft_strncmp.c)
-16. [strnstr](./src/ft_strnstr.c)
-17. [strrchr](./src/ft_strrchr.c)
-18. [strtrim](./src/ft_strtrim.c)
-19. [substr](./src/ft_substr.c)
+8. [strchr](./src/ft_strchr.c) - locates first occurrence of a character in a string
+9. [strdup](./src/ft_strdup.c) - duplicates a string into a new string (memory allocated with malloc(3))
+10. [striteri](./src/ft_striteri.c) - applies a function to every character in a string
+11. [strjoin](./src/ft_strjoin.c) - concatenates two strings into a new string (memory allocated with malloc(3))
+12. [strlcat](./src/ft_strlcat.c) - size-bounded string concatenation ('\0'-terminated)
+13. [strlen](./src/ft_strlen.c) - calculates the length of a string
+14. [strmapi](./src/ft_strmapi.c) - creates new string from another string with a function being applied to every character
+15. [strncmp](./src/ft_strncmp.c) - compares specified amount of bytes of two strings
+16. [strnstr](./src/ft_strnstr.c) - locates a substring in a string within a specified amount of bytes
+17. [strrchr](./src/ft_strrchr.c) - locates last occurrence of a character in a string 
+18. [strtrim](./src/ft_strtrim.c) - trims start and end of a string with a specified set of characters
+19. [substr](./src/ft_substr.c) - creates a substring from a string from a specified start and length
 
 ### linked list
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
+1. [lstclear](./src/ft_lstclear.c)
+2. [lstadd_back](./src/ft_lstadd_back.c)
+3. [lstadd_front](./src/ft_lstadd_front.c)
+4. [lstdelone](./src/ft_lstdelone.c)
+5. [lstiter](./src/ft_lstiter.c)
+6. [lstlast](./src/ft_lstlast.c)
+7. [lstmap](./src/ft_lstmap.c)
+8. [lstnew](./src/ft_lstnew.c)
+9. [lstsize](./src/ft_lstsize.c)
 
 ### output
-1.
-2.
-3.
-4.
+1. [putchar_fd](./src/ft_putchar_fd.c) - outputs a character to the specified file descriptor
+2. [putstr_fd](./src/ft_putstr_fd.c) - outputs a string to the specified file descriptor
+3. [putendl_fd](./src/ft_putendl_fd.c) - outputs a string to the specified file descriptor with an added newline
+4. [putnbr_fd](./src/ft_putnbr_fd.c) - outputs an integer to the specified file descriptor
 
 ## Installation
 To install the library, follow these steps:
