@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 14:27:36 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/26 13:20:43 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/26 21:39:37 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,36 @@
 		{ \
 			printf("\033[32m\xE2\x9C\x93\033[0m Test passed in %s at line %d: expected %s actual %s\n.", \
 			__FILE__, __LINE__, expected, actual); \
+		} \
+	} while (0)
+
+# define ASSERT_EQUAL_strn(expected, actual, size, n) \
+	do \
+	{ \
+		int	i = -1; \
+		if (memcmp(expected, actual, size)) \
+		{ \
+			printf("\033[31mx\033[0m Test failed in %s at line %d: expected ", \
+			__FILE__, __LINE__); \
+			while (++i < size) \
+				printf("\\%d", expected[i]); \
+			i = -1; \
+			printf(" actual "); \
+			while (++i < size) \
+				printf("\\%d", actual[i]); \
+			printf(".\n"); \
+		} \
+		else if (!memcmp(expected, actual, size)) \
+		{ \
+			printf("\033[32m\xE2\x9C\x93\033[0m Test passed in %s at line %d: expected ", \
+			__FILE__, __LINE__); \
+			while (++i < size) \
+				printf("\\%d", expected[i]); \
+			i = -1; \
+			printf(" actual "); \
+			while (++i < size) \
+				printf("\\%d", actual[i]); \
+			printf(".\n"); \
 		} \
 	} while (0)
 
