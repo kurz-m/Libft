@@ -60,7 +60,7 @@ These functions check whether *c*, which must have the value of an
 3. [itoa](./src/ft_itoa.c) - convert an integer to a string
 
 ### strings
-1. [bzero](./src/ft_bzero.c) - zeros **n** bytes of the memory
+1. [bzero](./src/ft_bzero.c) - zeros n bytes of the memory
 2. [memchr](./src/ft_memchr.c) - scans memory for specified byte
 3. [memcmp](./src/ft_memcmp.c) - compares memory areas
 4. [memcpy](./src/ft_memcpy.c) - copies memory area
