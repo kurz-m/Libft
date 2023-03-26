@@ -81,15 +81,15 @@ These functions check whether *c*, which must have the value of an
 19. [substr](./src/ft_substr.c) - creates a substring from a string from a specified start and length
 
 ### linked list
-1. [lstclear](./src/ft_lstclear.c)
-2. [lstadd_back](./src/ft_lstadd_back.c)
-3. [lstadd_front](./src/ft_lstadd_front.c)
-4. [lstdelone](./src/ft_lstdelone.c)
-5. [lstiter](./src/ft_lstiter.c)
-6. [lstlast](./src/ft_lstlast.c)
-7. [lstmap](./src/ft_lstmap.c)
-8. [lstnew](./src/ft_lstnew.c)
-9. [lstsize](./src/ft_lstsize.c)
+1. [lstclear](./src/ft_lstclear.c) - deletes and frees the given nodes and every successor
+2. [lstadd_back](./src/ft_lstadd_back.c) - adds a node at the end of a list
+3. [lstadd_front](./src/ft_lstadd_front.c) - adds a node at the beginning of a list
+4. [lstdelone](./src/ft_lstdelone.c) - deletes the content of a node with a given function and frees the node
+5. [lstiter](./src/ft_lstiter.c) - iterates a list and applies a function to its content
+6. [lstlast](./src/ft_lstlast.c) - returns the last node of a list
+7. [lstmap](./src/ft_lstmap.c) - creates a new list from a given list with a function being applied to its content
+8. [lstnew](./src/ft_lstnew.c) - creates a new node (with malloc(3))
+9. [lstsize](./src/ft_lstsize.c) - counts the number of nodes in a list
 
 ### output
 1. [putchar_fd](./src/ft_putchar_fd.c) - outputs a character to the specified file descriptor
