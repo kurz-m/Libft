@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 14:27:36 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/26 13:16:13 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/26 13:20:43 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,21 @@
 		else if (!strcmp(expected, actual)) \
 		{ \
 			printf("\033[32m\xE2\x9C\x93\033[0m Test passed in %s at line %d: expected %s actual %s\n.", \
+			__FILE__, __LINE__, expected, actual); \
+		} \
+	} while (0)
+
+# define ASSERT_EQUAL_ptr(expected, actual) \
+	do \
+	{ \
+		if (expected != actual) \
+		{ \
+			printf("\033[31mx\033[0m Test failed in %s at line %d: expected %p but got %p\n.", \
+			__FILE__, __LINE__, expected, actual); \
+		} \
+		else if (expected == actual) \
+		{ \
+			printf("\033[32m\xE2\x9C\x93\033[0m Test passed in %s at line %d: expected %p actual %p\n.", \
 			__FILE__, __LINE__, expected, actual); \
 		} \
 	} while (0)
