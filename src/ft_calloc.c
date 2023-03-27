@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:49:48 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 13:54:44 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 21:11:20 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	*ft_calloc(size_t count, size_t size)
 
 	shield = count * size;
 	if ((size != 0) && (shield / size != count))
-		return (0);
+		return (NULL);
 	buf = malloc(size * count);
 	if (!buf)
-		return (0);
+		return (NULL);
 	ft_bzero(buf, size * count);
 	return (buf);
 }

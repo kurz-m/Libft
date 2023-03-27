@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:48:32 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 14:32:31 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 21:25:55 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = size - start;
 	dst = (char *) ft_calloc((len + 1), sizeof(char));
 	if (!dst)
-		return (0);
+		return (NULL);
 	ft_strlcpy(dst, s + start, len + 1);
 	return (dst);
 }

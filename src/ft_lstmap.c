@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:45:02 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 14:37:03 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 21:16:00 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*head;
 
 	if (!lst)
-		return (0);
-	head = ft_lstnew(0);
+		return (NULL);
+	head = ft_lstnew(NULL);
 	head->content = (*f)(lst->content);
 	tmp = head;
 	lst = lst->next;
@@ -32,7 +32,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!new)
 		{
 			ft_lstclear(&head, del);
-			return (0);
+			return (NULL);
 		}
 		tmp->next = new;
 		tmp = new;

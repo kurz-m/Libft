@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:10:43 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 14:30:27 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 21:25:19 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ char	*ft_strrchr(const char *s, int c)
 			return (ptr);
 		ptr--;
 	}
-	return (0);
+	return (NULL);
 }

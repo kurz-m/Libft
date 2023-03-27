@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:22:37 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 14:16:28 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 21:19:44 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ static void	ft_free_words(char **dst, int allocated)
 	while (allocated--)
 		free(dst[allocated]);
 	free(dst);
+	dst = NULL;
 }
 
 // Returns a '\0'-terminated array of strings
@@ -87,12 +88,12 @@ char	**ft_split(char const *s, char c)
 	words = ft_words(s, c);
 	dst = (char **) ft_calloc(words + 1, sizeof(char *));
 	if (!dst)
-		return (0);
+		return (NULL);
 	shield = ft_alloc_words(dst, s, c);
 	if (shield)
 	{
 		ft_free_words(dst, shield);
-		return (0);
+		return (NULL);
 	}
 	return (dst);
 }

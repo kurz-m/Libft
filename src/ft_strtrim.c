@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:28:50 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 14:31:33 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 21:25:42 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	if (!s1 || !set)
-		return (0);
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1);
 	while (ft_strchr(set, s1[start]) && s1[start])
