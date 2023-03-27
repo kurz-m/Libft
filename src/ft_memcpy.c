@@ -6,12 +6,13 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:02:58 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 12:08:33 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:05:00 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Copies 'n' bytes from memory space 'src' to memory space 'dst'.
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t		i;

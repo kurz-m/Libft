@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:22:37 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/24 16:07:12 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:16:28 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ static size_t	ft_words(char const *s, char c)
 	return (n);
 }
 
+// Allocates memory for all splits and copies them into 'dst'.
+// On error it returns the number of already allocated strings.
 static int	ft_alloc_words(char **dst, const char *s, char c)
 {
 	int		n;
@@ -64,14 +66,17 @@ static int	ft_alloc_words(char **dst, const char *s, char c)
 	return (0);
 }
 
-static int	ft_free_words(char **dst, int allocated)
+// Gets the number of already allocated strings and frees them.
+// After freeing all splits, it also frees the array of strings.
+static void	ft_free_words(char **dst, int allocated)
 {
 	while (allocated--)
 		free(dst[allocated]);
 	free(dst);
-	return (0);
 }
 
+// Returns a '\0'-terminated array of strings
+// retrieved by splitting 's' at the delimiter 'c'.
 char	**ft_split(char const *s, char c)
 {
 	char	**dst;

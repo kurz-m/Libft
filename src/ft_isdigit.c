@@ -6,10 +6,11 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:14:40 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/14 16:16:54 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 13:58:09 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Checks if 'c' is a decimal digit (0-9).
 int	ft_isdigit(int c)
 {
 	if (c > 57 || c < 48)

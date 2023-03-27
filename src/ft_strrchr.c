@@ -6,12 +6,13 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:10:43 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/20 17:21:32 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:30:27 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Returns the last occurrence of the character 'c' ind the string 's'.
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	len;

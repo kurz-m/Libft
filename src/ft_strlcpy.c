@@ -6,12 +6,13 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:22:39 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/20 16:37:46 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:25:09 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Copies 'src' into 'dst' and '\0'-terminates it.
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;

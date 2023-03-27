@@ -6,12 +6,14 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:55:17 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/20 17:27:35 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:30:00 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Returns the first occurrence of 'needle' in the string 'haystack'.
+// Compares at most 'len' characters.
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*ptr;

@@ -6,10 +6,11 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:05:11 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/21 18:16:01 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:19:01 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Applies the function 'f' to all characters in string 's'.
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;

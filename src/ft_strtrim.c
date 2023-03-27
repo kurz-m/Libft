@@ -6,12 +6,14 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:28:50 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/20 17:51:52 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:31:33 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Returns a freeable copy of the string 's1.
+// The start and end are trimmed with the characters from 'set'.
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;

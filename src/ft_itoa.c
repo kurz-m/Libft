@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 13:25:35 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 12:08:43 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 15:14:46 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ static size_t	ft_buf_size(int n)
 	size_t	size;
 
 	size = 0;
-	if (n > 0)
-		size = 0;
-	else
+	if (n <= 0)
 		size = 1;
 	while (n != 0)
 	{
@@ -29,6 +27,7 @@ static size_t	ft_buf_size(int n)
 	return (size);
 }
 
+// Converts an integer into a string and returns it.
 char	*ft_itoa(int n)
 {
 	char	*ptr;

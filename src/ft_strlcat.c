@@ -6,12 +6,14 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:51:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/21 17:32:33 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:24:10 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Concatenates 'dst' and 'src'.
+// '\0'-terminates the result except for 'dst' being longer than dstsize.
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	int			i;

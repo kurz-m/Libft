@@ -6,12 +6,13 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:24:46 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/22 10:02:22 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:22:03 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Returns a freeable string 'dst', which is concatenated from 's1' and 's2'.
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*dst;

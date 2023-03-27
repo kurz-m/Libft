@@ -6,12 +6,13 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:37:27 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/15 12:48:11 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:06:49 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Outputs the char 'c' to the file descriptor 'fd'.
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);

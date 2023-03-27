@@ -6,12 +6,14 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:45:02 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/23 14:29:27 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:37:03 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Creates a copy of the list 'lst' and applies the function 'f'
+// to the content of it. Frees the list if memory allocation fails.
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;

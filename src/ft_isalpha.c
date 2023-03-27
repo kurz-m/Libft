@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:35:19 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/14 15:17:52 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 13:57:12 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static int	ft_islower(int c)
 	return (1);
 }
 
+// Checks if 'c' is an alphabetic character.
 int	ft_isalpha(int c)
 {
 	if (ft_islower(c) || ft_isupper(c))

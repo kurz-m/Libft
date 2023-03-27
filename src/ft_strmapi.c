@@ -6,12 +6,14 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:11:50 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/21 17:17:10 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:28:15 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Returns a new string 'ptr'.
+// The function 'f' is applied to every character + index of the string 's'.
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	size;

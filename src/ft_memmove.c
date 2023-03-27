@@ -6,12 +6,14 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 18:31:24 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 12:09:07 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:05:56 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Copies 'n' bytes from memory space 'src' to memory space 'dst'.
+// Memory may overlap.
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*dst_tmp;
