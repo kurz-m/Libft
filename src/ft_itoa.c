@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 13:25:35 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/21 15:54:09 by makurz           ###   ########.fr       */
+/*   Updated: 2023/03/27 12:08:43 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	ft_buf_size(int n)
 {
-	size_t			size;
+	size_t	size;
 
 	size = 0;
 	if (n > 0)
