@@ -23,6 +23,15 @@
     </a>
 </p>
 
+<h3 align="center">
+    Status
+</h3>
+
+<p align="center">
+    Finished: 27/3/2023
+    Grade: 125%
+</p>
+
 ---
 
 ## 💾 About
