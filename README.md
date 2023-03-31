@@ -28,7 +28,7 @@
 </h3>
 
 <p align="center">
-    Finished: 27/3/2023
+    Finished: 27/3/2023<br>
     Grade: 125%
 </p>
 
