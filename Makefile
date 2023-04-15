@@ -6,18 +6,28 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/04/15 16:33:32 by makurz           ###   ########.fr        #
+#    Updated: 2023/04/15 19:21:14 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Define the name of the library
 NAME := libft.a
 
-# Define the compiler the Makefile should use
-CC := gcc
+# Set compiler and debugger according to OS
+UNAME := $(shell uname)
+ifeq ($(UNAME), Linux)
+	CC := gcc
+	DB := gdb
+	CFLAGS ?= -Wall -Wextra -Werror -fsanitize=leak
+else ifeq ($(UNAME), Darwin)
+	CC := clang
+	DB := lldb
+	CFLAGS ?= -Wall -Wextra -Werror
+else
+	$(error Unsupported operating system: $(UNAME))
+endif
 
 # Add the neccessary flags for compiling 
-CFLAGS ?= -Wall -Wextra -Werror
 LDFLAGS ?=
 ARFLAGS := -rcs
 
@@ -56,7 +66,6 @@ OBJS_DEBUG := $(addprefix $(OBJ_DIR_DEBUG)/, $(SRCS:ft_%.c=%.o))
 Y := "\033[33m"
 R := "\033[31m"
 G := "\033[32m"
-B := "\033[34m"
 X := "\033[0m"
 UP := "\033[A"
 CUT := "\033[K"
@@ -115,20 +124,19 @@ fclean: clean clean_debug
 re: fclean all
 
 # Runs the compiler with the debugger flag
-debug: $(OBJ_DEBUG)
+debug: $(OBJS_DEBUG)
 	$(CC) $(CFLAGS) -g $^ $(LIB) -o debug
-	lldb debug
+	$(DB) debug
+
 
 # Rule for the debug compilation
-$(OBJ_DIR_DEBUG)/%.o: %.c
+$(OBJ_DIR_DEBUG)/%.o: ft_%.c
+	@echo $(Y)Compiling [$@]...$(X)
 	@mkdir -p _obj_debug
 	@$(CC) $(CFLAGS) -g -MMD -MP -c $< $(INC) -o $@
+	@printf $(UP)$(CUT)
 
 # Tell the Makefile that all those commands are actual commands and not files
 .PHONY: all clean fclean debug re
 
-
-
-
-
-
+-include $(OBJ:%.o=%.d)
