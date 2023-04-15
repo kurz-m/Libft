@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 10:47:23 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 13:54:34 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/14 21:25:58 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_sign(int c)
 }
 
 // Converts a string to an int.
-// Arbitrary amount of leading whitespaces, optional plus/minus sign.
+// Arbitrary amount of leading white spaces, optional plus/minus sign.
 int	ft_atoi(const char *str)
 {
 	int	i;

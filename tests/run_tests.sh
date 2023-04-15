@@ -3,7 +3,7 @@
 # make && make clean && cc -o main_test.out main.c -L.. -lft -L. -lft_test && ./main_test.out
 
 CC="cc"
-CFLAGS="-Wall -Werror -Wextra"
+CFLAGS="-Wall -Werror -Wextra -g"
 LFLAGS="-L../src/ -lft"
 
 # Check for the library file
