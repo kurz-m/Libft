@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Returns a freeable string 'dst', which is concatenated from 's1' and 's2'.
 char	*ft_strjoin(char const *s1, char const *s2)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Returns a substring from 's' from the 'start' location with length 'len'.
 char	*ft_substr(char const *s, unsigned int start, size_t len)

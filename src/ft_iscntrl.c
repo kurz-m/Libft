@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 10:44:57 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 21:16:12 by makurz           ###   ########.fr       */
+/*   Created: 2023/04/16 00:27:02 by makurz            #+#    #+#             */
+/*   Updated: 2023/04/16 00:28:53 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
-
-// Returns a new node with 'content'.
-t_list	*ft_lstnew(void *content)
+int	ft_iscntrl(char c)
 {
-	t_list	*new;
-
-	new = (t_list *) malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = 0;
-	return (new);
+	if ((c >= 0 && c < 32) || c == 127)
+		return (1);
+	return (0);
 }

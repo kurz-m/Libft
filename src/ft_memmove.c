@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Copies 'n' bytes from memory space 'src' to memory space 'dst'.
 // Memory may overlap.

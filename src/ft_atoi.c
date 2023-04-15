@@ -6,18 +6,11 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 10:47:23 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/14 21:25:58 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/16 00:20:07 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static int	ft_isspace(int c)
-{
-	if (c == 32 || (c > 8 && c < 14))
-		return (1);
-	return (0);
-}
+#include "../header/libft.h"
 
 static int	ft_sign(int c)
 {

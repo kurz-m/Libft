@@ -6,11 +6,11 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:13:23 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 21:26:51 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/16 00:42:22 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Compares 'n' characters from 's1' and 's2' and returning 0 on match,
 // < 0 if value of 's1' < 's2', > 0 if value of 's1' > 's2'.

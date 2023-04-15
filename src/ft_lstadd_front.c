@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Add a 'new'-node to the beginning of a list.
 void	ft_lstadd_front(t_list **lst, t_list *new)

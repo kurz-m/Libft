@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Checks if 'c' is either a decimal digit (0-9) or an alphabetic character.
 int	ft_isalnum(int c)

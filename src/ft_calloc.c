@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Allocates enough space for 'count' objects with 'size' bytes.
 // The allocated memory is filled with value zero.

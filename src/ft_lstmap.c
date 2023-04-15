@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Creates a copy of the list 'lst' and applies the function 'f'
 // to the content of it. Frees the list if memory allocation fails.

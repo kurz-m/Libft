@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Copies 'src' into 'dst' and '\0'-terminates it.
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)

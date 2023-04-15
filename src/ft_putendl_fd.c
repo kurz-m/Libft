@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 #include <unistd.h>
 
 // Outputs the string 's' to the file descriptor 'fd', followed by a new line.

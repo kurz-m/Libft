@@ -6,11 +6,11 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:22:37 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 21:19:44 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/16 00:58:19 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 static size_t	ft_words(char const *s, char c)
 {
@@ -55,7 +55,7 @@ static int	ft_alloc_words(char **dst, const char *s, char c)
 		else if (start >= 0 && (s[i] == c || !s[i]))
 		{
 			dst[n] = ft_substr(s, start, i - start);
-			if (!dst[n])
+			if (dst[n] == NULL)
 				return (n);
 			start = -1;
 			++n;
@@ -87,7 +87,7 @@ char	**ft_split(char const *s, char c)
 	shield = 0;
 	words = ft_words(s, c);
 	dst = (char **) ft_calloc(words + 1, sizeof(char *));
-	if (!dst)
+	if (dst == NULL)
 		return (NULL);
 	shield = ft_alloc_words(dst, s, c);
 	if (shield)

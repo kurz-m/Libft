@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Concatenates 'dst' and 'src'.
 // '\0'-terminates the result except for 'dst' being longer than dstsize.

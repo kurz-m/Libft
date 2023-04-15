@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Returns a new string 'ptr'.
 // The function 'f' is applied to every character + index of the string 's'.

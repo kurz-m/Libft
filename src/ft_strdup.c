@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Returns a freeable copy of the string 's1'.
 char	*ft_strdup(const char *s1)

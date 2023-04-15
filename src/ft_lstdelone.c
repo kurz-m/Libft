@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Calls the function 'del' on the content of 'lst' and frees the node.
 void	ft_lstdelone(t_list *lst, void (*del)(void *))

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Searches 'n' bytes in 's' for 'c' returning the first occurrence.
 void	*ft_memchr(const void *s, int c, size_t n)

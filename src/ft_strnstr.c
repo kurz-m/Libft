@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 // Returns the first occurrence of 'needle' in the string 'haystack'.
 // Compares at most 'len' characters.
