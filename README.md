@@ -39,11 +39,11 @@
 
 ## Table of Contents
 - [Functions](#functions)
-    - [ctype](#ctype)
-    - [stdlib](#stdlib)
+    - [char](#char)
+    - [memory](#memory)
     - [strings](#strings)
-    - [linked list](#linked-list)
-    - [output](#output)
+    - [list](#list)
+    - [io](#io)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -52,59 +52,69 @@
 ## Functions
 The library contains the following functions categorized by their use.
 
-### ctype
+### char
 These functions check whether *c*, which must have the value of an
 **unsigned char** or **EOF**, falls into a certain character class.
-1. [isalnum](./src/ft_isalnum.c) - checks for an alphanumeric character
-2. [isalpha](./src/ft_isalpha.c) - checks for an alphabetic character
-3. [isascii](./src/ft_isascii.c) - checks if *c* fits into the ASCII character set
-4. [isdigit](./src/ft_isdigit.c) - checks for a digit (0 through 0)
-5. [isprint](./src/ft_isprint.c) - checks for any printable character including space
-6. [tolower](./src/ft_tolower.c) - converts lowercase letters to uppercase
-7. [toupper](./src/ft_toupper.c) - converts uppercase letters to lowercase
+1. [isalnum](./src/char/ft_isalnum.c) - checks for an alphanumeric character
+2. [isalpha](./src/char/ft_isalpha.c) - checks for an alphabetic character
+3. [isascii](./src/char/ft_isascii.c) - checks if *c* fits into the ASCII character set
+4. [isblank](./src/char/ft_isblank.c) - checks if *c* is a white space or a tab
+5. [iscntrl](./src/char/ft_iscntrl.c) - checks if *c* is a control character
+6. [isdigit](./src/char/ft_isdigit.c) - checks for a digit (0 through 9)
+7. [isinstr](./src/char/ft_isinstr.c) - checks if *c* is in the given string
+8. [islower](./src/char/ft_islower.c) - checks if *c* is a lowercase character
+9. [isprint](./src/char/ft_isprint.c) - checks for any printable character including space
+10. [isspace](./src/char/ft_isspace.c) - checks if *c* is a space
+11. [isupper](./src/char/ft_isupper.c) - checks if *c* is a uppercase character
+12. [isxdigit](./src/char/ft_isdigit.c) - checks for a hexadecimal digit (0 through f/F)
+13. [tolower](./src/char/ft_tolower.c) - converts lowercase letters to uppercase
+14. [toupper](./src/char/ft_toupper.c) - converts uppercase letters to lowercase
 
-### stdlib
-1. [atoi](./src/ft_atoi.c) - convert a string to an integer
-2. [calloc](./src/ft_calloc.c) - allocates memory and the allocated memory is set to zero
-3. [itoa](./src/ft_itoa.c) - convert an integer to a string
+### memory
+1. [bzero](./src/memory/ft_bzero.c) - zeros n bytes of the memory
+2. [calloc](./src/memory/ft_calloc.c) - allocates memory and the allocated memory is set to zero
+3. [memchr](./src/memory/ft_memchr.c) - scans memory for specified byte
+4. [memcmp](./src/memory/ft_memcmp.c) - compares memory areas
+5. [memcpy](./src/memory/ft_memcpy.c) - copies memory area
+6. [memmove](./src/memory/ft_memmove.c) - copies memory area in a non-destructive manner
+7. [memset](./src/memory/ft_memset.c) - fills memory with a constant byte
 
 ### strings
-1. [bzero](./src/ft_bzero.c) - zeros n bytes of the memory
-2. [memchr](./src/ft_memchr.c) - scans memory for specified byte
-3. [memcmp](./src/ft_memcmp.c) - compares memory areas
-4. [memcpy](./src/ft_memcpy.c) - copies memory area
-5. [memmove](./src/ft_memmove.c) - copies memory area in a non-destructive manner
-6. [memset](./src/ft_memset.c) - fills memory with a constant byte
-7. [split](./src/ft_split.c) - splits a string at a specified delimiter into a new array of strings
-8. [strchr](./src/ft_strchr.c) - locates first occurrence of a character in a string
-9. [strdup](./src/ft_strdup.c) - duplicates a string into a new string (memory allocated with malloc(3))
-10. [striteri](./src/ft_striteri.c) - applies a function to every character in a string
-11. [strjoin](./src/ft_strjoin.c) - concatenates two strings into a new string (memory allocated with malloc(3))
-12. [strlcat](./src/ft_strlcat.c) - size-bounded string concatenation ('\0'-terminated)
-13. [strlen](./src/ft_strlen.c) - calculates the length of a string
-14. [strmapi](./src/ft_strmapi.c) - creates new string from another string with a function being applied to every character
-15. [strncmp](./src/ft_strncmp.c) - compares specified amount of bytes of two strings
-16. [strnstr](./src/ft_strnstr.c) - locates a substring in a string within a specified amount of bytes
-17. [strrchr](./src/ft_strrchr.c) - locates last occurrence of a character in a string 
-18. [strtrim](./src/ft_strtrim.c) - trims start and end of a string with a specified set of characters
-19. [substr](./src/ft_substr.c) - creates a substring from a string from a specified start and length
+1. [atoi](./src/string/ft_atoi.c) - convert a string to an integer
+2. [itoa](./src/string/ft_itoa.c) - convert an integer to a string
+3. [split](./src/string/ft_split.c) - splits a string at a specified delimiter into a new array of strings
+4. [strchr](./src/string/ft_strchr.c) - locates first occurrence of a character in a string
+5. [strcmp](./src/string/ft_strcmp.c) - compares two strings
+6. [strdup](./src/string/ft_strdup.c) - duplicates a string into a new string (memory allocated with malloc(3))
+7. [striteri](./src/string/ft_striteri.c) - applies a function to every character in a string
+8. [strjoin](./src/string/ft_strjoin.c) - concatenates two strings into a new string (memory allocated with malloc(3))
+9. [strlcat](./src/string/ft_strlcat.c) - size-bounded string concatenation ('\0'-terminated)
+10. [strlen](./src/string/ft_strlen.c) - calculates the length of a string
+11. [strlen_c](./src/string/ft_strlen_c.c) - calculates the length of a string till the specified char
+12. [strmapi](./src/string/ft_strmapi.c) - creates new string from another string with a function being applied to every character
+13. [strncmp](./src/string/ft_strncmp.c) - compares specified amount of bytes of two strings
+14. [strnstr](./src/string/ft_strnstr.c) - locates a substring in a string within a specified amount of bytes
+15. [strrchr](./src/string/ft_strrchr.c) - locates last occurrence of a character in a string 
+16. [strstr](./src/string/ft_strstr.c) - locates a substring in a string
+17. [strtrim](./src/string/ft_strtrim.c) - trims start and end of a string with a specified set of characters
+18. [substr](./src/string/ft_substr.c) - creates a substring from a string from a specified start and length
 
-### linked list
-1. [lstclear](./src/ft_lstclear.c) - deletes and frees the given nodes and every successor
-2. [lstadd_back](./src/ft_lstadd_back.c) - adds a node at the end of a list
-3. [lstadd_front](./src/ft_lstadd_front.c) - adds a node at the beginning of a list
-4. [lstdelone](./src/ft_lstdelone.c) - deletes the content of a node with a given function and frees the node
-5. [lstiter](./src/ft_lstiter.c) - iterates a list and applies a function to its content
-6. [lstlast](./src/ft_lstlast.c) - returns the last node of a list
-7. [lstmap](./src/ft_lstmap.c) - creates a new list from a given list with a function being applied to its content
-8. [lstnew](./src/ft_lstnew.c) - creates a new node (with malloc(3))
-9. [lstsize](./src/ft_lstsize.c) - counts the number of nodes in a list
+### list
+1. [lstclear](./src/list/ft_lstclear.c) - deletes and frees the given nodes and every successor
+2. [lstadd_back](./src/list/ft_lstadd_back.c) - adds a node at the end of a list
+3. [lstadd_front](./src/list/ft_lstadd_front.c) - adds a node at the beginning of a list
+4. [lstdelone](./src/list/ft_lstdelone.c) - deletes the content of a node with a given function and frees the node
+5. [lstiter](./src/list/ft_lstiter.c) - iterates a list and applies a function to its content
+6. [lstlast](./src/list/ft_lstlast.c) - returns the last node of a list
+7. [lstmap](./src/list/ft_lstmap.c) - creates a new list from a given list with a function being applied to its content
+8. [lstnew](./src/list/ft_lstnew.c) - creates a new node (with malloc(3))
+9. [lstsize](./src/list/ft_lstsize.c) - counts the number of nodes in a list
 
-### output
-1. [putchar_fd](./src/ft_putchar_fd.c) - outputs a character to the specified file descriptor
-2. [putstr_fd](./src/ft_putstr_fd.c) - outputs a string to the specified file descriptor
-3. [putendl_fd](./src/ft_putendl_fd.c) - outputs a string to the specified file descriptor with an added newline
-4. [putnbr_fd](./src/ft_putnbr_fd.c) - outputs an integer to the specified file descriptor
+### io
+1. [putchar_fd](./src/io/ft_putchar_fd.c) - outputs a character to the specified file descriptor
+2. [putstr_fd](./src/io/ft_putstr_fd.c) - outputs a string to the specified file descriptor
+3. [putendl_fd](./src/io/ft_putendl_fd.c) - outputs a string to the specified file descriptor with an added newline
+4. [putnbr_fd](./src/io/ft_putnbr_fd.c) - outputs an integer to the specified file descriptor
 
 ## Installation
 To install the library, follow these steps:

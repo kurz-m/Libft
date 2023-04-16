@@ -6,15 +6,15 @@
 /*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 00:35:00 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/16 10:52:42 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/16 12:39:24 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isinstr(char c, const char *str)
+int	ft_isinstr(int c, const char *str)
 {
 	while (*str)
 	{
-		if (*str == c)
+		if (*str == (char) c)
 			return (1);
 		str++;
 	}

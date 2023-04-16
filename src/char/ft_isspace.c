@@ -6,12 +6,12 @@
 /*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 00:14:08 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/16 11:20:38 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/16 12:43:11 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Checks if character is space
-int	ft_isspace(char c)
+int	ft_isspace(int c)
 {
 	if (c == 32 || (c > 8 && c < 14))
 		return (1);

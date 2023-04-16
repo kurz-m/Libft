@@ -6,12 +6,12 @@
 /*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 00:29:43 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/16 00:33:38 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/16 12:42:51 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Checks if char is a hexadecimal digit
-int	ft_isxdigit(char c)
+int	ft_isxdigit(int c)
 {
 	if (c > 47 && c < 58)
 		return (1);
