@@ -7,8 +7,8 @@ CFLAGS="-Wall -Werror -Wextra -g"
 LFLAGS="-L../src/ -lft"
 
 # Check for the library file
-if [ ! -f "../src/libft.a" ]; then
-	(cd ../src && make)
+if [ ! -f "libft.a" ]; then
+	(make)
 fi
 
 # List of mandatory tests
