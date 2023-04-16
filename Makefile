@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/04/16 11:47:46 by makurz           ###   ########.fr        #
+#    Updated: 2023/04/16 13:30:45 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ else
 	$(error Unsupported operating system: $(UNAME))
 endif
 
-# Add the neccessary flags for compiling 
+# Add the necessary flags for Compiling
+# Can be changed in the command line
 LDFLAGS ?=
 ARFLAGS := -rcs
 
