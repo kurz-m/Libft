@@ -36,10 +36,11 @@
 ## ≡ Table of Contents
 - [Functions](#functions)
     - [Char](#char)
+    - [Get next line](#get-next-line)
+    - [IO](#io)
+    - [List](#list)
     - [Memory](#memory)
     - [Strings](#strings)
-    - [List](#list)
-    - [IO](#io)
 - [Installation](https://github.com/kurz-m/Libft/edit/main/README.md#%EF%B8%8F-installation)
 - [Usage](#-usage)
 - [Contributing](#contributing)
@@ -49,8 +50,6 @@
 The library contains the following functions categorized by their use.
 
 ### Char
-These functions check whether *c*, which must have the value of an
-**unsigned char** or **EOF**, falls into a certain character class.
 1. [isalnum](./src/char/ft_isalnum.c) - checks for an alphanumeric character
 2. [isalpha](./src/char/ft_isalpha.c) - checks for an alphabetic character
 3. [isascii](./src/char/ft_isascii.c) - checks if *c* fits into the ASCII character set
@@ -66,6 +65,27 @@ These functions check whether *c*, which must have the value of an
 13. [tolower](./src/char/ft_tolower.c) - converts lowercase letters to uppercase
 14. [toupper](./src/char/ft_toupper.c) - converts uppercase letters to lowercase
 
+### Get next line
+1. [get_next_line](./src/gnl/ft_get_next_line.c) - returns a freeable new line from the specified file descriptor
+2. [get_next_line_utils](./src/gnl/ft_get_next_line_utils.c) - utility functions for [get_next_line](./src/gnl/ft_get_next_line.c)
+
+### IO
+1. [putchar_fd](./src/io/ft_putchar_fd.c) - outputs a character to the specified file descriptor
+2. [putstr_fd](./src/io/ft_putstr_fd.c) - outputs a string to the specified file descriptor
+3. [putendl_fd](./src/io/ft_putendl_fd.c) - outputs a string to the specified file descriptor with an added newline
+4. [putnbr_fd](./src/io/ft_putnbr_fd.c) - outputs an integer to the specified file descriptor
+
+### List
+1. [lstclear](./src/list/ft_lstclear.c) - deletes and frees the given nodes and every successor
+2. [lstadd_back](./src/list/ft_lstadd_back.c) - adds a node at the end of a list
+3. [lstadd_front](./src/list/ft_lstadd_front.c) - adds a node at the beginning of a list
+4. [lstdelone](./src/list/ft_lstdelone.c) - deletes the content of a node with a given function and frees the node
+5. [lstiter](./src/list/ft_lstiter.c) - iterates a list and applies a function to its content
+6. [lstlast](./src/list/ft_lstlast.c) - returns the last node of a list
+7. [lstmap](./src/list/ft_lstmap.c) - creates a new list from a given list with a function being applied to its content
+8. [lstnew](./src/list/ft_lstnew.c) - creates a new node (with malloc(3))
+9. [lstsize](./src/list/ft_lstsize.c) - counts the number of nodes in a list
+
 ### Memory
 1. [bzero](./src/memory/ft_bzero.c) - zeros n bytes of the memory
 2. [calloc](./src/memory/ft_calloc.c) - allocates memory and the allocated memory is set to zero
@@ -76,8 +96,8 @@ These functions check whether *c*, which must have the value of an
 7. [memset](./src/memory/ft_memset.c) - fills memory with a constant byte
 
 ### Strings
-1. [atoi](./src/string/ft_atoi.c) - convert a string to an integer
-2. [itoa](./src/string/ft_itoa.c) - convert an integer to a string
+1. [atoi](./src/string/ft_atoi.c) - converts a string to an integer
+2. [itoa](./src/string/ft_itoa.c) - converts an integer to a string
 3. [split](./src/string/ft_split.c) - splits a string at a specified delimiter into a new array of strings
 4. [strchr](./src/string/ft_strchr.c) - locates first occurrence of a character in a string
 5. [strcmp](./src/string/ft_strcmp.c) - compares two strings
@@ -94,23 +114,6 @@ These functions check whether *c*, which must have the value of an
 16. [strstr](./src/string/ft_strstr.c) - locates a substring in a string
 17. [strtrim](./src/string/ft_strtrim.c) - trims start and end of a string with a specified set of characters
 18. [substr](./src/string/ft_substr.c) - creates a substring from a string from a specified start and length
-
-### List
-1. [lstclear](./src/list/ft_lstclear.c) - deletes and frees the given nodes and every successor
-2. [lstadd_back](./src/list/ft_lstadd_back.c) - adds a node at the end of a list
-3. [lstadd_front](./src/list/ft_lstadd_front.c) - adds a node at the beginning of a list
-4. [lstdelone](./src/list/ft_lstdelone.c) - deletes the content of a node with a given function and frees the node
-5. [lstiter](./src/list/ft_lstiter.c) - iterates a list and applies a function to its content
-6. [lstlast](./src/list/ft_lstlast.c) - returns the last node of a list
-7. [lstmap](./src/list/ft_lstmap.c) - creates a new list from a given list with a function being applied to its content
-8. [lstnew](./src/list/ft_lstnew.c) - creates a new node (with malloc(3))
-9. [lstsize](./src/list/ft_lstsize.c) - counts the number of nodes in a list
-
-### IO
-1. [putchar_fd](./src/io/ft_putchar_fd.c) - outputs a character to the specified file descriptor
-2. [putstr_fd](./src/io/ft_putstr_fd.c) - outputs a string to the specified file descriptor
-3. [putendl_fd](./src/io/ft_putendl_fd.c) - outputs a string to the specified file descriptor with an added newline
-4. [putnbr_fd](./src/io/ft_putnbr_fd.c) - outputs an integer to the specified file descriptor
 
 ## 🗣️ Installation
 To install the library, follow these steps:
