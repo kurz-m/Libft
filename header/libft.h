@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:39:33 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/16 00:56:08 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/16 11:27:55 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include "get_next_line.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_islower(int c);
-int		ft_iscstr(char c, const char *str);
+size_t	ft_strlen_c(const char *str, char c);
+int		ft_isinstr(char c, const char *str);
 int		ft_isspace(char c);
 int		ft_isupper(int c);
 int		ft_isascii(int c);
