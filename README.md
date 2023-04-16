@@ -17,10 +17,6 @@
     <a href="https://skillicons.dev">
         <img src="https://skillicons.dev/icons?i=neovim" />
     </a>
-     &nbsp&nbspand&nbsp&nbsp
-    <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=vscode" />
-    </a>
 </p>
 
 <h3 align="center">
@@ -37,22 +33,22 @@
 ## 💾 About
 > The task of the Libft project is to code a C library with basic functions (see below) I can use in later projects of the core curriculum.
 
-## Table of Contents
+## ≡ Table of Contents
 - [Functions](#functions)
-    - [char](#char)
-    - [memory](#memory)
-    - [strings](#strings)
-    - [list](#list)
-    - [io](#io)
-- [Installation](#installation)
-- [Usage](#usage)
+    - [Char](#char)
+    - [Memory](#memory)
+    - [Strings](#strings)
+    - [List](#list)
+    - [IO](#io)
+- [Installation](https://github.com/kurz-m/Libft/edit/main/README.md#%EF%B8%8F-installation)
+- [Usage](#-usage)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Functions
 The library contains the following functions categorized by their use.
 
-### char
+### Char
 These functions check whether *c*, which must have the value of an
 **unsigned char** or **EOF**, falls into a certain character class.
 1. [isalnum](./src/char/ft_isalnum.c) - checks for an alphanumeric character
@@ -70,7 +66,7 @@ These functions check whether *c*, which must have the value of an
 13. [tolower](./src/char/ft_tolower.c) - converts lowercase letters to uppercase
 14. [toupper](./src/char/ft_toupper.c) - converts uppercase letters to lowercase
 
-### memory
+### Memory
 1. [bzero](./src/memory/ft_bzero.c) - zeros n bytes of the memory
 2. [calloc](./src/memory/ft_calloc.c) - allocates memory and the allocated memory is set to zero
 3. [memchr](./src/memory/ft_memchr.c) - scans memory for specified byte
@@ -79,7 +75,7 @@ These functions check whether *c*, which must have the value of an
 6. [memmove](./src/memory/ft_memmove.c) - copies memory area in a non-destructive manner
 7. [memset](./src/memory/ft_memset.c) - fills memory with a constant byte
 
-### strings
+### Strings
 1. [atoi](./src/string/ft_atoi.c) - convert a string to an integer
 2. [itoa](./src/string/ft_itoa.c) - convert an integer to a string
 3. [split](./src/string/ft_split.c) - splits a string at a specified delimiter into a new array of strings
@@ -99,7 +95,7 @@ These functions check whether *c*, which must have the value of an
 17. [strtrim](./src/string/ft_strtrim.c) - trims start and end of a string with a specified set of characters
 18. [substr](./src/string/ft_substr.c) - creates a substring from a string from a specified start and length
 
-### list
+### List
 1. [lstclear](./src/list/ft_lstclear.c) - deletes and frees the given nodes and every successor
 2. [lstadd_back](./src/list/ft_lstadd_back.c) - adds a node at the end of a list
 3. [lstadd_front](./src/list/ft_lstadd_front.c) - adds a node at the beginning of a list
@@ -110,27 +106,32 @@ These functions check whether *c*, which must have the value of an
 8. [lstnew](./src/list/ft_lstnew.c) - creates a new node (with malloc(3))
 9. [lstsize](./src/list/ft_lstsize.c) - counts the number of nodes in a list
 
-### io
+### IO
 1. [putchar_fd](./src/io/ft_putchar_fd.c) - outputs a character to the specified file descriptor
 2. [putstr_fd](./src/io/ft_putstr_fd.c) - outputs a string to the specified file descriptor
 3. [putendl_fd](./src/io/ft_putendl_fd.c) - outputs a string to the specified file descriptor with an added newline
 4. [putnbr_fd](./src/io/ft_putnbr_fd.c) - outputs an integer to the specified file descriptor
 
-## Installation
+## 🗣️ Installation
 To install the library, follow these steps:
 1. Clone the repository: 
 ```shell
-% git clone https://github.com/kurz-m/Libft.git
+git clone https://github.com/kurz-m/Libft.git
 ```
 
 2. Navigate to the repository: 
 ```shell
-% cd Libft
+cd Libft
 ```
 
 3. Compile the library:
 ```shell
-% make
+make
+```
+
+All in one solution:
+```shell
+git clone https://github.com/kurz-m/Libft.git && cd Libft && make
 ```
 
 ## 🧰 Usage
