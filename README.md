@@ -125,12 +125,12 @@ To install the library, follow these steps:
 
 2. Navigate to the repository: 
 ```shell
-% cd Libft/src
+% cd Libft
 ```
 
 3. Compile the library:
 ```shell
-% make all
+% make
 ```
 
 ## 🧰 Usage
