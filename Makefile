@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/04/17 12:46:30 by makurz           ###   ########.fr        #
+#    Updated: 2023/04/17 15:52:25 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ ifeq ($(UNAME), Linux)
 	DB := gdb
 	CFLAGS ?= -Wall -Wextra -Werror -fsanitize=leak
 else ifeq ($(UNAME), Darwin)
-	CC := clang
+	CC := cc
 	DB := lldb
-	CFLAGS ?= -Wall -Wextra -Werror
+	CFLAGS ?= -Wall -Wextra -Werror -g3
 else
 	$(error Unsupported operating system: $(UNAME))
 endif
