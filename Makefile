@@ -6,12 +6,12 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/04/17 15:52:25 by makurz           ###   ########.fr        #
+#    Updated: 2023/04/17 18:49:40 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Define the name of the library
-NAME := libft.a
+NAME := ./lib/libft.a
 
 # Set compiler and debugger according to OS
 UNAME := $(shell uname)
@@ -105,6 +105,7 @@ all: $(NAME)
 	@printf "\n\n"
 
 $(NAME): $(OBJS)
+	@mkdir -p lib
 	@echo $(Y)Compiling [$(NAME)]...$(X)
 	@ar $(ARFLAGS) $(NAME) $(OBJS)
 	@printf $(UP)$(CUT)
