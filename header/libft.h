@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:39:33 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/17 12:44:40 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/18 09:19:38 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "get_next_line.h"
+
+// functions regarding arrays
+char	**ft_arrdup(const char **src);
+void	ft_arrfree(char **arr);
+size_t	ft_arrlen(const char **arr);
 
 // functions regarding chars
 int		ft_isalnum(int c);
@@ -43,8 +48,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 
 // functions regarding strings
-char	**ft_arrdup(const char **src);
-size_t	ft_arrlen(const char **arr);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);

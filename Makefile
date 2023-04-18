@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/04/17 21:49:28 by makurz           ###   ########.fr        #
+#    Updated: 2023/04/18 09:34:46 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,8 @@ RM := rm -f
 VPATH = src/char src/gnl src/io src/list src/memory src/string
 
 # Explicitly state all function names for better Modularity
+SRC_ARR :=	\
+			ft_arrdup.c ft_arrfree.c ft_arrlen.c
 SRC_CHAR :=	\
 			ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c		\
 			ft_iscntrl.c ft_isdigit.c ft_isinstr.c ft_islower.c		\
@@ -56,19 +58,20 @@ SRC_LIST :=	\
 			ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c	\
 			ft_lstnew.c ft_lstsize.c
 
-SRC_MEM :=	\
 			ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c			\
 			ft_memcpy.c ft_memmove.c ft_memset.c
 
 SRC_STR :=	\
-			ft_arrdup.c ft_arrlen.c ft_atoi.c ft_itoa.c ft_split.c	\
-			ft_strchr.c	 ft_strcmp.c ft_strdup.c ft_striteri.c		\
-			ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c		\
-			ft_strlen_c.c ft_strmapi.c ft_strncmp.c ft_strnstr.c	\
-			ft_strrchr.c ft_strstr.c ft_strtrim.c ft_substr.c
+			ft_atoi.c ft_itoa.c ft_split.c ft_strchr.c ft_strcmp.c	\
+			ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c		\
+			ft_strlcpy.c ft_strlen.c ft_strlen_c.c ft_strmapi.c		\
+			ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strstr.c		\
+			ft_strtrim.c ft_substr.c
 
 # Combine all the sources
-SRCS :=	$(SRC_CHAR) $(SRC_GNL) $(SRC_IO) $(SRC_LIST) $(SRC_MEM) $(SRC_STR)
+SRCS :=		\
+			$(SRC_ARR) $(SRC_CHAR) $(SRC_GNL) $(SRC_IO) $(SRC_LIST)	\
+			$(SRC_MEM) $(SRC_STR)
 
 # Define a directory for object files
 OBJ_DIR := ./_obj
