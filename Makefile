@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/04/18 09:34:46 by makurz           ###   ########.fr        #
+#    Updated: 2023/04/18 09:39:26 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ ARFLAGS := -rcs
 RM := rm -f
 
 # Add paths for the source files
-VPATH = src/char src/gnl src/io src/list src/memory src/string
+VPATH = src/array src/char src/gnl src/io src/list src/memory src/string
 
 # Explicitly state all function names for better Modularity
 SRC_ARR :=	\
@@ -58,6 +58,7 @@ SRC_LIST :=	\
 			ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c	\
 			ft_lstnew.c ft_lstsize.c
 
+SRC_MEM :=	\
 			ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c			\
 			ft_memcpy.c ft_memmove.c ft_memset.c
 
