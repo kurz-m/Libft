@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/04/19 08:28:47 by makurz           ###   ########.fr        #
+#    Updated: 2023/04/19 22:07:43 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ VPATH = src/array src/char src/gnl src/io src/list src/memory src/string
 # Explicitly state all function names for better Modularity
 SRC_ARR :=	\
 			ft_arrdup.c ft_arrfree.c ft_arrlen.c
+
 SRC_CHAR :=	\
 			ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c		\
 			ft_iscntrl.c ft_isdigit.c ft_isinstr.c ft_islower.c		\
@@ -120,7 +121,7 @@ $(OBJ_DIR)/%.o: ft_%.c
 	@mkdir -p _obj
 	@$(CC) $(CFLAGS) -MMD -MP -c $< $(INC) -o $@
 	@printf $(UP)$(CUT)
-
+aaaa
 # Cleans only the object files if they exist
 clean:
 	@if [ -d "${OBJ_DIR}" ]; then \
@@ -153,7 +154,6 @@ debug: $(OBJS_DEBUG)
 	$(CC) $(CFLAGS) -g $^ $(LIB) -o debug
 	$(DB) debug
 
-
 # Rule for the debug compilation
 $(OBJ_DIR_DEBUG)/%.o: ft_%.c
 	@echo $(Y)Compiling [$@]...$(X)
@@ -165,8 +165,6 @@ $(OBJ_DIR_DEBUG)/%.o: ft_%.c
 .PHONY: all clean fclean debug re
 
 -include $(OBJ:%.o=%.d)
-
-
 # 	For later use
 # 	@printf "\n"
 # 	@echo $(G)"                       **"
@@ -178,4 +176,3 @@ $(OBJ_DIR_DEBUG)/%.o: ft_%.c
 # 	@echo $(G)"  *** /** /**//********/**//**//******/***    ******"
 # 	@echo $(G)" ///  //  //  //////// //  //  ////// ///    //////"$(X)
 # 	@printf "\n\n"
-
