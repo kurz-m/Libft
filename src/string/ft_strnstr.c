@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:55:17 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 21:24:15 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/19 08:19:27 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	n_len;
 
 	n_len = ft_strlen(needle);
-	if (!n_len)
+	if (n_len == 0)
 		return ((char *) haystack);
 	ptr = (char *) haystack;
 	while (*ptr && len-- >= n_len)

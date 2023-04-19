@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 13:25:35 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/16 11:40:03 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/18 22:20:46 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 
 	size = ft_buf_size(n);
 	ptr = (char *) malloc((size + 1) * sizeof(char));
-	if (!ptr)
+	if (ptr == NULL)
 		return (NULL);
 	nb = n;
 	if (nb < 0)

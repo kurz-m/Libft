@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 18:31:24 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 14:05:56 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/18 22:16:58 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 // Memory may overlap.
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char		*dst_tmp;
-	const char	*src_tmp;
+	unsigned char		*dst_tmp;
+	const unsigned char	*src_tmp;
 
-	dst_tmp = (char *) dst;
-	src_tmp = (const char *) src;
+	dst_tmp = (unsigned char *) dst;
+	src_tmp = (const unsigned char *) src;
 	if (dst < src)
 	{
 		while (len--)

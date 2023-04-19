@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:22:39 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 14:25:09 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/19 08:17:28 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	src_len = ft_strlen(src);
-	if (!dstsize)
+	if (dstsize == 0)
 		return (src_len);
 	while (src[i] && i < (dstsize - 1))
 	{
