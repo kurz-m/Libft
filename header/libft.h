@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:39:33 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/18 09:19:38 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/20 10:55:08 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		ft_isblank(int c);
 int		ft_iscntrl(int c);
 int		ft_isdigit(int c);
 int		ft_isinstr(int c, const char *str);
+int		ft_isinstrr(int c, const char *str, int i);
 int		ft_islower(int c);
 int		ft_isprint(int c);
 int		ft_isspace(int c);

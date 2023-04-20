@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/04/19 22:07:43 by makurz           ###   ########.fr        #
+#    Updated: 2023/04/20 10:59:48 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,15 +38,15 @@ RM := rm -f
 # Add paths for the source files
 VPATH = src/array src/char src/gnl src/io src/list src/memory src/string
 
-# Explicitly state all function names for better Modularity
+# Explicitly state all function names for better modularity
 SRC_ARR :=	\
 			ft_arrdup.c ft_arrfree.c ft_arrlen.c
 
 SRC_CHAR :=	\
 			ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c		\
-			ft_iscntrl.c ft_isdigit.c ft_isinstr.c ft_islower.c		\
-			ft_isprint.c ft_isspace.c ft_isupper.c ft_isxdigit.c	\
-			ft_tolower.c ft_toupper.c
+			ft_iscntrl.c ft_isdigit.c ft_isinstr.c ft_isinstr.c		\
+			ft_islower.c ft_isprint.c ft_isspace.c ft_isupper.c		\
+			ft_isxdigit.c ft_tolower.c ft_toupper.c
 
 SRC_GNL :=	\
 			ft_get_next_line.c ft_get_next_line_utils.c
@@ -121,7 +121,7 @@ $(OBJ_DIR)/%.o: ft_%.c
 	@mkdir -p _obj
 	@$(CC) $(CFLAGS) -MMD -MP -c $< $(INC) -o $@
 	@printf $(UP)$(CUT)
-aaaa
+
 # Cleans only the object files if they exist
 clean:
 	@if [ -d "${OBJ_DIR}" ]; then \
