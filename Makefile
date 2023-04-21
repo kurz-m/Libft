@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/04/20 10:59:48 by makurz           ###   ########.fr        #
+#    Updated: 2023/04/21 08:56:08 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,9 @@ ARFLAGS := -rcs
 RM := rm -f
 
 # Add paths for the source files
-VPATH = src/array src/char src/gnl src/io src/list src/memory src/string
+VPATH =	\
+		src/array src/char src/gnl src/io src/list src/memory		\
+		src/string src/printf
 
 # Explicitly state all function names for better modularity
 SRC_ARR :=	\
