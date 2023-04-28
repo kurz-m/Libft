@@ -6,7 +6,7 @@
 /*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 06:55:14 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/28 07:22:50 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/28 08:44:45 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_count_words(const char *str, char c)
 		else
 		{
 			count++;
-			str += ft_strlen_c(str, 32);
+			str += ft_strlen_c(str, c);
 		}
 	}
 	return (count);
@@ -48,10 +48,10 @@ char	**maintmp(char const *str, char c)
 			str++;
 		else
 		{
-			arr[i] = ft_substr(str, 0, ft_strlen_c(str, 32));
+			arr[i] = ft_substr(str, 0, ft_strlen_c(str, c));
 			if (arr[i] == NULL)
 				return (ft_arrfree(arr), NULL);
-			str += ft_strlen_c(str, 32);
+			str += ft_strlen_c(str, c);
 			++i;
 		}
 	}
