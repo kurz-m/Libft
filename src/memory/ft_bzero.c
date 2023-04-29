@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Writes 'n' bytes from 's' to 0.
 // Usage of ft_memset.

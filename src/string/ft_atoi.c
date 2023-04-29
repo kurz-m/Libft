@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 static int	ft_sign(int c)
 {

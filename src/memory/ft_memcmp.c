@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Compares 'n' bytes in 's1' and 's2' and returning 0 on a match,
 // < 0 if value of 's1' < 's2', > 0 if value of 's1' > 's2'.

@@ -6,11 +6,11 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:49:48 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/18 22:07:55 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/29 11:13:29 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Allocates enough space for 'count' objects with 'size' bytes.
 // The allocated memory is filled with value zero.

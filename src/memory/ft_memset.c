@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Sets 'len' bytes from 'b' to 'c'.
 void	*ft_memset(void *b, int c, size_t len)

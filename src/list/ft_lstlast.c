@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Returns the address of the last node in a list.
 t_list	*ft_lstlast(t_list *lst)

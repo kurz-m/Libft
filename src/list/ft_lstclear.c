@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Deletes and frees the given node and every successor of that node.
 void	ft_lstclear(t_list **lst, void (*del)(void *))

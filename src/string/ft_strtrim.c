@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Returns a freeable copy of the string 's1.
 // The start and end are trimmed with the characters from 'set'.

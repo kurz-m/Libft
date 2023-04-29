@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Returns the first occurrence of 'needle' in the string 'haystack'.
 char	*ft_strstr(const char *haystack, const char *needle)

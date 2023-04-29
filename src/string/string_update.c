@@ -6,11 +6,11 @@
 /*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 06:55:14 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/28 08:44:45 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/29 11:12:28 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 static int	ft_count_words(const char *str, char c)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Returns the last occurrence of the character 'c' ind the string 's'.
 char	*ft_strrchr(const char *s, int c)

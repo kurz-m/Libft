@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Returns a new node with 'content'.
 t_list	*ft_lstnew(void *content)

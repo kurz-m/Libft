@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Resets the stash and keeps string after new_line char.
 int	ft_clean_stash(char *str, t_gnl next)

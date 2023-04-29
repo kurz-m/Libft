@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // This function parses the specifier and calls the relevant function.
 int	ft_parse_specifier(char c, va_list args, int *printed)

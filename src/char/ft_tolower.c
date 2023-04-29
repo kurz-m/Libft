@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Converts uppercase characters to lowercase characters.
 int	ft_tolower(int c)

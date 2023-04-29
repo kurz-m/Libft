@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/libft.h"
+#include "libft.h"
 
 // Takes the number and base and recursively prints out the number.
 int	ft_putnbrbase(size_t nb, char *base, int *printed)
