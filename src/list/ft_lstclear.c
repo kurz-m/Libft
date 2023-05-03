@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:44:02 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/21 08:53:07 by makurz           ###   ########.fr       */
+/*   Updated: 2023/05/03 08:39:11 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	if (lst == NULL)
 		return ;
 	tmp = *lst;
-	while (tmp)
+	while (tmp != NULL)
 	{
 		(*del)(tmp->content);
 		tmp_free = tmp;
