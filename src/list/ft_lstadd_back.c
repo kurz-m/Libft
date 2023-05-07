@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:15:41 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/21 08:55:08 by makurz           ###   ########.fr       */
+/*   Updated: 2023/05/03 08:38:25 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new_node)
 {
 	t_list	*last;
 
-	last = ft_lstlast(*lst);
-	if (last == NULL)
+	if (*lst == NULL)
 		*lst = new_node;
 	else
+	{
+		last = ft_lstlast(*lst);
 		last->next = new_node;
+	}
 }
