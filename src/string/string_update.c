@@ -6,7 +6,7 @@
 /*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 06:55:14 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/29 11:12:28 by makurz           ###   ########.fr       */
+/*   Updated: 2023/05/07 21:48:14 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,21 @@ char	**maintmp(char const *str, char c)
 		}
 	}
 	return (arr);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char	to_split[] = "string toasdfffffffff asd sadf   fffffd                              split";
+	char	**split;
+	int		i;
+
+	i = 0;
+	split = maintmp(to_split, ' ');
+	while (split[i] != NULL)
+	{
+		printf("string: %s\n", split[i]);
+		++i;
+	}
 }
