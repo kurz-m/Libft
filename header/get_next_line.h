@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 00:09:22 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/16 11:30:27 by makurz           ###   ########.fr       */
+/*   Updated: 2023/05/15 19:14:02 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
-# endif
-
-# ifndef MAX_FD
-#  define MAX_FD 20
 # endif
 
 # include <unistd.h>
