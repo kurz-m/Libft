@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/04/21 08:56:08 by makurz           ###   ########.fr        #
+#    Updated: 2023/05/15 18:48:45 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ UNAME := $(shell uname)
 ifeq ($(UNAME), Linux)
 	CC := gcc
 	DB := gdb
-	CFLAGS ?= -Wall -Wextra -Werror -fsanitize=leak
+	CFLAGS ?= -Wall -Wextra -Werror -fsanitize=leak -g
 else ifeq ($(UNAME), Darwin)
 	CC := cc
 	DB := lldb

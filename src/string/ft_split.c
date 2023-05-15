@@ -3,97 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 16:22:37 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/16 00:58:19 by makurz           ###   ########.fr       */
+/*   Created: 2023/04/28 06:55:14 by makurz            #+#    #+#             */
+/*   Updated: 2023/05/15 18:54:46 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_words(char const *s, char c)
+static int	ft_count_words(const char *str, char c)
 {
+	int		count;
+
+	count = 0;
+	while (*str)
+	{
+		if (*str == c)
+			str++;
+		else
+		{
+			count++;
+			str += ft_strlen_c(str, c);
+		}
+	}
+	return (count);
+}
+
+char	**ft_split(char const *str, char c)
+{
+	int		count;
+	char	**arr;
 	int		i;
-	int		shield;
-	size_t	n;
 
 	i = 0;
-	n = 0;
-	shield = 0;
-	while (s[i])
-	{
-		if (s[i] != c && shield == 0)
-		{
-			shield = 1;
-			++n;
-		}
-		else if (s[i] == c)
-			shield = 0;
-		++i;
-	}
-	return (n);
-}
-
-// Allocates memory for all splits and copies them into 'dst'.
-// On error it returns the number of already allocated strings.
-static int	ft_alloc_words(char **dst, const char *s, char c)
-{
-	int		n;
-	int		start;
-	size_t	i;
-
-	i = 0;
-	n = 0;
-	start = -1;
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] != c && start == -1)
-		{
-			start = i;
-		}
-		else if (start >= 0 && (s[i] == c || !s[i]))
-		{
-			dst[n] = ft_substr(s, start, i - start);
-			if (dst[n] == NULL)
-				return (n);
-			start = -1;
-			++n;
-		}
-		++i;
-	}
-	dst[n] = 0;
-	return (0);
-}
-
-// Gets the number of already allocated strings and frees them.
-// After freeing all splits, it also frees the array of strings.
-static void	ft_free_words(char **dst, int allocated)
-{
-	while (allocated--)
-		free(dst[allocated]);
-	free(dst);
-	dst = NULL;
-}
-
-// Returns a '\0'-terminated array of strings
-// retrieved by splitting 's' at the delimiter 'c'.
-char	**ft_split(char const *s, char c)
-{
-	char	**dst;
-	int		shield;
-	size_t	words;
-
-	shield = 0;
-	words = ft_words(s, c);
-	dst = (char **) ft_calloc(words + 1, sizeof(char *));
-	if (dst == NULL)
+	count = ft_count_words(str, c);
+	arr = ft_calloc(sizeof(char*), (count + 1));
+	if (arr == NULL)
 		return (NULL);
-	shield = ft_alloc_words(dst, s, c);
-	if (shield)
+	arr[count] = NULL;
+	while (i < count)
 	{
-		ft_free_words(dst, shield);
-		return (NULL);
+		if (*str == c)
+			str++;
+		else
+		{
+			arr[i] = ft_substr(str, 0, ft_strlen_c(str, c));
+			if (arr[i] == NULL)
+				return (ft_arrfree(arr), NULL);
+			str += ft_strlen_c(str, c);
+			++i;
+		}
 	}
-	return (dst);
+	return (arr);
 }
