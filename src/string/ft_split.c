@@ -6,7 +6,7 @@
 /*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 06:55:14 by makurz            #+#    #+#             */
-/*   Updated: 2023/05/15 18:54:46 by makurz           ###   ########.fr       */
+/*   Updated: 2023/05/22 14:09:53 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	**ft_split(char const *str, char c)
 
 	i = 0;
 	count = ft_count_words(str, c);
-	arr = ft_calloc(sizeof(char*), (count + 1));
+	arr = ft_calloc(sizeof(char *), (count + 1));
 	if (arr == NULL)
 		return (NULL);
 	arr[count] = NULL;
