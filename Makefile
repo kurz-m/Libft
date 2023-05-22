@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/05/20 15:17:23 by makurz           ###   ########.fr        #
+#    Updated: 2023/05/21 00:16:53 by makurz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,11 @@ UNAME := $(shell uname)
 ifeq ($(UNAME), Linux)
 	CC := gcc
 	DB := gdb
-	CFLAGS ?= -Wall -Wextra -Werror -g3
+	CFLAGS ?= -Wall -Wextra -Werror
 else ifeq ($(UNAME), Darwin)
 	CC := cc
 	DB := lldb
-	CFLAGS ?= -Wall -Wextra -Werror -g3
+	CFLAGS ?= -Wall -Wextra -Werror
 else
 	$(error Unsupported operating system: $(UNAME))
 endif
