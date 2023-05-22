@@ -6,12 +6,11 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:15:41 by makurz            #+#    #+#             */
-/*   Updated: 2023/05/15 19:56:21 by makurz           ###   ########.fr       */
+/*   Updated: 2023/05/16 14:00:04 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 // Add a 'new_node'-node to the end of a list.
 void	ft_lstadd_back(t_list **lst, t_list *new_node)
