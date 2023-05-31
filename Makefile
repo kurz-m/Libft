@@ -6,7 +6,7 @@
 #    By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:39:14 by makurz            #+#    #+#              #
-#    Updated: 2023/05/21 00:16:53 by makurz           ###   ########.fr        #
+#    Updated: 2023/05/31 09:42:56 by work             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,11 +66,11 @@ SRC_MEM :=	\
 			ft_memcpy.c ft_memmove.c ft_memset.c
 
 SRC_STR :=	\
-			ft_atoi.c ft_itoa.c ft_split.c ft_strchr.c ft_strcmp.c	\
-			ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c		\
-			ft_strlcpy.c ft_strlen.c ft_strlen_c.c ft_strmapi.c		\
-			ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strstr.c		\
-			ft_strtrim.c ft_substr.c
+			ft_atoi.c ft_atol.c ft_itoa.c ft_split.c ft_strchr.c	\
+			ft_strcmp.c ft_strdup.c ft_striteri.c ft_strjoin.c		\
+			ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strlen_c.c		\
+			ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c		\
+			ft_strstr.c ft_strtrim.c ft_substr.c
 
 # Combine all the sources
 SRCS :=		\
