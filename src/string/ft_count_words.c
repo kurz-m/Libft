@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
+/*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/28 06:55:14 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/01 14:45:43 by work             ###   ########.fr       */
+/*   Created: 2023/06/01 14:39:51 by work              #+#    #+#             */
+/*   Updated: 2023/06/01 14:45:29 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *str, char c)
+int	ft_count_words(const char *str, char c)
 {
 	int		count;
-	char	**arr;
-	int		i;
 
-	i = 0;
-	count = ft_count_words(str, c);
-	arr = ft_calloc(sizeof(char *), (count + 1));
-	if (arr == NULL)
-		return (NULL);
-	arr[count] = NULL;
-	while (i < count)
+	count = 0;
+	while (*str)
 	{
 		if (*str == c)
 			str++;
 		else
 		{
-			arr[i] = ft_substr(str, 0, ft_strlen_c(str, c));
-			if (arr[i] == NULL)
-				return (ft_arrfree(arr), NULL);
+			count++;
 			str += ft_strlen_c(str, c);
-			++i;
 		}
 	}
-	return (arr);
+	return (count);
 }

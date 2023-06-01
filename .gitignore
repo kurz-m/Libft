@@ -56,3 +56,4 @@ dkms.conf
 ./.vscode
 main*
 .ccls-cache
+ft_isint.c

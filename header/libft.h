@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:39:33 by makurz            #+#    #+#             */
-/*   Updated: 2023/05/31 09:41:27 by work             ###   ########.fr       */
+/*   Updated: 2023/06/01 14:44:52 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	*ft_memset(void *b, int c, size_t len);
 // functions regarding strings
 int		ft_atoi(const char *str);
 long	ft_atol(const char *str);
+int		ft_count_words(const char *str, char c);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
