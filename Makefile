@@ -8,10 +8,10 @@ NAME := ./lib/libft.a
 UNAME := $(shell uname)
 ifeq ($(UNAME), Linux)
 	CC := gcc
-	CFLAGS ?= -Wall -Wextra -Werror -O3
+	CFLAGS ?= -Wall -Wextra -Werror
 else ifeq ($(UNAME), Darwin)
 	CC := cc
-	CFLAGS ?= -Wall -Wextra -Werror -O3
+	CFLAGS ?= -Wall -Wextra -Werror
 else
 	$(error Unsupported operating system: $(UNAME))
 endif
@@ -46,6 +46,8 @@ SRC_LIST :=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c		\
 SRC_MEM :=	ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c			\
 			ft_memcpy.c ft_memmove.c ft_memset.c
 
+SRC_PRINT := ft_printf.c ft_printf_utils_nbr.c ft_printf_utils_str.c
+
 SRC_STR :=	ft_atoi.c ft_atol.c ft_count_words.c ft_itoa.c			\
 			ft_split.c ft_strchr.c ft_strcmp.c ft_strdup.c			\
 			ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c	\
@@ -54,7 +56,7 @@ SRC_STR :=	ft_atoi.c ft_atol.c ft_count_words.c ft_itoa.c			\
 			ft_substr.c
 
 SRCS :=		$(SRC_ARR) $(SRC_CHAR) $(SRC_GNL) $(SRC_IO) $(SRC_LIST)	\
-			$(SRC_MEM) $(SRC_STR)
+			$(SRC_MEM) $(SRC_PRINT) $(SRC_STR)
 
 ##############################################################################
 ##############################################################################
