@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:24:54 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/21 08:50:53 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/05 16:00:50 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_arrlen(const char **arr)
 	size_t	size;
 
 	size = 0;
-	while (arr[size])
+	while (arr[size] != NULL)
 		++size;
 	return (size);
 }
