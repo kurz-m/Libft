@@ -1,4 +1,4 @@
-NAME := ./lib/libft.a
+NAME := libft.a
 .DEFAULT_GOAL := all
 
 ##############################################################################
@@ -21,7 +21,7 @@ CC := cc
 
 LDFLAGS ?=
 ARFLAGS := -rcs
-INC := -I ./header
+INC := -I ./include
 RM := rm -f
 
 ##############################################################################
@@ -77,7 +77,6 @@ OBJS_DEBUG := $(addprefix $(OBJ_DIR_DEBUG)/, $(SRCS:ft_%.c=%.o))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@mkdir -p lib
 	@$(LOG) "Linking objects to $(notdir $(NAME))"
 	@ar $(ARFLAGS) $(NAME) $(OBJS)
 
