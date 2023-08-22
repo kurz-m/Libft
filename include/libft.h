@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:39:33 by makurz            #+#    #+#             */
-/*   Updated: 2023/08/19 16:04:32 by makurz           ###   ########.fr       */
+/*   Updated: 2023/08/22 15:53:02 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 char	**ft_arrdup(const char **src);
 void	ft_arrfree(char **arr);
 size_t	ft_arrlen(const char **arr);
+void	ft_arrprint(const char **arr);
 
 // functions regarding chars
 int		ft_isalnum(int c);

@@ -19,6 +19,7 @@ LOG := printf "[$(G)INFO$(X)] %s\n"
 
 CC := cc
 
+CFLAGS ?= -Wall -Werror -Wextra
 LDFLAGS ?=
 ARFLAGS := -rcs
 INC := -I ./include
@@ -31,7 +32,7 @@ RM := rm -f
 VPATH =	src/array src/char src/gnl src/io src/list src/memory		\
 		src/string src/printf
 
-SRC_ARR :=	ft_arrdup.c ft_arrfree.c ft_arrlen.c
+SRC_ARR :=	ft_arrdup.c ft_arrfree.c ft_arrlen.c ft_arrprint.c
 
 SRC_CHAR :=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c		\
 			ft_iscntrl.c ft_isdigit.c ft_isinstr.c ft_isinstr.c		\
