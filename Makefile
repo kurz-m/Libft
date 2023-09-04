@@ -52,11 +52,11 @@ SRC_MEM :=	ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c			\
 SRC_PRINT := ft_printf.c ft_printf_utils_nbr.c ft_printf_utils_str.c
 
 SRC_STR :=	ft_atoi.c ft_atol.c ft_count_words.c ft_itoa.c			\
-			ft_split.c ft_strchr.c ft_strcmp.c ft_strdup.c			\
-			ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c	\
-			ft_strlen.c ft_strlen_c.c ft_strmapi.c ft_strncmp.c		\
-			ft_strndup.c ft_strnlen.c ft_strnstr.c ft_strrchr.c		\
-			ft_strstr.c ft_strtrim.c ft_substr.c
+			ft_split.c ft_stpcpy.c ft_strchr.c ft_strcmp.c			\
+			ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c 	\
+			ft_strlcpy.c ft_strlen.c ft_strlen_c.c ft_strmapi.c		\
+			ft_strncmp.c ft_strndup.c ft_strnlen.c ft_strnstr.c		\
+			ft_strrchr.c ft_strstr.c ft_strtrim.c ft_substr.c
 
 SRCS :=		$(SRC_ARR) $(SRC_CHAR) $(SRC_GNL) $(SRC_IO) $(SRC_LIST)	\
 			$(SRC_MEM) $(SRC_PRINT) $(SRC_STR)

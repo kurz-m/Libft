@@ -1,5 +1,1 @@
-gcc
--Wall
--Werror
--Wextra
--I./header/
+-I./include

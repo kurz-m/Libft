@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:39:33 by makurz            #+#    #+#             */
-/*   Updated: 2023/08/22 15:53:02 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/04 22:11:20 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ long	ft_atol(const char *str);
 int		ft_count_words(const char *str, char c);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
+char	*ft_stpcpy(char *dst, const char *src);
 char	*ft_strchr(const char *s, int c);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strdup(const char *s1);
