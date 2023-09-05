@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 09:51:40 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/16 00:58:57 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/05 10:24:21 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_lstsize(t_list *lst)
 		return (0);
 	i = lst;
 	size = 1;
-	while (i->next)
+	while (NULL != i->next)
 	{
 		++size;
 		i = i->next;
