@@ -101,6 +101,7 @@ SRC_STR += ft_strlcpy.c
 SRC_STR += ft_strlen.c
 SRC_STR += ft_strlen_c.c
 SRC_STR += ft_strmapi.c
+SRC_STR += ft_strnchr.c
 SRC_STR += ft_strncmp.c
 SRC_STR += ft_strndup.c
 SRC_STR += ft_strnlen.c

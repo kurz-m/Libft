@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:39:33 by makurz            #+#    #+#             */
-/*   Updated: 2023/09/05 10:14:07 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/05 17:45:44 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlen_c(const char *str, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strnchr(const char *s, size_t size, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strndup(const char *s1, size_t n);
 size_t	ft_strnlen(const char *s, size_t maxlen);
