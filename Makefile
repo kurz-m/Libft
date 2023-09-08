@@ -35,6 +35,7 @@ SRC_ARR := ft_arrdup.c
 SRC_ARR += ft_arrfree.c
 SRC_ARR += ft_arrlen.c
 SRC_ARR += ft_arrprint.c
+SRC_ARR += ft_resize_array.c
 
 SRC_CHAR :=	ft_isalnum.c
 SRC_CHAR += ft_isalpha.c

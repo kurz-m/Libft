@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:24:05 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/17 12:43:29 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/08 18:59:49 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	**ft_arrdup(const char **src)
 		return (NULL);
 	size = ft_arrlen(src) + 1;
 	i = -1;
-	dst = malloc(sizeof(*dst) * (size));
+	dst = ft_calloc(size, sizeof(*dst));
 	if (dst == NULL)
 		return (NULL);
 	while (src[++i])
