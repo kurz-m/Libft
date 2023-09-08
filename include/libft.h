@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:39:33 by makurz            #+#    #+#             */
-/*   Updated: 2023/09/05 17:45:44 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/08 18:47:29 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(const char *s1);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strjoinfree(char *s1, char *s2, char delete);
+char	*ft_strjoinfree(char *s1, char *s2, char control);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
@@ -75,6 +75,7 @@ char	*ft_strndup(const char *s1, size_t n);
 size_t	ft_strnlen(const char *s, size_t maxlen);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strreplace(char *target, char *new_str);
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);

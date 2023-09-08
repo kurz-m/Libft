@@ -107,6 +107,7 @@ SRC_STR += ft_strndup.c
 SRC_STR += ft_strnlen.c
 SRC_STR += ft_strnstr.c
 SRC_STR += ft_strrchr.c
+SRC_STR += ft_strreplace.c
 SRC_STR += ft_strstr.c
 SRC_STR += ft_strtrim.c
 SRC_STR += ft_substr.c
