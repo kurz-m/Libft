@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:39:33 by makurz            #+#    #+#             */
-/*   Updated: 2023/09/08 19:52:14 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/08 21:39:13 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include "get_next_line.h"
 # include "ft_printf.h"
 
-// functions regarding arrays
 char	**ft_arrdup(const char **src);
 void	ft_arrfree(char **arr);
 size_t	ft_arrlen(const char **arr);

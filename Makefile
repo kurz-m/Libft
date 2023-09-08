@@ -18,7 +18,7 @@ LOG := printf "[$(BO)$(G)ⓘ INFO$(X)] %s\n"
 
 CC := cc
 
-CFLAGS ?= -Wall -Werror -Wextra
+CFLAGS ?= -Wall -Werror -Wextra -g
 LDFLAGS ?=
 ARFLAGS := -rcs
 INC := -I ./include

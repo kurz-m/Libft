@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 16:36:53 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/21 13:37:43 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/09 00:23:03 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,33 @@ int	ft_printf(const char *format, ...)
 			check &= ft_parse_specifier(format[i], args, &printed);
 		if (check == FALSE)
 			return (-1);
+	}
+	va_end(args);
+	return (printed);
+}
+
+int	ft_fprintf(int fd, const char *format, ...)
+{
+	int		printed;
+	char	*str;
+	va_list	args;
+
+	printed = 0;
+	va_start(args, format);
+	if (!format)
+		return (0);
+	while (*format != '\0')
+	{
+		printed += write(fd, format, ft_strlen_c(format, '%'));
+		format += ft_strlen_c(format, '%');
+		if (*format == '%' && *(format + 1) == 's')
+		{
+			str = va_arg(args, char *);
+			printed += write(fd, str, ft_strlen(str));
+			format += 2;
+		}
+		else if (*format == '%')
+			write(fd, format++, 1);
 	}
 	va_end(args);
 	return (printed);

@@ -6,12 +6,19 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:24:05 by makurz            #+#    #+#             */
-/*   Updated: 2023/09/08 18:59:49 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/08 23:36:25 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* `<SUMMARY>`
+ * Function for deep copying an array of strings to a new variable.
+ * `<PARAM>`
+ * `src`: input array of string.
+ * `<RETURN>`
+ * Returns a freeable array of string with the same size and values
+ * as `src`.*/
 char	**ft_arrdup(const char **src)
 {
 	int		i;

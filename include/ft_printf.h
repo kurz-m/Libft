@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 16:45:06 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/21 11:23:36 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/09 00:01:22 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define FALSE 0
 
 // Name all the prototypes
+int		ft_fprintf(int fd, const char *format, ...);
 int		ft_printf(const char *format, ...);
 int		f_putchar(char c, int *printed);
 int		f_putstr(char *s, int *printed);
