@@ -6,14 +6,14 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 16:36:53 by makurz            #+#    #+#             */
-/*   Updated: 2023/09/09 00:23:03 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/09 09:02:15 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // This function parses the specifier and calls the relevant function.
-int	ft_parse_specifier(char c, va_list args, int *printed)
+static int	ft_parse_specifier(char c, va_list args, int *printed)
 {
 	int		check;
 
@@ -37,7 +37,14 @@ int	ft_parse_specifier(char c, va_list args, int *printed)
 	return (check);
 }
 
-// Main function which walks through the given string.
+/* `<SUMMARY>`
+ * Writes a formatted string to STDOUT_FILENO.
+ * Can handle %c, %s, %d, %i, %p, %u, %x, and %X as as identifier.
+ * `<PARAM>`
+ * `format`: The format string, with specifiers (e.g. %s).
+ * `...`: Additional string arguments to format.
+ * `<RETURN>`
+ * Number of characters printed; does not handle write errors. */
 int	ft_printf(const char *format, ...)
 {
 	int		printed;
@@ -66,6 +73,15 @@ int	ft_printf(const char *format, ...)
 	return (printed);
 }
 
+/* `<SUMMARY>`
+ * Writes a formatted string to the given file descriptor.
+ * Can only handle %s as identifier.
+ * `<PARAM>`
+ * `fd`: The file descriptor to write to.
+ * `format`: The format string, with %s specifiers.
+ * `...`: Additional string arguments to format.
+ * `<RETURN>`
+ * Number of characters printed; does not handle write errors. */
 int	ft_fprintf(int fd, const char *format, ...)
 {
 	int		printed;
