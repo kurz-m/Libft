@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 18:33:07 by makurz            #+#    #+#             */
-/*   Updated: 2023/09/08 18:50:11 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/13 13:59:18 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,5 @@ char	*ft_strreplace(char *target, char *new_str)
 	free(target);
 	target = NULL;
 	target = ft_strdup(new_str);
-	if (NULL == target)
-		return (NULL);
 	return (target);
 }
