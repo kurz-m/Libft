@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:13:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/05/15 19:11:46 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/15 19:44:47 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char	*get_next_line(int fd)
 	static char	stash[BUFFER_SIZE + 1];
 	t_gnl		next;
 
+	next = (t_gnl){};
 	next.new_line = NULL;
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);

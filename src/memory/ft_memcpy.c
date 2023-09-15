@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:02:58 by makurz            #+#    #+#             */
-/*   Updated: 2023/07/03 12:57:22 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/15 19:43:50 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	const char	*s = src;
 	char		*d;
 
-	if (dst == NULL && src == NULL)
+	if (dst == NULL || src == NULL)
 		return (NULL);
 	d = (char *) dst;
 	while (n--)
