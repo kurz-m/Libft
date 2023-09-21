@@ -6,7 +6,7 @@
 /*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 10:49:30 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/16 11:26:00 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/21 10:56:39 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen_c(const char *str, char c)
 	size_t	i;
 
 	i = 0;
+	if (NULL == str)
+		return (NO_SIZE);
 	while (str[i] && str[i] != c)
 		i++;
 	return (i);

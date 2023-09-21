@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:39:33 by makurz            #+#    #+#             */
-/*   Updated: 2023/09/08 21:39:13 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/21 11:13:32 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 # include <stdlib.h>
 # include "get_next_line.h"
 # include "ft_printf.h"
+# define NO_SIZE 0
 
 char	**ft_arrdup(const char **src);
 void	ft_arrfree(char **arr);
 size_t	ft_arrlen(const char **arr);
 void	ft_arrprint(const char **arr);
-char	**ft_resize_array(char **src, int size, size_t capacity);
+char	**ft_resize_array(char **src, size_t size, size_t capacity);
 
 // functions regarding chars
 int		ft_isalnum(int c);

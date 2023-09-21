@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:51:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/03/27 14:24:10 by makurz           ###   ########.fr       */
+/*   Updated: 2023/09/21 14:48:07 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t		src_len;
 
 	i = -1;
+	if (NULL == dst || NULL == src)
+		return (NO_SIZE);
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	if (dst_len > dstsize)
