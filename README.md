@@ -75,6 +75,13 @@ The library contains the following functions categorized by their use.
 3. [putendl_fd](./src/io/ft_putendl_fd.c) - outputs a string to the specified file descriptor with an added newline
 4. [putnbr_fd](./src/io/ft_putnbr_fd.c) - outputs an integer to the specified file descriptor
 
+### Array
+1. [arrdup](./src/array/ft_arrdup.c) - copies an array of strings
+2. [arrfree](./src/array/ft_arrfree.c) - frees an array of strings
+3. [arrlen](./src/array/ft_arrlen.c) - returns the length of an array
+4. [arrprint](./src/array/ft_arrprint.c) - prints all strings from an array
+5. [resize_array](./src/array/ft_resize_array.c) - resizes an array of strings with a given capacity
+
 ### List
 1. [lstclear](./src/list/ft_lstclear.c) - deletes and frees the given nodes and every successor
 2. [lstadd_back](./src/list/ft_lstadd_back.c) - adds a node at the end of a list
@@ -97,23 +104,33 @@ The library contains the following functions categorized by their use.
 
 ### Strings
 1. [atoi](./src/string/ft_atoi.c) - converts a string to an integer
-2. [itoa](./src/string/ft_itoa.c) - converts an integer to a string
-3. [split](./src/string/ft_split.c) - splits a string at a specified delimiter into a new array of strings
-4. [strchr](./src/string/ft_strchr.c) - locates first occurrence of a character in a string
-5. [strcmp](./src/string/ft_strcmp.c) - compares two strings
-6. [strdup](./src/string/ft_strdup.c) - duplicates a string into a new string (memory allocated with malloc(3))
-7. [striteri](./src/string/ft_striteri.c) - applies a function to every character in a string
-8. [strjoin](./src/string/ft_strjoin.c) - concatenates two strings into a new string (memory allocated with malloc(3))
-9. [strlcat](./src/string/ft_strlcat.c) - size-bounded string concatenation ('\0'-terminated)
-10. [strlen](./src/string/ft_strlen.c) - calculates the length of a string
-11. [strlen_c](./src/string/ft_strlen_c.c) - calculates the length of a string till the specified char
-12. [strmapi](./src/string/ft_strmapi.c) - creates new string from another string with a function being applied to every character
-13. [strncmp](./src/string/ft_strncmp.c) - compares specified amount of bytes of two strings
-14. [strnstr](./src/string/ft_strnstr.c) - locates a substring in a string within a specified amount of bytes
-15. [strrchr](./src/string/ft_strrchr.c) - locates last occurrence of a character in a string 
-16. [strstr](./src/string/ft_strstr.c) - locates a substring in a string
-17. [strtrim](./src/string/ft_strtrim.c) - trims start and end of a string with a specified set of characters
-18. [substr](./src/string/ft_substr.c) - creates a substring from a string from a specified start and length
+2. [atol](./src/string/ft_atol.c) - converts a string to a long
+3. [count_words](./src/string/ft_count_words.c) - counts the words in a string divided by 'c'
+4. [itoa](./src/string/ft_itoa.c) - converts an integer to a string
+5. [split](./src/string/ft_split.c) - splits a string at a specified delimiter into a new array of strings
+6. [stpcpy](./src/string/ft_stpcpy.c) - copies a string an returns a pointer to the '\0'-terminating char
+7. [stpncpy](./src/string/ft_stpncpy.c) - copies n chars of a string an returns a pointer to the '\0'-terminating char
+8. [strchr](./src/string/ft_strchr.c) - locates first occurrence of a character in a string
+9. [strcmp](./src/string/ft_strcmp.c) - compares two strings
+10. [strcpy](./src/string/ft_strcpy.c) - copies a string an returns a pointer to the string
+11. [strdup](./src/string/ft_strdup.c) - duplicates a string into a new string (memory allocated with malloc(3))
+12. [striteri](./src/string/ft_striteri.c) - applies a function to every character in a string
+13. [strjoin](./src/string/ft_strjoin.c) - concatenates two strings into a new string (memory allocated with malloc(3))
+14. [strjoinfree](./src/string/ft_strjoinfree.c) - concatenates two strings into a new string (memory allocated with malloc(3)) and free the string specified by the third argument
+15. [strlcat](./src/string/ft_strlcat.c) - size-bounded string concatenation ('\0'-terminated)
+16. [strlcpy](./src/string/ft_strlcpy.c) - size-bounded string copying ('\0'-terminated)
+17. [strlen](./src/string/ft_strlen.c) - calculates the length of a string
+18. [strlen_c](./src/string/ft_strlen_c.c) - calculates the length of a string till the specified char
+19. [strmapi](./src/string/ft_strmapi.c) - creates new string from another string with a function being applied to every character
+20. [strnchr](./src/string/ft_strnchr.c) - locates first occurrence of a character in a string within 'n' bytes
+21. [strncmp](./src/string/ft_strncmp.c) - compares specified amount of bytes of two strings
+22. [strndup](./src/string/ft_strndup.c) - duplicates 'n' chars from a string into a new string (memory allocated with malloc(3))
+23. [strnlen](./src/string/ft_strnlen.c) - calculates the length of a string with max size 'n'
+24. [strnstr](./src/string/ft_strnstr.c) - locates a substring in a string within a specified amount of bytes
+25. [strrchr](./src/string/ft_strrchr.c) - locates last occurrence of a character in a string 
+26. [strstr](./src/string/ft_strstr.c) - locates a substring in a string
+27. [strtrim](./src/string/ft_strtrim.c) - trims start and end of a string with a specified set of characters
+28. [substr](./src/string/ft_substr.c) - creates a substring from a string from a specified start and length
 
 ## 🗣️ Installation
 To install the library, follow these steps:
