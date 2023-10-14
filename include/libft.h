@@ -6,7 +6,7 @@
 /*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:39:33 by makurz            #+#    #+#             */
-/*   Updated: 2023/10/13 11:05:45 by makurz           ###   ########.fr       */
+/*   Updated: 2023/10/15 00:56:58 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define NO_SIZE 0
 
 char	**ft_arrdup(const char **src);
-void	ft_arrfree(char ***arr);
+void	ft_arrfree(char **arr);
 size_t	ft_arrlen(const char **arr);
 void	ft_arrprint(const char **arr);
 char	**ft_resize_array(char **src, size_t size, size_t capacity);
