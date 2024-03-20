@@ -20,7 +20,7 @@
 # define NO_SIZE 0
 
 char	**ft_arrdup(const char **src);
-void	ft_arrfree(char **arr);
+void	*ft_arrfree(char **arr);
 size_t	ft_arrlen(const char **arr);
 void	ft_arrprint(const char **arr);
 char	**ft_resize_array(char **src, size_t size, size_t capacity);

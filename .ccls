@@ -3,3 +3,5 @@
 -wextra
 
 -I./include/
+-I./ctype
+-I./string
