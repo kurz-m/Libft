@@ -1,9 +1,11 @@
 NAME := libft.a
 .DEFAULT_GOAL := all
+CC := cc
 
-##############################################################################
-##############################################################################
-##############################################################################
+################################################################################
+###############                 PRINT OPTIONS                     ##############
+################################################################################
+
 Y := \033[33m
 C := \033[36m
 R := \033[31m
@@ -12,11 +14,9 @@ X := \033[0m
 BO := $(shell tput bold)
 LOG := printf "[$(BO)$(G)ⓘ INFO$(X)] %s\n"
 
-##############################################################################
-##############################################################################
-##############################################################################
-
-CC := cc
+################################################################################
+###############                  DIRECTORIES                      ##############
+################################################################################
 
 CFLAGS ?= -Wall -Werror -Wextra -g
 LDFLAGS ?=
@@ -24,9 +24,9 @@ ARFLAGS := -rcs
 INC := -I ./include
 RM := rm -f
 
-##############################################################################
-##############################################################################
-##############################################################################
+################################################################################
+###############                  SOURCE FILES                     ##############
+################################################################################
 
 VPATH =	src/array src/char src/gnl src/io src/list src/memory		\
 		src/string src/printf
@@ -37,21 +37,21 @@ SRC_ARR += ft_arrlen.c
 SRC_ARR += ft_arrprint.c
 SRC_ARR += ft_resize_array.c
 
-SRC_CHAR :=	ft_isalnum.c
-SRC_CHAR += ft_isalpha.c
-SRC_CHAR += ft_isascii.c
-SRC_CHAR += ft_isblank.c
-SRC_CHAR += ft_iscntrl.c
-SRC_CHAR += ft_isdigit.c
-SRC_CHAR += ft_isinstr.c
-SRC_CHAR += ft_isinstr.c
-SRC_CHAR += ft_islower.c
-SRC_CHAR += ft_isprint.c
-SRC_CHAR += ft_isspace.c
-SRC_CHAR += ft_isupper.c
-SRC_CHAR += ft_isxdigit.c
-SRC_CHAR += ft_tolower.c
-SRC_CHAR += ft_toupper.c
+SRC_CTYPE := ft_isalnum.c
+SRC_CTYPE += ft_isalpha.c
+SRC_CTYPE += ft_isascii.c
+SRC_CTYPE += ft_isblank.c
+SRC_CTYPE += ft_iscntrl.c
+SRC_CTYPE += ft_isdigit.c
+SRC_CTYPE += ft_isinstr.c
+SRC_CTYPE += ft_isinstr.c
+SRC_CTYPE += ft_islower.c
+SRC_CTYPE += ft_isprint.c
+SRC_CTYPE += ft_isspace.c
+SRC_CTYPE += ft_isupper.c
+SRC_CTYPE += ft_isxdigit.c
+SRC_CTYPE += ft_tolower.c
+SRC_CTYPE += ft_toupper.c
 
 SRC_GNL := ft_get_next_line.c
 SRC_GNL += ft_get_next_line_utils.c
