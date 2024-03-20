@@ -16,7 +16,8 @@
 #include "string.h"
 
 // Returns the first occurrence of 'needle' in the string 'haystack'.
-char *ft_strstr(const char *haystack, const char *needle) {
+char *ft_strstr(const char *haystack, const char *needle)
+{
   const unsigned char *hs = (const unsigned char *)haystack;
   const unsigned char *ne = (const unsigned char *)needle;
 
@@ -25,18 +26,17 @@ char *ft_strstr(const char *haystack, const char *needle) {
   hs = (const unsigned char *)ft_strchr((const char *)hs, ne[0]);
   if (hs == NULL || ne[1] == '\0')
     return (char *)hs;
-  char *ptr;
-  size_t n_len = ft_strlen(needle);
-  size_t src_len;
 
-  if (n_len == 0)
-    return ((char *)haystack);
-  size_t src_len = ft_strlen(haystack);
-  ptr = (char *)haystack;
-  while (*ptr && src_len-- >= n_len) {
-    if (*ptr == *needle && !ft_strncmp(ptr, needle, n_len))
-      return (ptr);
-    ptr++;
+  size_t needle_len = ft_strlen(needle);
+  size_t hay_len = ft_strlen((const char *)hs);
+  if (hay_len < needle_len)
+    return NULL;
+
+  while (*hs && hay_len-- >= needle_len)
+  {
+    if (ft_memcmp(hs, ne, needle_len))
+      return (char *)hs;
+    ++hs;
   }
-  return (NULL);
+  return NULL;
 }

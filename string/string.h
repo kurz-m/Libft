@@ -21,6 +21,7 @@
 
 void ft_bzero(void *s, size_t n);
 void *ft_calloc(size_t count, size_t size);
+char *ft_realloc_str(const char *ptr, size_t size);
 void *ft_memchr(const void *s, int c, size_t n);
 void *ft_memrchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -31,6 +32,8 @@ void *ft_memset(void *b, int c, size_t len);
 int ft_atoi(const char *str);
 long ft_atol(const char *str);
 int ft_count_words(const char *str, char c);
+int ft_isinstr(int c, const char *str);
+int ft_isinstrr(int c, const char *str, int i);
 char *ft_itoa(int n);
 char **ft_split(char const *s, char c);
 char *ft_stpcpy(char *dst, const char *src);

@@ -13,24 +13,31 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "libft.h"
+#include "string.h"
+#include <stdbool.h>
 
 // Returns a freeable copy of the string 's1.
 // The start and end are trimmed with the characters from 'set'.
-char	*ft_strtrim(char const *s1, char const *set)
+char *ft_strtrim(const char *s1, const char *set)
 {
-	char	*trim;
-	size_t	start;
-	size_t	end;
+  size_t end = ft_strlen(s1);
+  char *s_end = (char *)s1 + end - 1;
 
-	if (s1 == NULL || set == NULL)
-		return (NULL);
-	start = 0;
-	end = ft_strlen(s1);
-	while (ft_isinstr(s1[start], set) && s1[start])
-		++start;
-	while (ft_isinstr(s1[end], set) && end > start)
-		--end;
-	trim = ft_substr(s1, start, end + 1 - start);
-	return (trim);
+  bool lok_tab[256] = {false};
+  for (const char *t = set; *t != '\0'; ++t)
+  {
+    lok_tab[*t] = true;
+  }
+
+  while (*s1 && lok_tab[*s1])
+    ++s1;
+
+  /* return empty string when all chars got trimmed */
+  if (*s1 == '\0')
+    return ft_strdup("");
+
+  while (s_end != s1 && lok_tab[*s_end])
+    --s_end;
+
+  return ft_strndup(s1, s_end - s1 + 1);
 }

@@ -1,23 +1,14 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/02 16:36:53 by makurz            #+#    #+#             */
-/*   Updated: 2023/09/09 09:02:15 by makurz           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-#include "libft.h"
+
+#include "printf.h"
+#include <stdbool.h>
 
 // This function parses the specifier and calls the relevant function.
-static int	ft_parse_specifier(char c, va_list args, int *printed)
+static bool	ft_parse_specifier(char c, va_list args, int *printed)
 {
-	int		check;
+	bool		check;
 
-	check = TRUE;
+	check = true;
 	if (c == 'c')
 		check &= f_putchar(va_arg(args, int), printed);
 	else if (c == 's')
@@ -34,7 +25,7 @@ static int	ft_parse_specifier(char c, va_list args, int *printed)
 		check &= ft_putnbrbase(va_arg(args, unsigned int), UHEX, printed);
 	else if (c == '%')
 		check &= f_putchar('%', printed);
-	return (check);
+	return check;
 }
 
 /* `<SUMMARY>`
@@ -54,10 +45,10 @@ int	ft_printf(const char *format, ...)
 
 	printed = 0;
 	i = -1;
-	check = TRUE;
+	check = true;
 	va_start(args, format);
 	if (!format)
-		return (0);
+		return 0;
 	while (format[++i])
 	{
 		if (format[i] == '%' && !format[i + 1])
@@ -66,11 +57,11 @@ int	ft_printf(const char *format, ...)
 			check &= f_putchar(format[i], &printed);
 		else if (format[i++] == '%')
 			check &= ft_parse_specifier(format[i], args, &printed);
-		if (check == FALSE)
-			return (-1);
+		if (check == false)
+			return -1;
 	}
 	va_end(args);
-	return (printed);
+	return printed;
 }
 
 /* `<SUMMARY>`

@@ -13,20 +13,30 @@
 
    The MIT Licence will be situated within the root directory. */
 
+#include "array.h"
 #include "string.h"
 
-// Returns a substring from 's' from the 'start' location with length 'len'.
-char *ft_substr(char const *s, unsigned int start, size_t len)
+/* `<SUMMARY>`
+ * Function for deep copying an array of strings to a new variable.
+ * `<PARAM>`
+ * `src`: input array of string.
+ * `<RETURN>`
+ * Returns a freeable array of string with the same size and values
+ * as `src`.*/
+char **ft_arrdup(const char **src)
 {
-  size_t size = ft_strlen(s);
+  int i;
+  size_t size;
+  char **dst;
 
-  if (size < start)
-    return ft_strdup("");
-  if (size - start < len)
-    len = size - start;
-  char *dst = ft_calloc((len + 1), sizeof(*dst));
+  if (src == NULL)
+    return NULL;
+  size = ft_arrlen(src) + 1;
+  i = -1;
+  dst = ft_calloc(size, sizeof(*dst));
   if (dst == NULL)
     return NULL;
-  dst[len + 1] = '\0';
-  return ft_memcpy(dst, s + start, len);
+  while (src[++i])
+    dst[i] = ft_strdup(src[i]);
+  return dst;
 }

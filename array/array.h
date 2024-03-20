@@ -13,20 +13,15 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#ifndef __ARRAY_H__
+#define __ARRAY_H__
 
-// Returns a substring from 's' from the 'start' location with length 'len'.
-char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-  size_t size = ft_strlen(s);
+#include <stddef.h>
 
-  if (size < start)
-    return ft_strdup("");
-  if (size - start < len)
-    len = size - start;
-  char *dst = ft_calloc((len + 1), sizeof(*dst));
-  if (dst == NULL)
-    return NULL;
-  dst[len + 1] = '\0';
-  return ft_memcpy(dst, s + start, len);
-}
+char **ft_arrdup(const char **src);
+void *ft_arrfree(char **arr);
+size_t ft_arrlen(const char **arr);
+void ft_arrprint(const char **arr);
+char **ft_resize_array(char **src, size_t size, size_t capacity);
+
+#endif /* array.h */
