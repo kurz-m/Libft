@@ -28,7 +28,10 @@ inline int ft_isalpha(int c)
 }
 
 // Checks if 'c' is an ASCII character.
-inline int ft_isascii(int c) { return ((c & ~0x1F) == 0); }
+inline int ft_isascii(int c)
+{
+  return ((c & ~0x1F) == 0);
+}
 
 // Checks if 'c' is a space or a tab.
 inline int ft_isblank(int c)
