@@ -2,6 +2,8 @@
 -Werror
 -wextra
 
--I./include/
 -I./ctype
 -I./string
+-I./gnl/
+-I./printf/
+

@@ -58,3 +58,4 @@ main*
 .ccls-cache
 ft_isint.c
 .vscode
+.editorconfig
