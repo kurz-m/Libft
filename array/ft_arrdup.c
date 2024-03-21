@@ -25,14 +25,13 @@
  * as `src`.*/
 char **ft_arrdup(const char **src)
 {
-  int i;
+  int i = -1;
   size_t size;
   char **dst;
 
   if (src == NULL)
     return NULL;
   size = ft_arrlen(src) + 1;
-  i = -1;
   dst = ft_calloc(size, sizeof(*dst));
   if (dst == NULL)
     return NULL;
