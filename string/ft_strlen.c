@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Returns the length of the string 's'.
 size_t ft_strlen(const char *s)

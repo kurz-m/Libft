@@ -1,14 +1,17 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 00:09:22 by makurz            #+#    #+#             */
-/*   Updated: 2023/05/22 14:09:42 by makurz           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/* Copyright (C) 2023 Markus Kurz
+   This file is part of the LIBFT C Library.
+
+   The LIBFT C Library is my own implementation for the
+   42 project 'libft', which recodes functions from the
+   regular GNU C Library. It is a free to use library;
+   you can redistribute and/or modify it under the terms
+   of the MIT Licence.
+
+   This library mostly suits my needs regarding 42 projects
+   within the outer circle of the projects and is therefore
+   not Norm conform as needed within the core curriculum.
+
+   The MIT Licence will be situated within the root directory. */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
@@ -34,4 +37,4 @@ char	*get_next_line(int fd);
 char	*ft_strjoin_gnl(char *s1, char *s2, t_gnl str);
 int		ft_clean_stash(char *str, t_gnl next);
 
-#endif // GET_NEXT_LINE_BONUS_H
+#endif /* get_next_line.h */

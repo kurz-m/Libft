@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 char *ft_stpncpy(char *dst, const char *src, size_t size)
 {

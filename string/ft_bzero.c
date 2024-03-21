@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Writes 'n' bytes from 's' to 0.
 // Usage of ft_memset.

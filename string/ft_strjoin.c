@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Returns a freeable string 'dst', which is concatenated from 's1' and 's2'.
 char *ft_strjoin(const char *s1, const char *s2)

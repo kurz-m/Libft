@@ -13,22 +13,15 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "ft_string.h"
+#ifndef __FT_ARRAY_H__
+#define __FT_ARRAY_H__
 
-// Returns the first occurrence of 'needle' in the string 'haystack'.
-// Compares at most 'len' characters.
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-  char *ptr;
-  size_t n_len = ft_strlen(needle);
+#include <stddef.h>
 
-  if (n_len == 0)
-    return ((char *)haystack);
-  ptr = (char *)haystack;
-  while (*ptr && len-- >= n_len) {
-    if (*ptr == *needle && !ft_strncmp(ptr, needle, n_len))
-      return (ptr);
-    ptr++;
-  }
-  return (NULL);
-}
+char **ft_arrdup(const char **src);
+void *ft_arrfree(char **arr);
+size_t ft_arrlen(const char **arr);
+void ft_arrprint(const char **arr);
+char **ft_resize_array(char **src, size_t size, size_t capacity);
+
+#endif /* ft_array.h */

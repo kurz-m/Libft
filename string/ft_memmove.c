@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Copies 'n' bytes from memory space 'src' to memory space 'dst'.
 // Memory may overlap.

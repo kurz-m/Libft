@@ -13,9 +13,9 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
-static size_t ft_buf_size(int n)
+static inline size_t ft_buf_size(int n)
 {
   size_t size = 0;
 
@@ -33,11 +33,10 @@ static size_t ft_buf_size(int n)
 char *ft_itoa(int n) {
   size_t size = ft_buf_size(n);
   char *ptr = ft_calloc((size + 1), sizeof(char));
-  long nb;
+  long nb = n;
 
   if (ptr == NULL)
     return NULL;
-  nb = n;
   if (nb < 0)
   {
     nb *= -1;

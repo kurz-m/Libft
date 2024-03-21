@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 void *ft_mempcpy(void *dest, const void *src, size_t len)
 {

@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "array.h"
-#include "string.h"
+#include "ft_array.h"
+#include "ft_string.h"
 
 /* `<SUMMARY>`
  * Function for deep copying an array of strings to a new variable.

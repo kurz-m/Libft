@@ -36,21 +36,7 @@ SRC_ARR += ft_arrlen.c
 SRC_ARR += ft_arrprint.c
 SRC_ARR += ft_resize_array.c
 
-SRC_CTYPE := ft_isalnum.c
-SRC_CTYPE += ft_isalpha.c
-SRC_CTYPE += ft_isascii.c
-SRC_CTYPE += ft_isblank.c
-SRC_CTYPE += ft_iscntrl.c
-SRC_CTYPE += ft_isdigit.c
-SRC_CTYPE += ft_isinstr.c
-SRC_CTYPE += ft_isinstr.c
-SRC_CTYPE += ft_islower.c
-SRC_CTYPE += ft_isprint.c
-SRC_CTYPE += ft_isspace.c
-SRC_CTYPE += ft_isupper.c
-SRC_CTYPE += ft_isxdigit.c
-SRC_CTYPE += ft_tolower.c
-SRC_CTYPE += ft_toupper.c
+SRC_CTYPE := ft_ctype.c
 
 SRC_GNL := ft_get_next_line.c
 SRC_GNL += ft_get_next_line_utils.c
@@ -70,19 +56,19 @@ SRC_LIST += ft_lstmap.c
 SRC_LIST += ft_lstnew.c
 SRC_LIST += ft_lstsize.c
 
-SRC_MEM := ft_bzero.c
-SRC_MEM += ft_calloc.c
-SRC_MEM += ft_memchr.c
-SRC_MEM += ft_memcmp.c
-SRC_MEM += ft_memcpy.c
-SRC_MEM += ft_memmove.c
-SRC_MEM += ft_memset.c
 
 SRC_PRINT := ft_printf.c
 SRC_PRINT += ft_printf_utils_nbr.c
 SRC_PRINT += ft_printf_utils_str.c
 
-SRC_STR := ft_atoi.c
+SRC_STR := ft_bzero.c
+SRC_STR += ft_calloc.c
+SRC_STR += ft_memchr.c
+SRC_STR += ft_memcmp.c
+SRC_STR += ft_memcpy.c
+SRC_STR += ft_memmove.c
+SRC_STR += ft_memset.c
+SRC_STR += ft_atoi.c
 SRC_STR += ft_atol.c
 SRC_STR += ft_count_words.c
 SRC_STR += ft_itoa.c
@@ -113,11 +99,10 @@ SRC_STR += ft_strtrim.c
 SRC_STR += ft_substr.c
 
 SRCS := $(SRC_ARR)
-SRCS += $(SRC_CHAR)
+SRCS += $(SRC_CTYPE)
 SRCS += $(SRC_GNL)
 SRCS += $(SRC_IO)
 SRCS += $(SRC_LIST)
-SRCS += $(SRC_MEM)
 SRCS += $(SRC_PRINT)
 SRCS += $(SRC_STR)
 

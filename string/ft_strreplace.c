@@ -13,7 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "libft.h"
+#include "ft_string.h"
+#include <stdlib.h>
 
 /* `<SUMMARY>`
  * Takes a freeable string as target and replaces it

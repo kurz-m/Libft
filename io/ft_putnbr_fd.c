@@ -1,16 +1,19 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: makurz <makurz@student.42heilbronn.de>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 10:30:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/16 11:31:55 by makurz           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/* Copyright (C) 2023 Markus Kurz
+   This file is part of the LIBFT C Library.
 
-#include "libft.h"
+   The LIBFT C Library is my own implementation for the
+   42 project 'libft', which recodes functions from the
+   regular GNU C Library. It is a free to use library;
+   you can redistribute and/or modify it under the terms
+   of the MIT Licence.
+
+   This library mostly suits my needs regarding 42 projects
+   within the outer circle of the projects and is therefore
+   not Norm conform as needed within the core curriculum.
+
+   The MIT Licence will be situated within the root directory. */
+
+#include "ft_io.h"
 
 // Outputs the integer 'n' to the file descriptor 'fd'.
 void	ft_putnbr_fd(int n, int fd)

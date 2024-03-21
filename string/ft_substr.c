@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Returns a substring from 's' from the 'start' location with length 'len'.
 char *ft_substr(char const *s, unsigned int start, size_t len)

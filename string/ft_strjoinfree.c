@@ -13,7 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "libft.h"
+#include "ft_string.h"
+#include <stdlib.h>
 
 // joins 2 strings together and frees the memory of the string
 // given by the 'control' character.

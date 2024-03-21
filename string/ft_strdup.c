@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Returns a freeable copy of the string 's1'.
 char *ft_strdup(const char *s1)

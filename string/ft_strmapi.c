@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Returns a new string 'ptr'.
 // The function 'f' is applied to every character + index of the string 's'.

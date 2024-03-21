@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 #include <stdlib.h>
 
 // Allocates enough space for 'count' objects with 'size' bytes.

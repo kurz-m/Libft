@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "ctype.h"
+#include "ft_ctype.h"
 
 // Checks if 'c' is either a decimal digit (0-9) or an alphabetic character.
 inline int ft_isalnum(int c)

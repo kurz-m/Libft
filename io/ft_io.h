@@ -13,13 +13,13 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
-#include <stdlib.h>
+#ifndef __FT_IO_H__
+#define __FT_IO_H__
 
-char *ft_realloc_str(const char *ptr, size_t size)
-{
-  char *buf = ft_calloc(size, sizeof(*ptr));
-  if (buf == NULL)
-    return NULL;
-  return ft_memcpy(buf, ptr, ft_strlen(ptr));
-}
+// functions regarding input and output
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
+
+#endif /* ft_io.h */

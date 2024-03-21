@@ -13,15 +13,25 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#ifndef __ARRAY_H__
-#define __ARRAY_H__
+#ifndef __FT_CTYPE_H__
+#define __FT_CTYPE_H__
 
-#include <stddef.h>
+#include <sys/types.h>
 
-char **ft_arrdup(const char **src);
-void *ft_arrfree(char **arr);
-size_t ft_arrlen(const char **arr);
-void ft_arrprint(const char **arr);
-char **ft_resize_array(char **src, size_t size, size_t capacity);
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isblank(int c);
+int		ft_iscntrl(int c);
+int		ft_isdigit(int c);
+int		ft_isinstr(int c, const char *str);
+int		ft_isinstrr(int c, const char *str, int i);
+int		ft_islower(int c);
+int		ft_isprint(int c);
+int		ft_isspace(int c);
+int		ft_isupper(int c);
+int		ft_isxdigit(int c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
-#endif /* array.h */
+#endif /* ft_ctype.h */

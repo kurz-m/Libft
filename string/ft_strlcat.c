@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Concatenates 'dst' and 'src'.
 // '\0'-terminates the result except for 'dst' being longer than size.

@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Returns the last occurrence of the character 'c' ind the string 's'.
 char *ft_strrchr(const char *s, int c)

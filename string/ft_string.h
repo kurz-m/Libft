@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#ifndef __STRING_H__
-#define __STRING_H__
+#ifndef __FT_STRING_H__
+#define __FT_STRING_H__
 
 /* get size_t and NULL from <stddef.h> */
 #include <stddef.h>
@@ -60,4 +60,4 @@ char *ft_strstr(const char *haystack, const char *needle);
 char *ft_strtrim(char const *s1, char const *set);
 char *ft_substr(char const *s, unsigned int start, size_t len);
 
-#endif /* string.h */
+#endif /* ft_string.h */

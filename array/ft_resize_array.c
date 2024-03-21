@@ -13,9 +13,9 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "array.h"
+#include "ft_array.h"
 #include "printf.h"
-#include "string.h"
+#include "ft_string.h"
 #include <stdlib.h>
 
 /* SUMMARY

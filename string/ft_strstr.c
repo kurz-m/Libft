@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Returns the first occurrence of 'needle' in the string 'haystack'.
 char *ft_strstr(const char *haystack, const char *needle)

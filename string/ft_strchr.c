@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Returns the first occurrence of the character 'c' in the string 's'.
 char *ft_strchr(const char *s, int c)

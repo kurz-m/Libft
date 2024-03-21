@@ -13,13 +13,12 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Compares 'n' bytes in 's1' and 's2' and returning 0 on a match,
 // < 0 if value of 's1' < 's2', > 0 if value of 's1' > 's2'.
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-  size_t i = 0;
   unsigned char *src1 = (unsigned char *)s1;
   unsigned char *src2 = (unsigned char *)s2;
 

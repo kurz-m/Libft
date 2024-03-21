@@ -1,25 +1,27 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_arrlen.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 12:24:54 by makurz            #+#    #+#             */
-/*   Updated: 2023/09/08 10:47:04 by makurz           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/* Copyright (C) 2023 Markus Kurz
+   This file is part of the LIBFT C Library.
 
-#include "libft.h"
+   The LIBFT C Library is my own implementation for the
+   42 project 'libft', which recodes functions from the
+   regular GNU C Library. It is a free to use library;
+   you can redistribute and/or modify it under the terms
+   of the MIT Licence.
 
-size_t	ft_arrlen(const char **arr)
+   This library mostly suits my needs regarding 42 projects
+   within the outer circle of the projects and is therefore
+   not Norm conform as needed within the core curriculum.
+
+   The MIT Licence will be situated within the root directory. */
+
+#include "ft_array.h"
+
+size_t ft_arrlen(const char **arr)
 {
-	size_t	size;
+  size_t size = 0;
 
-	size = 0;
-	if (NULL == arr)
-		return (0);
-	while (*arr++ != NULL)
-		++size;
-	return (size);
+  if (NULL == arr)
+    return 0;
+  while (*arr++ != NULL)
+    ++size;
+  return size;
 }

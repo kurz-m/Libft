@@ -16,7 +16,7 @@
 /* input a string, a char and an index
    it searches if the char is in the string from the index
    to the start of the string */
-int ft_isinstrr(int c, const char *str, int i)
+inline int ft_isinstrr(int c, const char *str, int i)
 {
   unsigned char ch = (unsigned char)c;
   str += i;

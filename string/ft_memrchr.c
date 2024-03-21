@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 
 // Searches 'n' bytes in 's' for 'c' returning the first occurrence.
 void *ft_memrchr(const void *s, int c, size_t n)

@@ -13,7 +13,7 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "string.h"
+#include "ft_string.h"
 #include <stdbool.h>
 
 // Returns a freeable copy of the string 's1.
@@ -21,23 +21,24 @@
 char *ft_strtrim(const char *s1, const char *set)
 {
   size_t end = ft_strlen(s1);
-  char *s_end = (char *)s1 + end - 1;
+  const unsigned char *start = (const unsigned char *)s1;
+  const unsigned char *s_end = (const unsigned char *)s1 + end - 1;
 
   bool lok_tab[256] = {false};
-  for (const char *t = set; *t != '\0'; ++t)
+  for (const unsigned char *t = (const unsigned char *)set; *t != '\0'; ++t)
   {
     lok_tab[*t] = true;
   }
 
-  while (*s1 && lok_tab[*s1])
-    ++s1;
+  while (*start && lok_tab[*start])
+    ++start;
 
   /* return empty string when all chars got trimmed */
-  if (*s1 == '\0')
+  if (*start == '\0')
     return ft_strdup("");
 
-  while (s_end != s1 && lok_tab[*s_end])
+  while (s_end != start && lok_tab[*s_end])
     --s_end;
 
-  return ft_strndup(s1, s_end - s1 + 1);
+  return ft_strndup(s1, s_end - start + 1);
 }

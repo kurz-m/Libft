@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "ctype.h"
-#include "string.h"
+#include "ft_ctype.h"
+#include "ft_string.h"
 
 static inline int ft_sign(int c) {
   if (c == '-')
