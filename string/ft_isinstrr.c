@@ -18,7 +18,7 @@
    to the start of the string */
 inline int ft_isinstrr(int c, const char *str, int i)
 {
-  unsigned char ch = (unsigned char)c;
+  const unsigned char ch = (const unsigned char)c;
   str += i;
 
   while (i-- >= 0)

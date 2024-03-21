@@ -15,7 +15,7 @@
 
 inline int ft_isinstr(int c, const char *str)
 {
-  unsigned char ch = (unsigned char)c;
+  const unsigned char ch = (const unsigned char)c;
 
   while (*str)
   {
