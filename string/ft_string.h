@@ -18,6 +18,7 @@
 
 /* get size_t and NULL from <stddef.h> */
 #include <stddef.h>
+#include <sys/types.h>
 
 void ft_bzero(void *s, size_t n);
 void *ft_calloc(size_t count, size_t size);
@@ -47,6 +48,7 @@ char *ft_strjoinfree(char *s1, char *s2, char control);
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t ft_strlen(const char *s);
+ssize_t ft_safe_strlen(const char *s);
 size_t ft_strlen_c(const char *str, char c);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char *ft_strnchr(const char *s, size_t size, int c);
