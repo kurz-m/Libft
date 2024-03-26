@@ -20,24 +20,21 @@
 // First 'if' statement checks for valid inputs
 // While loop is there for creating the new new_line
 // and also filling the stash for keeping string after the new_line
-char	*get_next_line(int fd)
+char *get_next_line(int fd)
 {
-	static char	stash[BUFFER_SIZE + 1];
-	t_gnl		next;
+  static char stash[BUFFER_SIZE + 1] = {0};
+  t_gnl next = (t_gnl){.new_line = NULL};
 
-	next = (t_gnl){};
-	next.new_line = NULL;
-	if (fd < 0 || BUFFER_SIZE < 1)
-		return (NULL);
-	while (stash[0] != '\0' || read(fd, stash, BUFFER_SIZE) > 0)
-	{
-		next.new_line = ft_strjoin_gnl(next.new_line, stash, next);
-		if (next.new_line == NULL)
-			return (NULL);
-		if (ft_clean_stash(stash, next) == true)
-			break ;
-		if (read(fd, stash, 0) < 0)
-			return (free(next.new_line), NULL);
-	}
-	return (next.new_line);
+  if (fd < 0 || BUFFER_SIZE < 1)
+    return NULL;
+  while (stash[0] != '\0' || read(fd, stash, BUFFER_SIZE) > 0) {
+    next.new_line = ft_strjoin_gnl(next.new_line, stash, next);
+    if (next.new_line == NULL)
+      return NULL;
+    if (ft_clean_stash(stash, next) == true)
+      break;
+    if (read(fd, stash, 0) < 0)
+      return free(next.new_line), NULL;
+  }
+  return next.new_line;
 }

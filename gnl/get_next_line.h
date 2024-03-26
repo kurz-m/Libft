@@ -14,27 +14,27 @@
    The MIT Licence will be situated within the root directory. */
 
 #ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#define GET_NEXT_LINE_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+#ifndef BUFFER_SIZE
+#define BUFFER_SIZE 42
+#endif
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stddef.h>
-# include <stdbool.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 typedef struct s_gnl
 {
-	char	*new_line;
-	bool	line_bool;
-	size_t	i;
-	size_t	k;
-}	t_gnl;
+  char *new_line;
+  bool line_bool;
+  size_t i;
+  size_t k;
+} t_gnl;
 
-char	*get_next_line(int fd);
-char	*ft_strjoin_gnl(char *s1, char *s2, t_gnl str);
-int		ft_clean_stash(char *str, t_gnl next);
+char *get_next_line(int fd);
+char *ft_strjoin_gnl(char *s1, char *s2, t_gnl str);
+int ft_clean_stash(char *str, t_gnl next);
 
 #endif /* get_next_line.h */

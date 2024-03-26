@@ -14,6 +14,7 @@
    The MIT Licence will be situated within the root directory. */
 
 #include "get_next_line.h"
+#include "ft_string.h"
 
 // Resets the stash and keeps string after new_line char.
 inline int ft_clean_stash(char *str, t_gnl next)
@@ -29,45 +30,23 @@ inline int ft_clean_stash(char *str, t_gnl next)
       next.line_bool = true;
     str[next.i++] = '\0';
   }
-  return (next.line_bool);
-}
-
-// Adapted strlen function to fit the need of get_next_line.
-static inline size_t ft_strlen_gnl(const char *str)
-{
-  size_t i;
-
-  i = 0;
-  if (!str)
-    return (0);
-  while (str[i] && str[i] != '\n')
-    i++;
-  if (str[i] == '\n')
-    i++;
-  return (i);
+  return next.line_bool;
 }
 
 // joins the strings until a new_line appears.
 inline char *ft_strjoin_gnl(char *s1, char *s2, t_gnl str)
 {
-  str.new_line = malloc(ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1);
+  size_t size_1 = ft_strlen_c(s1, '\n');
+  size_t size_2 = ft_strlen_c(s2, '\n');
+
+  str.new_line = malloc(size_1 + size_2 + 1);
   if (str.new_line == NULL)
-    return (NULL);
-  str.i = 0;
+    return NULL;
+  str.i = size_1;
   str.k = 0;
-  while (s1 && s1[str.i])
-  {
-    str.new_line[str.i] = s1[str.i];
-    str.i++;
-  }
-  while (s2 && s2[str.k])
-  {
-    str.new_line[str.i] = s2[str.k++];
-    if (str.new_line[str.i++] == '\n')
-      break;
-  }
-  str.new_line[str.i] = '\0';
+  ft_memcpy(str.new_line, s1, size_1 + 1);
+  ft_strlcat(str.new_line, s2, size_2);
   free(s1);
   s1 = NULL;
-  return (str.new_line);
+  return str.new_line;
 }
