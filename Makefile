@@ -112,6 +112,8 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:ft_%.c=%.o))
 ########                           FLAGS                        ################
 ################################################################################
 
+# TODO: add check for write error to be able to use O3 flag
+
 CFLAGS ?= -Wall -Werror -Wextra -MMD -MP $(addprefix -I, $(INC_DIRS))
 ARFLAGS := -rcs
 
@@ -132,7 +134,7 @@ $(NAME): $(OBJS)
 $(OBJ_DIR)/%.o: ft_%.c
 	@$(LOG) "Compiling $(notdir $@)"
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(CFLAGS) -MMD -MP -c $< $(INC) -o $@
+	$(CC) $(CFLAGS) -MMD -MP -c $< $(INC) -o $@
 
 clean:
 	@if [ -d "$(OBJ_DIR)" ]; then \

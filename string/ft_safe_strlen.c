@@ -23,7 +23,6 @@ ssize_t ft_safe_strlen(const char *s)
 
   if (s == NULL)
     return -1;
-  while (s[i])
-    i++;
-  return i;
+
+  return ft_strlen(s);
 }
