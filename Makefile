@@ -114,7 +114,7 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:ft_%.c=%.o))
 
 # TODO: add check for write error to be able to use O3 flag
 
-CFLAGS ?= -Wall -Werror -Wextra -MMD -MP $(addprefix -I, $(INC_DIRS))
+CFLAGS ?= -Wall -Werror -Wextra -MMD -MP $(addprefix -I,$(INC_DIRS))
 ARFLAGS := -rcs
 
 ifeq ($(DEBUG), 1)

@@ -13,17 +13,31 @@
 
    The MIT Licence will be situated within the root directory. */
 
+#include "ft_memcpy.h"
+#include "ft_string-misc.h"
 #include "ft_string.h"
 
 // Copies 'n' bytes from memory space 'src' to memory space 'dst'.
 void *ft_memcpy(void *dst, const void *src, size_t n)
 {
-  const unsigned char *s = (const unsigned char *)src;
-  unsigned char *d = (unsigned char *)dst;
+  op_t *long_s = (op_t *)src;
+  op_t *long_d = (op_t *)dst;
 
-  while (n--)
+  /* only use fast forword copying if there are enough bytes */
+  if (n > 16)
   {
-    *d++ = *s++;
+    /* use this loop to align the pointer address */
+    uintptr_t align = -(uintptr_t)long_d % FT_OPSIZE;
+    n -= align;
+    BYTE_COPY_FWD(long_d, long_s, align);
+
+    while (n >= FT_OPSIZE)
+    {
+      *long_d++ = *long_s++;
+      n -= FT_OPSIZE;
+    }
   }
+
+  BYTE_COPY_FWD(long_d, long_s, n);
   return dst;
 }

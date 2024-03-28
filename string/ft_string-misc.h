@@ -14,4 +14,6 @@ static inline op_t repeat_bytes(unsigned char c_in)
 #define has_zero(x) ((x - 0x01010101) & ~x & 0x80808080)
 #endif /* __x86_64__ */
 
+#define FT_OPSIZE (sizeof(op_t))
+
 #endif /* ft_string-misc.h */

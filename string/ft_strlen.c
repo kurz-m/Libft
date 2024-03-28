@@ -23,8 +23,8 @@ size_t ft_strlen(const char *s)
   const char *run_ptr = s;
 
   /* use this loop to align the pointer address */
-  uintptr_t align = -(uintptr_t)s % sizeof(op_t);
-  for (int i = 0; i < align; ++i)
+  uintptr_t align = -(uintptr_t)s % FT_OPSIZE;
+  for (size_t i = 0; i < align; ++i)
   {
     unsigned char c1 = *run_ptr;
     if (c1 == '\0')
