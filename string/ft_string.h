@@ -16,6 +16,10 @@
 #ifndef __FT_STRING_H__
 #define __FT_STRING_H__
 
+#ifndef op_t
+typedef unsigned long int op_t;
+#endif /* op_t */
+
 /* get size_t and NULL from <stddef.h> */
 #include <stddef.h>
 #include <sys/types.h>

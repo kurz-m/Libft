@@ -14,23 +14,18 @@
    The MIT Licence will be situated within the root directory. */
 
 #include "ft_string.h"
+#include "ft_string-misc.h"
 #include <stdint.h>
 
-#ifdef __x86_64__
-#define has_zero(x) ((x - 0x0101010101010101) & ~x & 0x8080808080808080)
-#else
-#define has_zero(x) ((x - 0x01010101) & ~x & 0x80808080)
-#endif /* __x86_64__ */
-
-typedef unsigned long int op_t;
-
 // Returns the length of the string 's'.
-size_t ft_strlen(const char *s) {
+size_t ft_strlen(const char *s)
+{
   const char *run_ptr = s;
 
   /* use this loop to align the pointer address */
   uintptr_t align = -(uintptr_t)s % sizeof(op_t);
-  for (int i = 0; i < align; ++i) {
+  for (int i = 0; i < align; ++i)
+  {
     unsigned char c1 = *run_ptr;
     if (c1 == '\0')
       return run_ptr - s;
