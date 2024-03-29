@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#ifndef __FT_MEMCPY_H__
-#define __FT_MEMCPY_H__
+#ifndef _FT_MEMCPY_H
+#define _FT_MEMCPY_H
 
 typedef unsigned char byte;
 

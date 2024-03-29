@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#ifndef __FT_ARRAY_H__
-#define __FT_ARRAY_H__
+#ifndef _FT_ARRAY_H
+#define _FT_ARRAY_H
 
 #include <stddef.h>
 

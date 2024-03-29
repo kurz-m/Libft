@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#ifndef __FT_LIST_H__
-#define __FT_LIST_H__
+#ifndef _FT_LIST_H
+#define _FT_LIST_H
 
 typedef struct s_list
 {

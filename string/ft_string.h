@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#ifndef __FT_STRING_H__
-#define __FT_STRING_H__
+#ifndef _FT_STRING_H
+#define _FT_STRING_H
 
 #ifndef op_t
 typedef unsigned long int op_t;

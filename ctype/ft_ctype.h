@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#ifndef __FT_CTYPE_H__
-#define __FT_CTYPE_H__
+#ifndef _FT_CTYPE_H
+#define _FT_CTYPE_H
 
 #include <sys/types.h>
 

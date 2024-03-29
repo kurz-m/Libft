@@ -14,8 +14,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#ifndef __FT_STRING_MISC__
-#define __FT_STRING_MISC__
+#ifndef _FT_STRING_MISC_H
+#define _FT_STRING_MISC_H
 
 #include "ft_string.h"
 

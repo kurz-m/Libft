@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef _FT_PRINTF_H
+# define _FT_PRINTF_H
 
 // include the necessary libraries
 # include <stdarg.h>

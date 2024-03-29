@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
+#ifndef _GET_NEXT_LINE_H
+#define _GET_NEXT_LINE_H
 
 #ifndef BUFFER_SIZE
 #define BUFFER_SIZE 42

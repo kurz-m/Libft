@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#ifndef __FT_IO_H__
-#define __FT_IO_H__
+#ifndef _FT_IO_H
+#define _FT_IO_H
 
 // functions regarding input and output
 void	ft_putchar_fd(char c, int fd);
