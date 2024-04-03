@@ -35,7 +35,7 @@ static __always_inline op_t has_zero(op_t x)
   /* inspiration comes from
      https://graphics.stanford.edu/~seander/bithacks.html#ZeroInWord
      [1] Subtracting 1 sets 0x80 in a byte that was 0
-     [2] anding (&) ~x clears 0x80 in a byte that was >= 123
+     [2] anding (&) ~x clears 0x80 in a byte that was >= 128
      [3] anding 0x80 isolates that test bit */
   op_t lsb = repeat_bytes(0x01);
   op_t msb = repeat_bytes(0x80);
