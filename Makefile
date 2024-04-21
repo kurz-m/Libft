@@ -20,11 +20,13 @@ LOG := printf "[$(BO)$(G)ⓘ INFO$(X)] %s\n"
 ################################################################################
 
 OBJ_DIR := ./obj-cache
+DEP_DIR := $(OBJ_DIR)/.deps
 INC_DIRS := array ctype gnl io list printf string
 SRC_DIRS := array ctype gnl io list printf string
 
-vpath %.h $(INC_DIRS)
 vpath %.c $(SRC_DIRS)
+vpath %.h $(INC_DIRS)
+vpath %.d $(DEP_DIR)
 
 ################################################################################
 ###############                  SOURCE FILES                     ##############
@@ -112,9 +114,8 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:ft_%.c=%.o))
 ########                           FLAGS                        ################
 ################################################################################
 
-# TODO: add check for write error to be able to use O3 flag
-
 CFLAGS ?= -Wall -Werror -Wextra -MMD -MP $(addprefix -I,$(INC_DIRS))
+DEPFLAGS ?= -MT $@ -MMD -MP -MF $(DEP_DIR)/$(notdir $(@:%.o=%.d))
 ARFLAGS := -rcs
 
 ifeq ($(DEBUG), 1)
@@ -131,10 +132,17 @@ $(NAME): $(OBJS)
 	@$(LOG) "Linking objects to $(notdir $(NAME))"
 	@ar $(ARFLAGS) $(NAME) $(OBJS)
 
-$(OBJ_DIR)/%.o: ft_%.c
+$(OBJ_DIR)/%.o: ft_%.c | $(OBJ_DIR) $(DEP_DIR)
 	@$(LOG) "Compiling $(notdir $@)"
-	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -MMD -MP -c $< $(INC) -o $@
+	$(CC) $(CFLAGS) $(DEPFLAGS) -c $< $(INC) -o $@
+
+$(OBJ_DIR):
+	@$(LOG) "Creating object directory."
+	@mkdir -p $@
+
+$(DEP_DIR):
+	@$(LOG) "Creating dependency directory."
+	@mkdir -p $@
 
 clean:
 	@if [ -d "$(OBJ_DIR)" ]; then \
@@ -156,4 +164,4 @@ re: fclean all
 
 .PHONY: all clean fclean debug re
 
--include $(OBJ:%.o=%.d)
+-include $(DEPS)
