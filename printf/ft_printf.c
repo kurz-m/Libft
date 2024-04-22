@@ -51,30 +51,34 @@ static inline bool ft_parse_specifier(char c, va_list args, int *printed)
  * Number of characters printed; does not handle write errors. */
 int ft_printf(const char *format, ...)
 {
-  int printed;
-  int check;
-  int i;
-  va_list args;
+  t_printf work = {
+    .fd = 1,
+    .format = format,
+    .buff = {0},
+    .done = 0,
+  };
+  va_start(work.args, format);
 
-  printed = 0;
-  i = -1;
-  check = true;
-  va_start(args, format);
-  if (!format)
-    return 0;
-  while (format[++i])
+  while (*work.format != '\0')
   {
-    if (format[i] == '%' && !format[i + 1])
-      break;
-    if (format[i] != '%')
-      check &= f_putchar(format[i], &printed);
-    else if (format[i++] == '%')
-      check &= ft_parse_specifier(format[i], args, &printed);
-    if (check == false)
-      return -1;
+    if (*work.format == '%')
+    {
+
+    }
+    else
+    {
+      
+    }
+    ++work.format;
   }
-  va_end(args);
-  return printed;
+
+  if (write(work.fd, work.buff, work.to_print) == -1)
+  {
+    work.done = -1;
+  }
+all_done:
+  va_end(work.args);
+  return work.done;
 }
 
 /* `<SUMMARY>`

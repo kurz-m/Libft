@@ -35,7 +35,7 @@ void *ft_mempcpy(void *dst, const void *src, size_t n);
 void *ft_memmove(void *dst, const void *src, size_t len);
 void *ft_memset(void *b, int c, size_t len);
 int ft_atoi(const char *str);
-long ft_atol(const char *str);
+long ft_atol(const char *str, int base);
 int ft_count_words(const char *str, char c);
 int ft_isinstr(int c, const char *str);
 int ft_isinstrr(int c, const char *str, int i);
