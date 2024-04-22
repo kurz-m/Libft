@@ -35,19 +35,24 @@
 
 typedef unsigned char uchar_t;
 
+typedef enum e_spec {
+  F_PTR = (1 << 0),
+  F_UPCASE = (1 << 1),
+} t_spec;
+
 typedef struct s_printf {
   int fd;
   const uchar_t *f;
   const uchar_t *end_fmt;
+  short flags;
   char buff[WORKBUFFER];
   va_list args;
   unsigned int to_print;
   int done;
 } t_printf;
 
-inline const uchar_t *__find_spec(const uchar_t *fmt)
-{
-  return (const uchar_t*)ft_strchrnul(fmt, '%');
+inline const uchar_t *__find_spec(const uchar_t *fmt) {
+  return (const uchar_t *)ft_strchrnul(fmt, '%');
 }
 
 // Name all the prototypes
