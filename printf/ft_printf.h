@@ -22,6 +22,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include "ft_string.h"
 // define size of working buffer
 #define WORKBUFFER 1000
 
@@ -32,21 +33,28 @@
 #define TRUE 1
 #define FALSE 0
 
+typedef unsigned char uchar_t;
+
 typedef struct s_printf {
   int fd;
-  const char *format;
+  const uchar_t *f;
+  const uchar_t *end_fmt;
   char buff[WORKBUFFER];
   va_list args;
   unsigned int to_print;
   int done;
 } t_printf;
 
+inline const uchar_t *__find_spec(const uchar_t *fmt)
+{
+  return (const uchar_t*)ft_strchrnul(fmt, '%');
+}
+
 // Name all the prototypes
 int ft_fprintf(int fd, const char *format, ...);
 int ft_printf(const char *format, ...);
 int f_putchar(char c, int *printed);
 int f_putstr(char *s, int *printed);
-size_t ft_strlen(const char *s);
 int ft_putnbr(long nbr, int *printed);
 int ft_putunbr(unsigned int nbr, int *printed);
 int ft_putnbrbase(size_t nb, char *base, int *printed);
