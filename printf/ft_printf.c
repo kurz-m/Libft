@@ -17,101 +17,119 @@
 #include "ft_string.h"
 #include <stdbool.h>
 
-// This function parses the specifier and calls the relevant function.
-static inline bool ft_parse_specifier(char c, va_list args, int *printed)
-{
-  bool check = true;
+int bufwriter(t_printf *work, const uchar_t *add, size_t size) {
+  int diff = 0;
+  size_t i = 0;
 
-  if (c == 'c')
-    check &= f_putchar(va_arg(args, int), printed);
-  else if (c == 's')
-    check &= f_putstr(va_arg(args, char *), printed);
-  else if (c == 'p')
-    check &= ft_putptr(va_arg(args, void *), printed);
-  else if (c == 'i' || c == 'd')
-    check &= ft_putnbr((long)va_arg(args, int), printed);
-  else if (c == 'u')
-    check &= ft_putunbr(va_arg(args, unsigned int), printed);
-  else if (c == 'x')
-    check &= ft_putnbrbase(va_arg(args, unsigned int), LHEX, printed);
-  else if (c == 'X')
-    check &= ft_putnbrbase(va_arg(args, unsigned int), UHEX, printed);
-  else if (c == '%')
-    check &= f_putchar('%', printed);
-  return check;
+  while (WORKBUFFER - work->to_print < size) {
+    diff = WORKBUFFER - work->to_print;
+    ft_memcpy((work->buff + work->to_print), (add + i), diff);
+    size -= diff;
+    i += diff;
+    work->to_print += diff;
+    work->done += diff;
+    if (write(work->fd, work->buff, work->to_print) == -1) {
+      work->done = -1;
+      return work->done;
+    }
+  }
+  ft_memcpy((work->buff + work->to_print), (add + i), diff);
+  work->to_print += size;
+  work->done += size;
+  return work->done;
 }
 
-/* `<SUMMARY>`
- * Writes a formatted string to STDOUT_FILENO.
- * Can handle %c, %s, %d, %i, %p, %u, %x, and %X as as identifier.
- * `<PARAM>`
- * `format`: The format string, with specifiers (e.g. %s).
- * `...`: Additional string arguments to format.
- * `<RETURN>`
- * Number of characters printed; does not handle write errors. */
 int ft_printf(const char *format, ...)
 {
+  /* initialize the working struct for printf */
   t_printf work = {
-    .fd = 1,
-    .format = format,
-    .buff = {0},
-    .done = 0,
+      .fd = 1,
+      .f = (const uchar_t *)format,
+      .end_fmt = NULL,
+      .buff = {0},
+      .to_print = 0,
+      .done = 0,
   };
+  /* pointer to the end of the leading string literal */
+  const uchar_t *lead_str_end = NULL;
+  /* initialize the variadic arguments function */
   va_start(work.args, format);
 
-  while (*work.format != '\0')
-  {
-    if (*work.format == '%')
-    {
+  /* find the first format specifier */
+  work.f = lead_str_end = __find_spec((const uchar_t *)format);
 
-    }
-    else
-    {
-      
-    }
-    ++work.format;
-  }
+  /* store the leading string into the internal buffer */
+  if (bufwriter(&work, (const uchar_t *)format,
+                lead_str_end - (const uchar_t *)format) == -1)
+    goto all_done;
 
-  if (write(work.fd, work.buff, work.to_print) == -1)
-  {
+  /* check if only a string has to be printed */
+  if (*work.f == '\0')
+    goto all_done;
+
+  do {
+    /* do all the specifier handling here */
+    /* TODO: here comes the specifier handling */
+
+    /* NOTE: search for the next specifier */
+    work.f = __find_spec(work.end_fmt = ++work.f);
+    if (bufwriter(&work, work.end_fmt, work.f - work.end_fmt) ==
+        -1)
+      goto all_done;
+  } while (*work.f != '\0');
+
+all_done:
+  /* Flush buffer before exiting the function */
+  if (write(work.fd, work.buff, work.to_print) == -1) {
     work.done = -1;
   }
-all_done:
   va_end(work.args);
   return work.done;
 }
 
-/* `<SUMMARY>`
- * Writes a formatted string to the given file descriptor.
- * Can only handle %s as identifier.
- * `<PARAM>`
- * `fd`: The file descriptor to write to.
- * `format`: The format string, with %s specifiers.
- * `...`: Additional string arguments to format.
- * `<RETURN>`
- * Number of characters printed; does not handle write errors. */
-int ft_fprintf(int fd, const char *format, ...)
-{
-  int printed;
-  char *str;
-  va_list args;
+int ft_fprintf(int fd, const char *format, ...) {
+  /* initialize the working struct for printf */
+  t_printf work = {
+      .fd = fd,
+      .f = (const uchar_t *)format,
+      .end_fmt = NULL,
+      .buff = {0},
+      .to_print = 0,
+      .done = 0,
+  };
+  /* pointer to the end of the leading string literal */
+  const uchar_t *lead_str_end = NULL;
+  /* initialize the variadic arguments function */
+  va_start(work.args, format);
 
-  printed = 0;
-  va_start(args, format);
-  if (!format)
-    return (0);
-  while (*format != '\0') {
-    printed += write(fd, format, ft_strlen_c(format, '%'));
-    format += ft_strlen_c(format, '%');
-    if (*format == '%' && *(format + 1) == 's')
-    {
-      str = va_arg(args, char *);
-      printed += write(fd, str, ft_strlen(str));
-      format += 2;
-    }
-    else if (*format == '%')
-      write(fd, format++, 1);
+  /* find the first format specifier */
+  work.f = lead_str_end = __find_spec((const uchar_t *)format);
+
+  /* store the leading string into the internal buffer */
+  if (bufwriter(&work, (const uchar_t *)format,
+                lead_str_end - (const uchar_t *)format) == -1)
+    goto all_done;
+
+  /* check if only a string has to be printed */
+  if (*work.f == '\0')
+    goto all_done;
+
+  do {
+    /* do all the specifier handling here */
+    /* TODO: here comes the specifier handling */
+
+    /* NOTE: search for the next specifier */
+    work.f = __find_spec(work.end_fmt = ++work.f);
+    if (bufwriter(&work, work.end_fmt, work.f - work.end_fmt) ==
+        -1)
+      goto all_done;
+  } while (*work.f != '\0');
+
+all_done:
+  /* Flush buffer before exiting the function */
+  if (write(work.fd, work.buff, work.to_print) == -1) {
+    work.done = -1;
   }
-  va_end(args);
-  return (printed);
+  va_end(work.args);
+  return work.done;
 }
