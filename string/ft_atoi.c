@@ -16,28 +16,8 @@
 #include "ft_ctype.h"
 #include "ft_string.h"
 
-static inline int ft_sign(int c)
-{
-  if (c == '-')
-    return -1;
-  return 1;
-}
-
 // Converts a string to an int.
 // Arbitrary amount of leading white spaces, optional plus/minus sign.
-int ft_atoi(const char *str) {
-  int i = 0;
-  int result = 0;
-  int sign = 1;
-
-  while (ft_isspace(str[i]))
-    i++;
-  if (str[i] == '-' || str[i] == '+')
-    sign = ft_sign(str[i++]);
-  while (ft_isdigit(str[i]))
-  {
-    result = result * 10 + (str[i] - '0');
-    ++i;
-  }
-  return result * sign;
+int ft_atoi(const char *s) {
+  return ft_atol(s, 10);
 }
