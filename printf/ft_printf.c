@@ -89,6 +89,11 @@ static int bufwriter(t_printf *work, const uchar_t *add, size_t size) {
   return work->done;
 }
 
+static void parse_specifier(t_printf *work)
+{
+  // TODO: add a check if it is negative and add this to the flag
+}
+
 int ft_printf(const char *format, ...) {
   /* initialize the working struct for printf */
   t_printf work = {

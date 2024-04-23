@@ -32,6 +32,7 @@ typedef enum e_spec {
   F_PTR = (1 << 0),
   F_UCASE = (1 << 1),
   F_LCASE = (1 << 2),
+  F_SIGNED = (1 << 3),
 } t_spec;
 
 typedef struct s_printf {
