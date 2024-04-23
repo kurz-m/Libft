@@ -26,29 +26,23 @@
 // define size of working buffer
 #define WORKBUFFER 1000
 
-// define bases for hex and dec
-#define DEC "0123456789"
-#define UHEX "0123456789ABCDEF"
-#define LHEX "0123456789abcdef"
-#define TRUE 1
-#define FALSE 0
-
 typedef unsigned char uchar_t;
 
 typedef enum e_spec {
   F_PTR = (1 << 0),
-  F_UPCASE = (1 << 1),
+  F_UCASE = (1 << 1),
+  F_LCASE = (1 << 2),
 } t_spec;
 
 typedef struct s_printf {
-  int fd;
-  const uchar_t *f;
-  const uchar_t *end_fmt;
-  short flags;
-  char buff[WORKBUFFER];
-  va_list args;
-  unsigned int to_print;
-  int done;
+  int fd;                 /*<< Filedescriptor to write to */
+  const uchar_t *f;       /*<< Current char on fmt string */
+  const uchar_t *end_fmt; /*<< End of the format specifier */
+  short flags;            /*<< Flags */
+  char buff[WORKBUFFER];  /*<< Buffer for the formatted string */
+  va_list args;           /*<< variadic arguments */
+  unsigned int to_print;  /*<< Amount to print */
+  int done;               /*<< Return value for the printf function */
 } t_printf;
 
 inline const uchar_t *__find_spec(const uchar_t *fmt) {
