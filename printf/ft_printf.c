@@ -16,6 +16,7 @@
 #include "ft_printf.h"
 #include "ft_string.h"
 #include <stdbool.h>
+#include <stdint.h>
 
 static const char *const digit2[] = {
     "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11",
@@ -28,7 +29,7 @@ static const char *const digit2[] = {
     "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95",
     "96", "97", "98", "99"};
 
-static int digit_to_char(int digit, short flags) {
+static int digit_to_char(int digit, int flags) {
   if (digit <= 9) {
     return '0' + digit;
   } else if (digit >= 10 && digit <= 35) {
@@ -37,37 +38,7 @@ static int digit_to_char(int digit, short flags) {
   return -1;
 }
 
-#include <stdint.h>
-
-static void format_int(uintmax_t nb, int base, short flags) {
-  char buff[21] = {0};
-  int index = 20;
-
-  if (base == 10) {
-    while (nb >= 100) {
-      const char *tmp = digit2[nb % 100];
-      buff[index--] = tmp[1];
-      buff[index--] = tmp[0];
-      nb /= 100;
-    }
-
-    if (nb < 10) {
-      buff[index--] = '0' + nb;
-    } else {
-      const char *tmp = digit2[nb];
-      buff[index--] = tmp[1];
-      buff[index--] = tmp[0];
-    }
-  } else {
-    do {
-      const int digit = nb % base;
-      buff[index--] = digit_to_char(digit, flags);
-      nb /= base;
-    } while (nb != 0);
-  }
-}
-
-static int bufwriter(t_printf *work, const uchar_t *add, size_t size) {
+static int bufwriter(t_printf *work, void *add, size_t size) {
   int diff = 0;
   size_t i = 0;
 
@@ -89,9 +60,72 @@ static int bufwriter(t_printf *work, const uchar_t *add, size_t size) {
   return work->done;
 }
 
-static void parse_specifier(t_printf *work)
-{
-  // TODO: add a check if it is negative and add this to the flag
+static void format_int(intmax_t value, int base, t_printf *work) {
+  char buff[21] = {0};
+  int index = 20;
+  uintmax_t abs_value = (value < 0) ? -value : value;
+
+  if (base == 10) {
+    while (abs_value >= 100) {
+      const char *tmp = digit2[abs_value % 100];
+      buff[index--] = tmp[1];
+      buff[index--] = tmp[0];
+      abs_value /= 100;
+    }
+
+    if (abs_value < 10) {
+      buff[index--] = '0' + abs_value;
+    } else {
+      const char *tmp = digit2[abs_value];
+      buff[index--] = tmp[1];
+      buff[index--] = tmp[0];
+    }
+  } else {
+    do {
+      const int digit = abs_value % base;
+      int tmp = digit_to_char(digit, work->flags);
+      if (tmp == -1) {
+        work->done = -1;
+        return;
+      }
+      buff[index--] = tmp;
+      abs_value /= base;
+    } while (abs_value != 0);
+  }
+  bufwriter(work, buff, 21 - index);
+}
+
+static int parse_specifier(t_printf *work) {
+  int i = 0;
+
+  switch (*work->f) {
+  case 'X':
+    work->flags |= F_UCASE;
+    format_int(20, 16, work);
+    break;
+  case 'x':
+    work->flags |= F_LCASE;
+    format_int(20, 16, work);
+    break;
+  case 'b':
+    format_int(20, 2, work);
+    break;
+  case 'd':
+  case 'i':
+    format_int(20, 10, work);
+    break;
+  case 'p':
+    format_int(20, 16, work);
+    break;
+  case 'c':
+    break;
+  case 's':
+    break;
+  default:
+    i = write(2, "Not supported specifier\n", 24);
+    work->done = -1;
+  }
+  return work->done;
 }
 
 int ft_printf(const char *format, ...) {
@@ -114,12 +148,12 @@ int ft_printf(const char *format, ...) {
   work.f = lead_str_end = __find_spec((const uchar_t *)format);
 
   /* store the leading string into the internal buffer */
-  if (bufwriter(&work, (const uchar_t *)format,
+  if (bufwriter(&work, (void *)format,
                 lead_str_end - (const uchar_t *)format) == -1)
     goto all_done;
 
   /* check if only a string has to be printed */
-  if (*work.f == '\0')
+  if (*work.f++ == '\0')
     goto all_done;
 
   do {
