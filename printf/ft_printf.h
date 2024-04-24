@@ -29,17 +29,15 @@
 typedef unsigned char uchar_t;
 
 typedef enum e_spec {
-  F_PTR = (1 << 0),
-  F_UCASE = (1 << 1),
-  F_LCASE = (1 << 2),
-  F_SIGNED = (1 << 3),
+  F_UCASE = (1 << 0),
+  F_LCASE = (1 << 1),
 } t_spec;
 
 typedef struct s_printf {
   int fd;                 /*<< Filedescriptor to write to */
   const uchar_t *f;       /*<< Current char on fmt string */
   const uchar_t *end_fmt; /*<< End of the format specifier */
-  short flags;            /*<< Flags */
+  int flags;              /*<< Flags */
   char buff[WORKBUFFER];  /*<< Buffer for the formatted string */
   va_list args;           /*<< variadic arguments */
   unsigned int to_print;  /*<< Amount to print */
