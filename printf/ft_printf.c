@@ -44,7 +44,7 @@ static int bufwriter(t_printf *work, void *add, size_t size) {
 
   while (WORKBUFFER - work->to_print < size) {
     diff = WORKBUFFER - work->to_print;
-    ft_memcpy((work->buff + work->to_print), (add + i), diff);
+    ft_bytecpy((work->buff + work->to_print), (add + i), diff);
     size -= diff;
     i += diff;
     work->to_print += diff;
@@ -54,7 +54,7 @@ static int bufwriter(t_printf *work, void *add, size_t size) {
       return work->done;
     }
   }
-  ft_memcpy((work->buff + work->to_print), (add + i), size);
+  ft_bytecpy((work->buff + work->to_print), (add + i), size);
   work->to_print += size;
   work->done += size;
   return work->done;
@@ -92,7 +92,7 @@ static void format_int(intmax_t value, int base, t_printf *work) {
       abs_value /= base;
     } while (abs_value != 0);
   }
-  bufwriter(work, buff, 21 - index);
+  bufwriter(work, (buff + index), 21 - index);
 }
 
 static int parse_specifier(t_printf *work) {
@@ -101,18 +101,18 @@ static int parse_specifier(t_printf *work) {
   switch (*work->f) {
   case 'X':
     work->flags |= F_UCASE;
-    format_int(20, 16, work);
+    format_int(0xf2a, 16, work);
     break;
   case 'x':
     work->flags |= F_LCASE;
     format_int(20, 16, work);
     break;
   case 'b':
-    format_int(20, 2, work);
+    format_int(8, 2, work);
     break;
   case 'd':
   case 'i':
-    format_int(20, 10, work);
+    format_int(1235312341, 10, work);
     break;
   case 'p':
     format_int(20, 16, work);
@@ -159,6 +159,7 @@ int ft_printf(const char *format, ...) {
   do {
     /* do all the specifier handling here */
     /* TODO: here comes the specifier handling */
+    parse_specifier(&work);
 
     /* NOTE: search for the next specifier */
     work.f = __find_spec(work.end_fmt = ++work.f);
