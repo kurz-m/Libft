@@ -54,7 +54,7 @@ static int bufwriter(t_printf *work, void *add, size_t size) {
       return work->done;
     }
   }
-  ft_memcpy((work->buff + work->to_print), (add + i), diff);
+  ft_memcpy((work->buff + work->to_print), (add + i), size);
   work->to_print += size;
   work->done += size;
   return work->done;
@@ -162,7 +162,7 @@ int ft_printf(const char *format, ...) {
 
     /* NOTE: search for the next specifier */
     work.f = __find_spec(work.end_fmt = ++work.f);
-    if (bufwriter(&work, work.end_fmt, work.f - work.end_fmt) == -1)
+    if (bufwriter(&work, (void *)work.end_fmt, work.f - work.end_fmt) == -1)
       goto all_done;
   } while (*work.f != '\0');
 

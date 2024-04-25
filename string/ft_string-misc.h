@@ -23,14 +23,14 @@
 #define FT_OPSIZE (sizeof(op_t))
 
 /* function for filling each byte of op_t with c_in */
-static __always_inline op_t repeat_bytes(unsigned char c_in)
+static inline op_t repeat_bytes(unsigned char c_in)
 {
   /* This expression comes from glibc */
   return ((op_t)-1 / 0xFF) * c_in;
 }
 
 /* checks if there is a zero byte within an op_t */
-static __always_inline op_t has_zero(op_t x)
+static inline op_t has_zero(op_t x)
 {
   /* inspiration comes from
      https://graphics.stanford.edu/~seander/bithacks.html#ZeroInWord
@@ -42,7 +42,7 @@ static __always_inline op_t has_zero(op_t x)
   return (x - lsb) & ~x & msb;
 }
 
-static __always_inline op_t has_value(op_t x, unsigned char c_in)
+static inline op_t has_value(op_t x, unsigned char c_in)
 {
   /* inspiration comes from
      https://graphics.stanford.edu/~seander/bithacks.html#ValueInWord
