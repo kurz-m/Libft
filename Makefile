@@ -60,8 +60,8 @@ SRC_LIST += ft_lstsize.c
 
 
 SRC_PRINT := ft_printf.c
-SRC_PRINT += ft_printf_utils_nbr.c
-SRC_PRINT += ft_printf_utils_str.c
+# SRC_PRINT += ft_printf_utils_nbr.c
+# SRC_PRINT += ft_printf_utils_str.c
 
 SRC_STR := ft_bzero.c
 SRC_STR += ft_calloc.c
@@ -78,6 +78,7 @@ SRC_STR += ft_split.c
 SRC_STR += ft_stpcpy.c
 SRC_STR += ft_stpncpy.c
 SRC_STR += ft_strchr.c
+SRC_STR += ft_strchrnul.c
 SRC_STR += ft_strcmp.c
 SRC_STR += ft_strcpy.c
 SRC_STR += ft_strdup.c
@@ -114,7 +115,8 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:ft_%.c=%.o))
 ########                           FLAGS                        ################
 ################################################################################
 
-CFLAGS ?= -Wall -Werror -Wextra -MMD -MP $(addprefix -I,$(INC_DIRS))
+# CFLAGS ?= -Wall -Werror -Wextra -MMD -MP $(addprefix -I,$(INC_DIRS))
+CFLAGS ?= -MMD -MP $(addprefix -I,$(INC_DIRS))
 DEPFLAGS ?= -MT $@ -MMD -MP -MF $(DEP_DIR)/$(notdir $(@:%.o=%.d))
 ARFLAGS := -rcs
 

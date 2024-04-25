@@ -28,6 +28,9 @@
 
 typedef unsigned char uchar_t;
 
+#define TRUE 1
+#define FALSE 0
+
 typedef enum e_spec {
   F_UCASE = (1 << 0),
   F_LCASE = (1 << 1),
@@ -44,7 +47,7 @@ typedef struct s_printf {
   int done;               /*<< Return value for the printf function */
 } t_printf;
 
-inline const uchar_t *__find_spec(const uchar_t *fmt) {
+static inline const uchar_t *__find_spec(const uchar_t *fmt) {
   return (const uchar_t *)ft_strchrnul(fmt, '%');
 }
 
