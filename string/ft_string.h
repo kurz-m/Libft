@@ -25,7 +25,6 @@ typedef unsigned long int op_t;
 #include <sys/types.h>
 
 void ft_bzero(void *s, size_t n);
-void *ft_bytecpy(void *dst, const void *src, size_t n);
 void *ft_calloc(size_t count, size_t size);
 char *ft_realloc_str(const char *ptr, size_t size);
 void *ft_memchr(const void *s, int c, size_t n);

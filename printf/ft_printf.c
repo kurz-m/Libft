@@ -14,6 +14,7 @@
    The MIT Licence will be situated within the root directory. */
 
 #include "ft_printf.h"
+#include "ft_memcpy.h"
 #include "ft_string.h"
 #include <stdbool.h>
 #include <stdint.h>
@@ -44,7 +45,7 @@ static int bufwriter(t_printf *work, void *add, size_t size) {
 
   while (WORKBUFFER - work->to_print < size) {
     diff = WORKBUFFER - work->to_print;
-    ft_bytecpy((work->buff + work->to_print), (add + i), diff);
+    byte_copy_fwd((work->buff + work->to_print), (add + i), diff);
     size -= diff;
     i += diff;
     work->to_print += diff;
@@ -54,7 +55,7 @@ static int bufwriter(t_printf *work, void *add, size_t size) {
       return work->done;
     }
   }
-  ft_bytecpy((work->buff + work->to_print), (add + i), size);
+  byte_copy_fwd((work->buff + work->to_print), (add + i), size);
   work->to_print += size;
   work->done += size;
   return work->done;
