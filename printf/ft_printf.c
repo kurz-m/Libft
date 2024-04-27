@@ -45,7 +45,7 @@ static int bufwriter(t_printf *work, void *add, size_t size) {
 
   while (WORKBUFFER - work->to_print < size) {
     diff = WORKBUFFER - work->to_print;
-    byte_copy_fwd((work->buff + work->to_print), (add + i), diff);
+    ft_memcpy((work->buff + work->to_print), (add + i), diff);
     size -= diff;
     i += diff;
     work->to_print += diff;
@@ -55,7 +55,7 @@ static int bufwriter(t_printf *work, void *add, size_t size) {
       return work->done;
     }
   }
-  byte_copy_fwd((work->buff + work->to_print), (add + i), size);
+  ft_memcpy((work->buff + work->to_print), (add + i), size);
   work->to_print += size;
   work->done += size;
   return work->done;

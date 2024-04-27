@@ -31,7 +31,7 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
     /* use this loop to align the pointer address */
     uintptr_t align = -(uintptr_t)long_d % FT_OPSIZE;
     n -= align;
-    BYTE_COPY_FWD(long_d, long_s, align);
+    byte_copy_fwd((void**)&long_d, (const void**)&long_s, align);
 
     while (n >= FT_OPSIZE)
     {
@@ -40,6 +40,6 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
     }
   }
 
-  BYTE_COPY_FWD(long_d, long_s, n);
+  byte_copy_fwd((void**)&long_d, (const void**)&long_s, n);
   return dst;
 }
