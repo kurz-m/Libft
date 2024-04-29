@@ -64,7 +64,6 @@ SRC_PRINT := ft_printf.c
 # SRC_PRINT += ft_printf_utils_str.c
 
 SRC_STR := ft_bzero.c
-SRC_STR += ft_bytecpy.c
 SRC_STR += ft_calloc.c
 SRC_STR += ft_memchr.c
 SRC_STR += ft_memcmp.c
