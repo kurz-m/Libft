@@ -25,7 +25,6 @@
 // Converts a string to a long.
 long ft_atol(const char *s, int base) {
   unsigned long i = 0;
-  int sign = 1;
   int neg = 0;
   const char *end;
   char c;
@@ -40,6 +39,7 @@ long ft_atol(const char *s, int base) {
   switch (*s) {
   case '-':
     neg = 1;
+    /* intentional fall-through */
   case '+':
     ++s;
   }

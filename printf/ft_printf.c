@@ -16,9 +16,6 @@
 #include "ft_printf.h"
 #include "ft_memcpy.h"
 #include "ft_string.h"
-#include <stdarg.h>
-#include <stdbool.h>
-#include <stdint.h>
 
 static const char *const digit2[] = {
     "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11",
@@ -40,7 +37,7 @@ static int digit_to_char(int digit, int flags) {
   return -1;
 }
 
-static int bufwriter(t_printf *work, void *add, size_t size) {
+int bufwriter(t_printf *work, void *add, size_t size) {
   int diff = 0;
   size_t i = 0;
 
@@ -62,7 +59,7 @@ static int bufwriter(t_printf *work, void *add, size_t size) {
   return work->done;
 }
 
-static void format_int(intmax_t value, t_printf *work) {
+void format_int(intmax_t value, t_printf *work) {
   char buff[21] = {0};
   int index = 20;
   uintmax_t abs_value = (value < 0) ? -value : value;
@@ -75,19 +72,19 @@ static void format_int(intmax_t value, t_printf *work) {
   }
 
   if (abs_value < 10) {
-    buff[index--] = '0' + abs_value;
+    buff[index] = '0' + abs_value;
   } else {
     const char *tmp = digit2[abs_value];
     buff[index--] = tmp[1];
-    buff[index--] = tmp[0];
+    buff[index] = tmp[0];
   }
   if (value < 0) {
-    buff[index--] = '-';
+    buff[--index] = '-';
   }
   bufwriter(work, (buff + index), 21 - index);
 }
 
-static void format_int_base(uintmax_t value, int base, t_printf *work) {
+void format_int_base(uintmax_t value, int base, t_printf *work) {
   char buff[21] = {0};
   int index = 20;
 
@@ -101,46 +98,11 @@ static void format_int_base(uintmax_t value, int base, t_printf *work) {
     buff[index--] = tmp;
     value /= base;
   } while (value != 0);
+  ++index;
   bufwriter(work, (buff + index), 21 - index);
 }
 
-static void print_ptr_addr(t_printf *work) {
-  if (bufwriter(work, "0x", 2) == -1) {
-    return;
-  }
-  void *ptr = va_arg(work->args, void *);
-  format_int_base((uintptr_t)ptr, 16, work);
-}
-
-static void prepare_nb(t_printf *work) {
-  intmax_t n = (intmax_t)va_arg(work->args, int);
-  format_int(n, work);
-}
-
-static void prepare_nb_base(t_printf *work, int base) {
-  uintmax_t n = (uintmax_t)va_arg(work->args, unsigned int);
-  format_int_base(n, base, work);
-}
-
-static void ft_put_string(t_printf *work) {
-  char *str = va_arg(work->args, char *);
-
-  if (str == NULL) {
-    bufwriter(work, "(null)", 6);
-  } else {
-    bufwriter(work, str, ft_strlen(str));
-  }
-}
-
-static void ft_put_char(t_printf *work) {
-  char c = (char)va_arg(work->args, int);
-
-  bufwriter(work, &c, 1);
-}
-
 static int parse_specifier(t_printf *work) {
-  int i = 0;
-
   switch (*work->f) {
   case 'X':
     work->flags |= F_UCASE;
@@ -158,8 +120,13 @@ static int parse_specifier(t_printf *work) {
   case 'i':
     prepare_nb(work);
     break;
+  case 'P':
+    work->flags |= F_UCASE;
+    print_ptr_addr(work);
+    break;
   case 'p':
-    format_int_base(20, 16, work);
+    work->flags |= F_LCASE;
+    print_ptr_addr(work);
     break;
   case 'c':
     ft_put_char(work);
@@ -167,9 +134,12 @@ static int parse_specifier(t_printf *work) {
   case 's':
     ft_put_string(work);
     break;
+  case '%':
+    break;
   default:
-    i = write(2, "No supported specifier\n", 23);
-    work->done = -1;
+    if (write(2, "No supported specifier\n", 23) == -1) {
+      work->done = -1;
+    }
   }
   return work->done;
 }

@@ -1,6 +1,7 @@
 NAME := libft.a
 .DEFAULT_GOAL := all
 CC := cc
+AR := ar
 RM := rm -f
 
 ################################################################################
@@ -115,8 +116,8 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:ft_%.c=%.o))
 ########                           FLAGS                        ################
 ################################################################################
 
-# CFLAGS ?= -Wall -Werror -Wextra -MMD -MP $(addprefix -I,$(INC_DIRS))
-CFLAGS ?= -MMD -MP $(addprefix -I,$(INC_DIRS))
+CFLAGS ?= -Wall -Werror -Wextra -MMD -MP $(addprefix -I,$(INC_DIRS))
+# CFLAGS ?= -MMD -MP $(addprefix -I,$(INC_DIRS))
 DEPFLAGS ?= -MT $@ -MMD -MP -MF $(DEP_DIR)/$(notdir $(@:%.o=%.d))
 ARFLAGS := -rcs
 
@@ -132,7 +133,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(LOG) "Linking objects to $(notdir $(NAME))"
-	ar $(ARFLAGS) $(NAME) $(OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 $(OBJ_DIR)/%.o: ft_%.c | $(OBJ_DIR) $(DEP_DIR)
 	@$(LOG) "Compiling $(notdir $@)"
@@ -167,3 +168,6 @@ re: fclean all
 .PHONY: all clean fclean debug re
 
 -include $(DEPS)
+
+test:
+	$(CC) main.c $(addprefix -I,$(INC_DIRS)) -o main.out -L. -lft -g

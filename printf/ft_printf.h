@@ -19,6 +19,7 @@
 // include the necessary libraries
 #include <stdarg.h>
 #include <stddef.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -47,18 +48,52 @@ typedef struct s_printf {
   int done;               /*<< Return value for the printf function */
 } t_printf;
 
+int bufwriter(t_printf *work, void *add, size_t size);
+void format_int(intmax_t value, t_printf *work);
+void format_int_base(uintmax_t value, int base, t_printf *work);
+
 static inline const uchar_t *__find_spec(const uchar_t *fmt) {
   return (const uchar_t *)ft_strchrnul(fmt, '%');
 }
 
+static inline void print_ptr_addr(t_printf *work) {
+  if (bufwriter(work, "0x", 2) == -1) {
+    return;
+  }
+  void *ptr = va_arg(work->args, void *);
+  format_int_base((uintptr_t)ptr, 16, work);
+}
+
+static inline void prepare_nb(t_printf *work) {
+  intmax_t n = (intmax_t)va_arg(work->args, int);
+
+  format_int(n, work);
+}
+
+static inline void prepare_nb_base(t_printf *work, int base) {
+  uintmax_t n = (uintmax_t)va_arg(work->args, unsigned int);
+
+  format_int_base(n, base, work);
+}
+
+static inline void ft_put_string(t_printf *work) {
+  char *str = va_arg(work->args, char *);
+
+  if (str == NULL) {
+    bufwriter(work, "(null)", 6);
+  } else {
+    bufwriter(work, str, ft_strlen(str));
+  }
+}
+
+static inline void ft_put_char(t_printf *work) {
+  char c = (char)va_arg(work->args, int);
+
+  bufwriter(work, &c, 1);
+}
+
 // Name all the prototypes
-int ft_fprintf(int fd, const char *format, ...);
 int ft_printf(const char *format, ...);
-int f_putchar(char c, int *printed);
-int f_putstr(char *s, int *printed);
-int ft_putnbr(long nbr, int *printed);
-int ft_putunbr(unsigned int nbr, int *printed);
-int ft_putnbrbase(size_t nb, char *base, int *printed);
-int ft_putptr(void *ptr, int *printed);
+int ft_fprintf(int fd, const char *format, ...);
 
 #endif
