@@ -34,7 +34,7 @@ static inline void byte_copy_fwd(void **dst, const void **src, size_t n)
   *dst = d;
   *src = s;
 }
-//
+/*
 // #define BYTE_COPY_FWD(dst_bp, src_bp, nbytes)                                  \
 //   do {                                                                         \
 //     size_t __nbytes = (nbytes);                                                \
@@ -45,6 +45,6 @@ static inline void byte_copy_fwd(void **dst, const void **src, size_t n)
 //       ((byte *)dst_bp)[0] = __x;                                               \
 //       ++dst_bp;                                                                \
 //     }                                                                          \
-//   } while (0)
+//   } while (0) */
 
 #endif /* ft_memcpy.h */
