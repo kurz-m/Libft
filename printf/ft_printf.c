@@ -136,6 +136,7 @@ static int parse_specifier(t_printf *work) {
     ft_put_string(work);
     break;
   case '%':
+    bufwriter(work, "%", 1);
     break;
   default:
     if (write(2, "No supported specifier\n", 23) == -1) {
