@@ -52,6 +52,7 @@ int bufwriter(t_printf *work, void *add, size_t size) {
       work->done = -1;
       return work->done;
     }
+    work->to_print = 0;
   }
   ft_memcpy((work->buff + work->to_print), (add + i), size);
   work->to_print += size;
