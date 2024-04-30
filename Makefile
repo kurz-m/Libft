@@ -1,6 +1,7 @@
 NAME := libft.a
 .DEFAULT_GOAL := all
 CC := cc
+AR := ar
 RM := rm -f
 
 ################################################################################
@@ -60,8 +61,8 @@ SRC_LIST += ft_lstsize.c
 
 
 SRC_PRINT := ft_printf.c
-SRC_PRINT += ft_printf_utils_nbr.c
-SRC_PRINT += ft_printf_utils_str.c
+# SRC_PRINT += ft_printf_utils_nbr.c
+# SRC_PRINT += ft_printf_utils_str.c
 
 SRC_STR := ft_bzero.c
 SRC_STR += ft_calloc.c
@@ -78,6 +79,7 @@ SRC_STR += ft_split.c
 SRC_STR += ft_stpcpy.c
 SRC_STR += ft_stpncpy.c
 SRC_STR += ft_strchr.c
+SRC_STR += ft_strchrnul.c
 SRC_STR += ft_strcmp.c
 SRC_STR += ft_strcpy.c
 SRC_STR += ft_strdup.c
@@ -115,6 +117,7 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:ft_%.c=%.o))
 ################################################################################
 
 CFLAGS ?= -Wall -Werror -Wextra -MMD -MP $(addprefix -I,$(INC_DIRS))
+# CFLAGS ?= -MMD -MP $(addprefix -I,$(INC_DIRS))
 DEPFLAGS ?= -MT $@ -MMD -MP -MF $(DEP_DIR)/$(notdir $(@:%.o=%.d))
 ARFLAGS := -rcs
 
@@ -130,7 +133,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(LOG) "Linking objects to $(notdir $(NAME))"
-	@ar $(ARFLAGS) $(NAME) $(OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 $(OBJ_DIR)/%.o: ft_%.c | $(OBJ_DIR) $(DEP_DIR)
 	@$(LOG) "Compiling $(notdir $@)"
@@ -165,3 +168,6 @@ re: fclean all
 .PHONY: all clean fclean debug re
 
 -include $(DEPS)
+
+test:
+	$(CC) main.c $(addprefix -I,$(INC_DIRS)) -o main.out -L. -lft -g

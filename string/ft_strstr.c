@@ -23,7 +23,7 @@ char *ft_strstr(const char *haystack, const char *needle)
 
   if (ne[0] == '\0')
     return (char *)hs;
-  hs = (const unsigned char *)ft_strchr((const char *)hs, ne[0]);
+  hs = (const unsigned char *)ft_strchr((const unsigned char *)hs, ne[0]);
   if (hs == NULL || ne[1] == '\0')
     return (char *)hs;
 

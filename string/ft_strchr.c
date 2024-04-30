@@ -16,7 +16,7 @@
 #include "ft_string.h"
 
 // Returns the first occurrence of the character 'c' in the string 's'.
-char *ft_strchr(const char *s, int c)
+char *ft_strchr(const unsigned char *s, int c)
 {
   unsigned char ch = (unsigned char)c;
 

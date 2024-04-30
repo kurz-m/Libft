@@ -13,11 +13,18 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "ft_ctype.h"
 #include "ft_string.h"
 
-// Converts a string to an int.
-// Arbitrary amount of leading white spaces, optional plus/minus sign.
-int ft_atoi(const char *s) {
-  return ft_atol(s, 10);
+// Returns the first occurrence of the character 'c' in the string 's'.
+char *ft_strchrnul(const unsigned char *s, int c)
+{
+  unsigned char ch = (unsigned char)c;
+
+  while (*s)
+  {
+    if (*s == ch)
+      return ((char *)s);
+    ++s;
+  }
+  return (*s == ch || *s == '\0') ? (char *)s : NULL;
 }
