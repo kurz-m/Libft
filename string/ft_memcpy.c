@@ -29,7 +29,7 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
   if (n > 16)
   {
     /* use this loop to align the pointer address */
-    uintptr_t align = -(uintptr_t)long_d % FT_OPSIZE;
+    uintptr_t align = -(uintptr_t)long_d & (FT_OPSIZE - 1);
     n -= align;
     byte_copy_fwd((void**)&long_d, (const void**)&long_s, align);
 
