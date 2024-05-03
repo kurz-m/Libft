@@ -61,3 +61,5 @@ ft_isint.c
 .editorconfig
 zig-cache
 zig-out
+build-cache/
+build/
