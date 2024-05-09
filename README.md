@@ -1,4 +1,5 @@
 /* Copyright (C) 2023 Markus Kurz
+
    This repository is my own LIBFT C Library.
 
    The LIBFT C Library is my own implementation for the
