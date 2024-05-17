@@ -19,8 +19,6 @@
 // strlen function that checks for a null string and returns -1 on failure
 ssize_t ft_safe_strlen(const char *s)
 {
-  size_t i = 0;
-
   if (s == NULL)
     return -1;
 
