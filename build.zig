@@ -29,7 +29,6 @@ pub fn build(b: *std.Build) void {
         "gnl/ft_get_next_line_utils.c",
         "io/ft_putchar_fd.c",
         "io/ft_putendl_fd.c",
-        "io/ft_putnbr_fd.c",
         "io/ft_putstr_fd.c",
         "list/ft_lstadd_back.c",
         "list/ft_lstadd_front.c",

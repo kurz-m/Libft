@@ -18,8 +18,17 @@
 #include <unistd.h>
 
 // Outputs the string 's' to the file descriptor 'fd', followed by a new line.
-void	ft_putendl_fd(char *s, int fd)
+int ft_putendl_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
-	ft_putchar_fd('\n', fd);
+  ssize_t printed = 0;
+  char tmp[10000] = {0};
+  size_t size = ft_strlen(s);
+
+  ft_memcpy(tmp, s, size);
+  tmp[size + 1] = '\n';
+  printed = write(fd, tmp, size + 1);
+  if (printed == -1) {
+    return -1;
+  }
+  return printed;
 }

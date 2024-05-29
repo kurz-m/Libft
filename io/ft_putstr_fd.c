@@ -18,7 +18,11 @@
 #include <unistd.h>
 
 // Outputs the str 's' to the file descriptor 'fd'.
-void	ft_putstr_fd(char *s, int fd)
+int ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+  ssize_t printed = write(fd, s, ft_strlen(s));
+  if (printed == -1) {
+    return -1;
+  }
+  return printed;
 }

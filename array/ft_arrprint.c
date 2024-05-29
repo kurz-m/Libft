@@ -17,14 +17,26 @@
 #include "ft_string.h"
 #include <unistd.h>
 
-void ft_arrprint(const char **arr)
+int ft_arrprint(const char **arr)
 {
+  ssize_t printed = 0;
+  char tmp[10000] = {0};
+  size_t size = 0;
+
   if (arr == NULL)
-    return;
+    return -1;
   while (*arr != NULL)
   {
-    write(1, *arr, ft_strlen(*arr));
-    write(1, "\n", 1);
+    size = ft_strlen(*arr);
+    ft_memcpy(tmp, *arr, size);
+    tmp[size + 1] = '\n';
+    printed += write(1, tmp, size + 1);
+    if (printed == -1) {
+      return -1;
+    }
+    ft_memset(tmp, 0, size + 1);
     ++arr;
   }
+
+  return printed;
 }
