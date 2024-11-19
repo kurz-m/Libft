@@ -23,73 +23,67 @@
 #include "ft_string.h"
 
 // Converts a string to a long.
-long ft_atol(const char *s, int base) {
-  unsigned long i = 0;
-  int neg = 0;
-  const char *end;
-  char c;
+long ft_atol(const char *s, int base)
+{
+	unsigned long i = 0;
+	int neg = 0;
+	const char *end;
+	char c;
 
-  if (base < 0 || base == 1 || base > 36) {
-    __set_errno(EINVAL);
-    return 0;
-  }
+	if (base < 0 || base == 1 || base > 36) {
+		__set_errno(EINVAL);
+		return 0;
+	}
 
-  while (ft_isspace(*s))
-    ++s;
-  switch (*s) {
-  case '-':
-    neg = 1;
-    /* intentional fall-through */
-  case '+':
-    ++s;
-  }
+	while (ft_isspace(*s))
+		++s;
+	switch (*s) {
+	case '-':
+		neg = 1;
+		/* intentional fall-through */
+	case '+':
+		++s;
+	}
 
-  /* check for prefixes of number */
-  if (*s == '0')
-  {
-    if ((base == 0 || base == 16) && ft_toupper((s[1]) == 'X'))
-    {
-      s += 2;
-      base = 16;
-    }
-    else if ((base == 0 || base == 2) && ft_toupper((s[1]) == 'B'))
-    {
-      s += 2;
-      base = 2;
-    }
-    else if (base == 0)
-      base = 8;
-  }
-  else if (base == 0)
-    base = 10;
+	/* check for prefixes of number */
+	if (*s == '0') {
+		if ((base == 0 || base == 16) && ft_toupper((s[1]) == 'X')) {
+			s += 2;
+			base = 16;
+		} else if ((base == 0 || base == 2) &&
+			   ft_toupper((s[1]) == 'B')) {
+			s += 2;
+			base = 2;
+		} else if (base == 0)
+			base = 8;
+	} else if (base == 0)
+		base = 10;
 
-  /* find end of the digit string */
-  end = s;
-  for (c = *end; c != '\0'; c = *++end)
-  {
-    if ((c < '0' || c > '9') &&
-        (!ft_isalpha(c) || (int)(ft_toupper(c) - 'A' + 10) >= base))
-      break;
-  }
+	/* find end of the digit string */
+	end = s;
+	for (c = *end; c != '\0'; c = *++end) {
+		if ((c < '0' || c > '9') &&
+		    (!ft_isalpha(c) || (int)(ft_toupper(c) - 'A' + 10) >= base))
+			break;
+	}
 
-  c = *s;
+	c = *s;
 
-  for (; c != '\0'; c = *++s)
-  {
-    if (s == end)
-      break;
-    if (c >= '0' && c <= '9')
-      c -= '0';
-    else if (ft_isalpha(c))
-      c = ft_toupper(c) - 'A' + 10;
-    else
-      break;
-    if ((int)c >= base)
-      break;
-    else {
-      i *= base;
-      i += c;
-    }
-  }
-  return neg ? -i : i;
+	for (; c != '\0'; c = *++s) {
+		if (s == end)
+			break;
+		if (c >= '0' && c <= '9')
+			c -= '0';
+		else if (ft_isalpha(c))
+			c = ft_toupper(c) - 'A' + 10;
+		else
+			break;
+		if ((int)c >= base)
+			break;
+		else {
+			i *= base;
+			i += c;
+		}
+	}
+	return neg ? -i : i;
 }

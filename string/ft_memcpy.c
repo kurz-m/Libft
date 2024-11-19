@@ -22,24 +22,22 @@
 // Copies 'n' bytes from memory space 'src' to memory space 'dst'.
 void *ft_memcpy(void *dst, const void *src, size_t n)
 {
-  op_t *long_s = (op_t *)src;
-  op_t *long_d = (op_t *)dst;
+	op_t *long_s = (op_t *)src;
+	op_t *long_d = (op_t *)dst;
 
-  /* only use fast forword copying if there are enough bytes */
-  if (n > 16)
-  {
-    /* use this loop to align the pointer address */
-    uintptr_t align = -(uintptr_t)long_d & (FT_OPSIZE - 1);
-    n -= align;
-    byte_copy_fwd((void**)&long_d, (const void**)&long_s, align);
+	/* only use fast forword copying if there are enough bytes */
+	if (n > 16) {
+		/* use this loop to align the pointer address */
+		uintptr_t align = -(uintptr_t)long_d % FT_OPSIZE;
+		n -= align;
+		byte_copy_fwd((void **)&long_d, (const void **)&long_s, align);
 
-    while (n >= FT_OPSIZE)
-    {
-      *long_d++ = *long_s++;
-      n -= FT_OPSIZE;
-    }
-  }
+		while (n >= FT_OPSIZE) {
+			*long_d++ = *long_s++;
+			n -= FT_OPSIZE;
+		}
+	}
 
-  byte_copy_fwd((void**)&long_d, (const void**)&long_s, n);
-  return dst;
+	byte_copy_fwd((void **)&long_d, (const void **)&long_s, n);
+	return dst;
 }

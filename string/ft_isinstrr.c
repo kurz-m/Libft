@@ -16,15 +16,14 @@
 /* input a string, a char and an index
    it searches if the char is in the string from the index
    to the start of the string */
-inline int ft_isinstrr(int c, const char *str, int i)
+int ft_isinstrr(int c, const char *str, int i)
 {
-  const unsigned char ch = (const unsigned char)c;
-  str += i;
+	const unsigned char ch = (const unsigned char)c;
+	str += i;
 
-  while (i-- >= 0)
-  {
-    if (*str-- == ch)
-      return 1;
-  }
-  return 0;
+	while (i-- >= 0) {
+		if (*str-- == ch)
+			return 1;
+	}
+	return 0;
 }

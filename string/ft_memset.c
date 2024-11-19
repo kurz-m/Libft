@@ -18,10 +18,10 @@
 // Sets 'len' bytes from 'b' to 'c'.
 void *ft_memset(void *b, int c, size_t len)
 {
-  unsigned char *dst = (unsigned char *)b;
-  unsigned char ch = (unsigned char)c;
+	unsigned char *dst = (unsigned char *)b;
+	unsigned char ch = (unsigned char)c;
 
-  while (len--)
-    *dst++ = ch;
-  return b;
+	while (len--)
+		*dst++ = ch;
+	return b;
 }

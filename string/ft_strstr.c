@@ -18,25 +18,24 @@
 // Returns the first occurrence of 'needle' in the string 'haystack'.
 char *ft_strstr(const char *haystack, const char *needle)
 {
-  const unsigned char *hs = (const unsigned char *)haystack;
-  const unsigned char *ne = (const unsigned char *)needle;
+	const unsigned char *hs = (const unsigned char *)haystack;
+	const unsigned char *ne = (const unsigned char *)needle;
 
-  if (ne[0] == '\0')
-    return (char *)hs;
-  hs = (const unsigned char *)ft_strchr((const unsigned char *)hs, ne[0]);
-  if (hs == NULL || ne[1] == '\0')
-    return (char *)hs;
+	if (ne[0] == '\0')
+		return (char *)hs;
+	hs = (const unsigned char *)ft_strchr((const unsigned char *)hs, ne[0]);
+	if (hs == NULL || ne[1] == '\0')
+		return (char *)hs;
 
-  size_t needle_len = ft_strlen(needle);
-  size_t hay_len = ft_strlen((const char *)hs);
-  if (hay_len < needle_len)
-    return NULL;
+	size_t needle_len = ft_strlen(needle);
+	size_t hay_len = ft_strlen((const char *)hs);
+	if (hay_len < needle_len)
+		return NULL;
 
-  while (*hs && hay_len-- >= needle_len)
-  {
-    if (ft_memcmp(hs, ne, needle_len))
-      return (char *)hs;
-    ++hs;
-  }
-  return NULL;
+	while (*hs && hay_len-- >= needle_len) {
+		if (ft_memcmp(hs, ne, needle_len))
+			return (char *)hs;
+		++hs;
+	}
+	return NULL;
 }

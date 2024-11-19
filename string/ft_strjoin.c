@@ -18,12 +18,12 @@
 // Returns a freeable string 'dst', which is concatenated from 's1' and 's2'.
 char *ft_strjoin(const char *s1, const char *s2)
 {
-  size_t size = ft_strlen(s1) + ft_strlen(s2) + 1;
-  char *dst = ft_calloc(size, sizeof(*dst));;
+	size_t size = ft_strlen(s1) + ft_strlen(s2) + 1;
+	char *dst = ft_calloc(size, sizeof(*dst));
 
-  if (NULL == dst)
-    return NULL;
-  dst = ft_strcpy(dst, s1);
-  ft_strlcat(dst, s2, size);
-  return dst;
+	if (NULL == dst)
+		return NULL;
+	dst = ft_strcpy(dst, s1);
+	ft_strlcat(dst, s2, size);
+	return dst;
 }

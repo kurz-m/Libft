@@ -13,15 +13,14 @@
 
    The MIT Licence will be situated within the root directory. */
 
-inline int ft_isinstr(int c, const char *str)
+int ft_isinstr(int c, const char *str)
 {
-  const unsigned char ch = (const unsigned char)c;
+	const unsigned char ch = (const unsigned char)c;
 
-  while (*str)
-  {
-    if (*str == ch)
-      return 1;
-    str++;
-  }
-  return 0;
+	while (*str) {
+		if (*str == ch)
+			return 1;
+		str++;
+	}
+	return 0;
 }

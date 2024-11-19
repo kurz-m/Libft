@@ -17,37 +17,35 @@
 
 static inline size_t ft_buf_size(int n)
 {
-  size_t size = 0;
+	size_t size = 0;
 
-  if (n <= 0)
-    size = 1;
-  while (n != 0)
-  {
-    ++size;
-    n /= 10;
-  }
-  return size;
+	if (n <= 0)
+		size = 1;
+	while (n != 0) {
+		++size;
+		n /= 10;
+	}
+	return size;
 }
 
 // Converts an integer into a string and returns it.
-char *ft_itoa(int n) {
-  size_t size = ft_buf_size(n);
-  char *ptr = ft_calloc((size + 1), sizeof(char));
-  long nb = n;
+char *ft_itoa(int n)
+{
+	size_t size = ft_buf_size(n);
+	char *ptr = ft_calloc((size + 1), sizeof(char));
+	long nb = n;
 
-  if (ptr == NULL)
-    return NULL;
-  if (nb < 0)
-  {
-    nb *= -1;
-    ptr[0] = '-';
-  }
-  ptr[size] = 0;
-  ptr[size - 1] = '0';
-  while (nb > 0)
-  {
-    ptr[--size] = (nb % 10) + 48;
-    nb /= 10;
-  }
-  return ptr;
+	if (ptr == NULL)
+		return NULL;
+	if (nb < 0) {
+		nb *= -1;
+		ptr[0] = '-';
+	}
+	ptr[size] = 0;
+	ptr[size - 1] = '0';
+	while (nb > 0) {
+		ptr[--size] = (nb % 10) + 48;
+		nb /= 10;
+	}
+	return ptr;
 }

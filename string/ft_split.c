@@ -16,29 +16,25 @@
 #include "ft_string.h"
 #include "ft_array.h"
 
-char **ft_split(char const *str, char c) {
-  int count;
-  char **arr;
-  int i;
+char **ft_split(char const *str, char c)
+{
+	int count = ft_count_words(str, c);
+	char **arr = ft_calloc(sizeof(char *), (count + 1));
+	int i = 0;
 
-  i = 0;
-  count = ft_count_words(str, c);
-  arr = ft_calloc(sizeof(char *), (count + 1));
-  if (arr == NULL)
-    return NULL;
-  arr[count] = NULL;
-  while (i < count)
-  {
-    if (*str == c)
-      str++;
-    else
-    {
-      arr[i] = ft_substr(str, 0, ft_strlen_c(str, c));
-      if (arr[i] == NULL)
-        return ft_arrfree(arr);
-      str += ft_strlen_c(str, c);
-      ++i;
-    }
-  }
-  return arr;
+	if (arr == NULL)
+		return NULL;
+	arr[count] = NULL;
+	while (i < count) {
+		if (*str == c)
+			str++;
+		else {
+			arr[i] = ft_substr(str, 0, ft_strlen_c(str, c));
+			if (arr[i] == NULL)
+				return ft_arrfree(arr);
+			str += ft_strlen_c(str, c);
+			++i;
+		}
+	}
+	return arr;
 }

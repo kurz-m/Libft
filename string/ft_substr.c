@@ -18,15 +18,15 @@
 // Returns a substring from 's' from the 'start' location with length 'len'.
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-  size_t size = ft_strlen(s);
+	size_t size = ft_strlen(s);
 
-  if (size < start)
-    return ft_strdup("");
-  if (size - start < len)
-    len = size - start;
-  char *dst = ft_calloc((len + 1), sizeof(*dst));
-  if (dst == NULL)
-    return NULL;
-  dst[len + 1] = '\0';
-  return ft_memcpy(dst, s + start, len);
+	if (size < start)
+		return ft_strdup("");
+	if (size - start < len)
+		len = size - start;
+	char *dst = ft_calloc((len + 1), sizeof(*dst));
+	if (dst == NULL)
+		return NULL;
+	dst[len + 1] = '\0';
+	return ft_memcpy(dst, s + start, len);
 }

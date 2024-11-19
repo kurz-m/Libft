@@ -18,5 +18,5 @@
 // Returns the last occurrence of the character 'c' ind the string 's'.
 char *ft_strrchr(const char *s, int c)
 {
-  return ft_memrchr(s, c, ft_strlen(s) + 1);
+	return ft_memrchr(s, c, ft_strlen(s) + 1);
 }

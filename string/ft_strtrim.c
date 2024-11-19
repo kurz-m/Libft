@@ -20,25 +20,24 @@
 // The start and end are trimmed with the characters from 'set'.
 char *ft_strtrim(const char *s1, const char *set)
 {
-  size_t end = ft_strlen(s1);
-  const unsigned char *start = (const unsigned char *)s1;
-  const unsigned char *s_end = (const unsigned char *)s1 + end - 1;
+	size_t end = ft_strlen(s1);
+	const unsigned char *start = (const unsigned char *)s1;
+	const unsigned char *s_end = (const unsigned char *)s1 + end - 1;
 
-  bool lok_tab[256] = {false};
-  for (const unsigned char *t = (const unsigned char *)set; *t != '\0'; ++t)
-  {
-    lok_tab[*t] = true;
-  }
+	bool lok_tab[256] = {false};
+	for (const unsigned char *t = (const unsigned char *)set; *t != '\0'; ++t) {
+		lok_tab[*t] = true;
+	}
 
-  while (*start && lok_tab[*start])
-    ++start;
+	while (*start && lok_tab[*start])
+		++start;
 
-  /* return empty string when all chars got trimmed */
-  if (*start == '\0')
-    return ft_strdup("");
+	/* return empty string when all chars got trimmed */
+	if (*start == '\0')
+		return ft_strdup("");
 
-  while (s_end != start && lok_tab[*s_end])
-    --s_end;
+	while (s_end != start && lok_tab[*s_end])
+		--s_end;
 
-  return ft_strndup(s1, s_end - start + 1);
+	return ft_strndup(s1, s_end - start + 1);
 }

@@ -17,6 +17,6 @@
 
 char *ft_stpncpy(char *dst, const char *src, size_t size)
 {
-  ft_memset(dst, '\0', size);
-  return ft_mempcpy(dst, src, ft_strnlen(src, size));
+	ft_memset(dst, '\0', size);
+	return ft_mempcpy(dst, src, ft_strnlen(src, size));
 }
