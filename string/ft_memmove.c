@@ -19,20 +19,18 @@
 // Memory may overlap.
 void *ft_memmove(void *dst, const void *src, size_t len)
 {
-  unsigned char *dst_tmp = (unsigned char *)dst;
-  const unsigned char *src_tmp = (const unsigned char *)src;
+	unsigned char *dst_tmp = (unsigned char *)dst;
+	const unsigned char *src_tmp = (const unsigned char *)src;
 
-  if (dst < src)
-  {
-    while (len--)
-      *dst_tmp++ = *src_tmp++;
-  }
-  if (src < dst)
-  {
-    dst_tmp += len - 1;
-    src_tmp += len - 1;
-    while (len--)
-      *dst_tmp-- = *src_tmp--;
-  }
-  return dst;
+	if (dst < src) {
+		while (len--)
+			*dst_tmp++ = *src_tmp++;
+	}
+	if (src < dst) {
+		dst_tmp += len - 1;
+		src_tmp += len - 1;
+		while (len--)
+			*dst_tmp-- = *src_tmp--;
+	}
+	return dst;
 }

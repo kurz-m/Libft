@@ -18,9 +18,9 @@
 
 // joins 2 strings together and frees the memory of the string
 // given by the 'control' character.
-char	*ft_strjoinfree(char *s1, char *s2, char control)
+char *ft_strjoinfree(char *s1, char *s2, char control)
 {
-	char	*new;
+	char *new;
 
 	new = ft_strjoin(s1, s2);
 	if (control == 'L' || control == 'B')

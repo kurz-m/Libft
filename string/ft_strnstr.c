@@ -19,16 +19,15 @@
 // Compares at most 'len' characters.
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-  char *ptr;
-  size_t n_len = ft_strlen(needle);
+	char *ptr = (char *)haystack;
+	size_t n_len = ft_strlen(needle);
 
-  if (n_len == 0)
-    return ((char *)haystack);
-  ptr = (char *)haystack;
-  while (*ptr && len-- >= n_len) {
-    if (*ptr == *needle && !ft_strncmp(ptr, needle, n_len))
-      return (ptr);
-    ptr++;
-  }
-  return (NULL);
+	if (n_len == 0)
+		return (char *)haystack;
+	while (*ptr && len-- >= n_len) {
+		if (*ptr == *needle && !ft_strncmp(ptr, needle, n_len))
+			return ptr;
+		ptr++;
+	}
+	return NULL;
 }

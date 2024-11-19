@@ -18,11 +18,11 @@
 // Returns a freeable copy of the string 's1' with at most 'n' bytes copied.
 char *ft_strndup(const char *s1, size_t n)
 {
-  size_t len = ft_strnlen(s1, n);
-  char *copy = ft_calloc(len + 1, sizeof(*copy));
+	size_t len = ft_strnlen(s1, n);
+	char *copy = ft_calloc(len + 1, sizeof(*copy));
 
-  if (copy == NULL)
-    return NULL;
-  copy[len] = '\0';
-  return ft_memcpy(copy, s1, len);
+	if (copy == NULL)
+		return NULL;
+	copy[len] = '\0';
+	return ft_memcpy(copy, s1, len);
 }

@@ -18,6 +18,7 @@
 
 // Converts a string to an int.
 // Arbitrary amount of leading white spaces, optional plus/minus sign.
-int ft_atoi(const char *s) {
-  return ft_atol(s, 10);
+int ft_atoi(const char *s)
+{
+	return ft_atol(s, 10);
 }

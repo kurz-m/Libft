@@ -18,13 +18,12 @@
 // Returns the first occurrence of the character 'c' in the string 's'.
 char *ft_strchrnul(const unsigned char *s, int c)
 {
-  unsigned char ch = (unsigned char)c;
+	unsigned char ch = (unsigned char)c;
 
-  while (*s)
-  {
-    if (*s == ch)
-      return ((char *)s);
-    ++s;
-  }
-  return (*s == ch || *s == '\0') ? (char *)s : NULL;
+	while (*s) {
+		if (*s == ch)
+			return ((char *)s);
+		++s;
+	}
+	return (*s == ch || *s == '\0') ? (char *)s : NULL;
 }

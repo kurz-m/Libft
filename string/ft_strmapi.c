@@ -19,15 +19,13 @@
 // The function 'f' is applied to every character + index of the string 's'.
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-  size_t size;
-  char *ptr;
+	size_t size = ft_strlen(s);
+	char *ptr = ft_calloc((size + 1), sizeof(*ptr));
 
-  size = ft_strlen(s);
-  ptr = ft_calloc((size + 1), sizeof(*ptr));
-  if (ptr == NULL)
-    return NULL;
-  ptr[size] = '\0';
-  while (size--)
-    ptr[size] = f((unsigned int)size, s[size]);
-  return ptr;
+	if (ptr == NULL)
+		return NULL;
+	ptr[size] = '\0';
+	while (size--)
+		ptr[size] = f((unsigned int)size, s[size]);
+	return ptr;
 }

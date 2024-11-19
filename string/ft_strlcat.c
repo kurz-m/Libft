@@ -19,25 +19,24 @@
 // '\0'-terminates the result except for 'dst' being longer than size.
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-  size_t src_len = ft_strlen(src);
+	size_t src_len = ft_strlen(src);
 
-  if (size == 0)
-    return src_len;
+	if (size == 0)
+		return src_len;
 
-  size_t dst_len = ft_strlen(dst);
-  if (dst_len != size)
-  {
-    /* copy only the remaining number of chars in the
-       destination buffer. Leave room for nul terminator */
-    size_t remaining = size - dst_len - 1;
+	size_t dst_len = ft_strlen(dst);
+	if (dst_len != size) {
+		/* copy only the remaining number of chars in the
+		   destination buffer. Leave room for nul terminator */
+		size_t remaining = size - dst_len - 1;
 
-    /* copy only remaining chars from src */
-    if (remaining > src_len)
-      remaining = src_len;
+		/* copy only remaining chars from src */
+		if (remaining > src_len)
+			remaining = src_len;
 
-    char *target = dst + dst_len;
-    ft_memcpy(target, src, remaining);
-    target[remaining] = '\0';
-  }
-  return dst_len + src_len;
+		char *target = dst + dst_len;
+		ft_memcpy(target, src, remaining);
+		target[remaining] = '\0';
+	}
+	return dst_len + src_len;
 }

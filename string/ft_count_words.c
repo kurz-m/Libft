@@ -17,17 +17,15 @@
 
 int ft_count_words(const char *str, char c)
 {
-  int count = 0;
+	int count = 0;
 
-  while (*str)
-  {
-    if (*str == c)
-      str++;
-    else
-    {
-      count++;
-      str += ft_strlen_c(str, c);
-    }
-  }
-  return count;
+	while (*str) {
+		if (*str == c)
+			str++;
+		else {
+			count++;
+			str += ft_strlen_c(str, c);
+		}
+	}
+	return count;
 }

@@ -20,14 +20,9 @@
 // The allocated memory is filled with value zero.
 void *ft_calloc(size_t count, size_t size)
 {
-  void *buf;
-  size_t shield = count * size;
-
-  if ((size != 0) && (shield / size != count))
-    return NULL;
-  buf = malloc(shield);
-  if (buf == NULL)
-    return NULL;
-  ft_bzero(buf, shield);
-  return buf;
+	count *= size;
+	void *buf = malloc(count);
+	if (buf != NULL)
+		ft_memset(buf, '\0', count);
+	return buf;
 }

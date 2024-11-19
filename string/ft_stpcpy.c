@@ -18,7 +18,7 @@
 // copy a string and returning a pointer to its end
 char *ft_stpcpy(char *dst, const char *src)
 {
-  size_t len = ft_strlen(src);
+	size_t len = ft_strlen(src);
 
-  return ft_memcpy(dst, src, len + 1) + len;
+	return ft_memcpy(dst, src, len + 1) + len;
 }

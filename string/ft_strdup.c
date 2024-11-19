@@ -18,10 +18,10 @@
 // Returns a freeable copy of the string 's1'.
 char *ft_strdup(const char *s1)
 {
-  size_t len = ft_strlen(s1) + 1;
-  char *dst = ft_calloc(len, sizeof(*dst));
+	size_t len = ft_strlen(s1) + 1;
+	char *dst = ft_calloc(len, sizeof(*dst));
 
-  if (dst == NULL)
-    return NULL;
-  return ft_memcpy(dst, s1, len);
+	if (dst == NULL)
+		return NULL;
+	return ft_memcpy(dst, s1, len);
 }

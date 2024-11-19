@@ -18,14 +18,13 @@
 // Searches 'n' bytes in 's' for 'c' returning the first occurrence.
 void *ft_memchr(const void *s, int c, size_t n)
 {
-  unsigned char *str = (unsigned char *)s;
-  unsigned char ch = (unsigned char)c;
+	unsigned char *str = (unsigned char *)s;
+	unsigned char ch = (unsigned char)c;
 
-  while (n--)
-  {
-    if (*str == ch)
-      return str;
-    str++;
-  }
-  return NULL;
+	while (n--) {
+		if (*str == ch)
+			return str;
+		str++;
+	}
+	return NULL;
 }
