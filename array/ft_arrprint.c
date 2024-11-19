@@ -19,12 +19,11 @@
 
 void ft_arrprint(const char **arr)
 {
-  if (arr == NULL)
-    return;
-  while (*arr != NULL)
-  {
-    write(1, *arr, ft_strlen(*arr));
-    write(1, "\n", 1);
-    ++arr;
-  }
+	if (arr == NULL)
+		return;
+	while (*arr != NULL) {
+		write(1, *arr, ft_strlen(*arr));
+		write(1, "\n", 1);
+		++arr;
+	}
 }

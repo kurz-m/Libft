@@ -2,8 +2,10 @@
 -Werror
 -wextra
 
+-I./array
 -I./ctype
+-I./gnl
+-I./io
+-I./list
+-I./printf
 -I./string
--I./gnl/
--I./printf/
-

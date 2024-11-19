@@ -17,11 +17,9 @@
 
 size_t ft_arrlen(const char **arr)
 {
-  size_t size = 0;
+	size_t size = 0;
 
-  if (NULL == arr)
-    return 0;
-  while (*arr++ != NULL)
-    ++size;
-  return size;
+	while (*arr++ != NULL)
+		++size;
+	return size;
 }

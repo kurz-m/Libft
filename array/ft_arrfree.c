@@ -18,16 +18,15 @@
 
 void *ft_arrfree(char **arr)
 {
-  int i = -1;
+	int i = -1;
 
-  if (NULL == arr)
-    return NULL;
-  while (NULL != arr[++i])
-  {
-    free(arr[i]);
-    arr[i] = NULL;
-  }
-  free(arr);
-  arr = NULL;
-  return NULL;
+	if (NULL == arr)
+		return NULL;
+	while (NULL != arr[++i]) {
+		free(arr[i]);
+		arr[i] = NULL;
+	}
+	free(arr);
+	arr = NULL;
+	return NULL;
 }
