@@ -25,12 +25,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-typedef struct s_gnl
-{
-  char *new_line;
-  bool line_bool;
-  size_t i;
-  size_t k;
+typedef struct s_gnl {
+	char *new_line;
+	bool line_bool;
+	size_t i;
+	size_t k;
 } t_gnl;
 
 char *get_next_line(int fd);

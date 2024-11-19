@@ -19,9 +19,9 @@
 // Returns the address of the last node in a list.
 t_list *ft_lstlast(t_list *lst)
 {
-  if (lst == NULL)
-    return NULL;
-  while (NULL != lst->next)
-    lst = lst->next;
-  return lst;
+	if (lst == NULL)
+		return NULL;
+	while (NULL != lst->next)
+		lst = lst->next;
+	return lst;
 }

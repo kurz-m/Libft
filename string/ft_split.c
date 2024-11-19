@@ -13,8 +13,8 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "ft_string.h"
 #include "ft_array.h"
+#include "ft_string.h"
 
 char **ft_split(char const *str, char c)
 {

@@ -29,67 +29,73 @@
 
 typedef unsigned char uchar_t;
 
-#define TRUE 1
+#define TRUE  1
 #define FALSE 0
 
 typedef enum e_spec {
-  F_UCASE = (1 << 0),
-  F_LCASE = (1 << 1),
+	F_UCASE = (1 << 0),
+	F_LCASE = (1 << 1),
 } t_spec;
 
 typedef struct s_printf {
-  int fd;                 /*<< Filedescriptor to write to */
-  const uchar_t *f;       /*<< Current char on fmt string */
-  const uchar_t *end_fmt; /*<< End of the format specifier */
-  int flags;              /*<< Flags */
-  char buff[WORKBUFFER];  /*<< Buffer for the formatted string */
-  va_list args;           /*<< variadic arguments */
-  unsigned int to_print;  /*<< Amount to print */
-  int done;               /*<< Return value for the printf function */
+	int fd;			/*<< Filedescriptor to write to */
+	const uchar_t *f;	/*<< Current char on fmt string */
+	const uchar_t *end_fmt; /*<< End of the format specifier */
+	int flags;		/*<< Flags */
+	char buff[WORKBUFFER];	/*<< Buffer for the formatted string */
+	va_list args;		/*<< variadic arguments */
+	unsigned int to_print;	/*<< Amount to print */
+	int done;		/*<< Return value for the printf function */
 } t_printf;
 
 int bufwriter(t_printf *work, void *add, size_t size);
 void format_int(intmax_t value, t_printf *work);
 void format_int_base(uintmax_t value, int base, t_printf *work);
 
-static inline const uchar_t *__find_spec(const uchar_t *fmt) {
-  return (const uchar_t *)ft_strchrnul(fmt, '%');
+static inline const uchar_t *__find_spec(const uchar_t *fmt)
+{
+	return (const uchar_t *)ft_strchrnul(fmt, '%');
 }
 
-static inline void print_ptr_addr(t_printf *work) {
-  if (bufwriter(work, "0x", 2) == -1) {
-    return;
-  }
-  void *ptr = va_arg(work->args, void *);
-  format_int_base((uintptr_t)ptr, 16, work);
+static inline void print_ptr_addr(t_printf *work)
+{
+	if (bufwriter(work, "0x", 2) == -1) {
+		return;
+	}
+	void *ptr = va_arg(work->args, void *);
+	format_int_base((uintptr_t)ptr, 16, work);
 }
 
-static inline void prepare_nb(t_printf *work) {
-  intmax_t n = (intmax_t)va_arg(work->args, int);
+static inline void prepare_nb(t_printf *work)
+{
+	intmax_t n = (intmax_t)va_arg(work->args, int);
 
-  format_int(n, work);
+	format_int(n, work);
 }
 
-static inline void prepare_nb_base(t_printf *work, int base) {
-  uintmax_t n = (uintmax_t)va_arg(work->args, unsigned int);
+static inline void prepare_nb_base(t_printf *work, int base)
+{
+	uintmax_t n = (uintmax_t)va_arg(work->args, unsigned int);
 
-  format_int_base(n, base, work);
+	format_int_base(n, base, work);
 }
 
-static inline void ft_put_string(t_printf *work) {
-  char *str = va_arg(work->args, char *);
+static inline void ft_put_string(t_printf *work)
+{
+	char *str = va_arg(work->args, char *);
 
-  if (str == NULL) {
-    bufwriter(work, "(null)", 6);
-  } else {
-    bufwriter(work, str, ft_strlen(str));
-  }
+	if (str == NULL) {
+		bufwriter(work, "(null)", 6);
+	} else {
+		bufwriter(work, str, ft_strlen(str));
+	}
 }
 
-static inline void ft_put_char(t_printf *work) {
-  char c = (char)va_arg(work->args, int);
+static inline void ft_put_char(t_printf *work)
+{
+	char c = (char)va_arg(work->args, int);
 
-  bufwriter(work, &c, 1);
+	bufwriter(work, &c, 1);
 }
 
 // Name all the prototypes

@@ -19,18 +19,17 @@
 // Deletes and frees the given node and every successor of that node.
 void ft_lstclear(t_list **lst, void (*del)(void *))
 {
-  t_list *tmp = NULL;
-  t_list *tmp_free = NULL;
+	t_list *tmp = NULL;
+	t_list *tmp_free = NULL;
 
-  if (lst == NULL)
-    return;
-  tmp = *lst;
-  while (tmp != NULL)
-  {
-    (*del)(tmp->content);
-    tmp_free = tmp;
-    tmp = tmp->next;
-    free(tmp_free);
-  }
-  *lst = NULL;
+	if (lst == NULL)
+		return;
+	tmp = *lst;
+	while (tmp != NULL) {
+		(*del)(tmp->content);
+		tmp_free = tmp;
+		tmp = tmp->next;
+		free(tmp_free);
+	}
+	*lst = NULL;
 }

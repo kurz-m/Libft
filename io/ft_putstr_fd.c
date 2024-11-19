@@ -18,7 +18,7 @@
 #include <unistd.h>
 
 // Outputs the str 's' to the file descriptor 'fd'.
-void	ft_putstr_fd(char *s, int fd)
+void ft_putstr_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
 }

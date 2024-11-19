@@ -14,8 +14,8 @@
    The MIT Licence will be situated within the root directory. */
 
 #include "ft_array.h"
-#include "printf.h"
 #include "ft_string.h"
+#include "printf.h"
 #include <stdlib.h>
 
 /* SUMMARY
@@ -31,16 +31,15 @@
    strings assigned to it and the new length of `capacity`. */
 char **ft_resize_array(char **src, size_t size, size_t capacity)
 {
-  size_t i = 0;
-  char **new_array = ft_calloc(capacity + 1, sizeof(*new_array));
+	size_t i = 0;
+	char **new_array = ft_calloc(capacity + 1, sizeof(*new_array));
 
-  if (new_array == NULL)
-    return NULL;
-  while (i < size)
-  {
-    new_array[i] = src[i];
-    ++i;
-  }
-  free(src);
-  return new_array;
+	if (new_array == NULL)
+		return NULL;
+	while (i < size) {
+		new_array[i] = src[i];
+		++i;
+	}
+	free(src);
+	return new_array;
 }
