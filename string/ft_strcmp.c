@@ -17,14 +17,13 @@
 
 int ft_strcmp(const char *str1, const char *str2)
 {
-  size_t len = ft_strlen(str1);
-  for (size_t i = 0; i < len; ++i)
-  {
-    unsigned char c1 = *str1++;
-    unsigned char c2 = *str2++;
-    int diff = c1 - c2;
-    if (diff != 0)
-      return diff;
-  }
-  return *str1 - *str2;
+	size_t len = ft_strlen(str1);
+	for (size_t i = 0; i < len; ++i) {
+		unsigned char c1 = *str1++;
+		unsigned char c2 = *str2++;
+		int diff = c1 - c2;
+		if (diff != 0)
+			return diff;
+	}
+	return *str1 - *str2;
 }

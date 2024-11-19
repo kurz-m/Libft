@@ -16,8 +16,8 @@
 // Applies the function 'f' to all characters in string 's'.
 void ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-  int i = 0;;
+	int i = 0;
 
-  while (*s != '\0')
-    f(i++, s++);
+	while (*s != '\0')
+		f(i++, s++);
 }

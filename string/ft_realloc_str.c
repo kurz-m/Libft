@@ -18,8 +18,8 @@
 
 char *ft_realloc_str(const char *ptr, size_t size)
 {
-  char *buf = ft_calloc(size, sizeof(*ptr));
-  if (buf == NULL)
-    return NULL;
-  return ft_memcpy(buf, ptr, ft_strlen(ptr));
+	char *buf = ft_calloc(size, sizeof(*ptr));
+	if (buf == NULL)
+		return NULL;
+	return ft_memcpy(buf, ptr, ft_strlen(ptr));
 }

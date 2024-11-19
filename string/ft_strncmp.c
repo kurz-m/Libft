@@ -19,17 +19,16 @@
 // < 0 if value of 's1' < 's2', > 0 if value of 's1' > 's2'.
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-  unsigned char c1, c2;
+	unsigned char c1, c2;
 
-  while (n-- > 0)
-  {
-    c1 = (unsigned char)*s1++;
-    c2 = (unsigned char)*s2++;
-    int diff = c1 - c2;
-    if (diff != 0)
-      return diff;
-    if (c1 == '\0')
-      return 0;
-  }
-  return 0;
+	while (n-- > 0) {
+		c1 = (unsigned char)*s1++;
+		c2 = (unsigned char)*s2++;
+		int diff = c1 - c2;
+		if (diff != 0)
+			return diff;
+		if (c1 == '\0')
+			return 0;
+	}
+	return 0;
 }

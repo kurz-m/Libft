@@ -24,12 +24,10 @@
  * `new_str`: string that is getting copied to target.
  * `<RETURN>`
  * Pointer to the newly allocated string. */
-char	*ft_strreplace(char *target, char *new_str)
+char *ft_strreplace(char *target, char *new_str)
 {
-	if (NULL == new_str || NULL == target)
-		return (NULL);
 	free(target);
 	target = NULL;
 	target = ft_strdup(new_str);
-	return (target);
+	return target;
 }

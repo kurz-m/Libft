@@ -13,35 +13,34 @@
 
    The MIT Licence will be situated within the root directory. */
 
-#include "ft_string.h"
 #include "ft_string-misc.h"
+#include "ft_string.h"
 #include <stdint.h>
 
 // Returns the length of the string 's'.
 size_t ft_strlen(const char *s)
 {
-  const char *run_ptr = s;
+	const char *run_ptr = s;
 
-  /* use this loop to align the pointer address */
-  uintptr_t align = -(uintptr_t)s % FT_OPSIZE;
-  for (size_t i = 0; i < align; ++i)
-  {
-    unsigned char c1 = *run_ptr;
-    if (c1 == '\0')
-      return run_ptr - s;
-    ++run_ptr;
-  }
+	/* use this loop to align the pointer address */
+	uintptr_t align = -(uintptr_t)s % FT_OPSIZE;
+	for (size_t i = 0; i < align; ++i) {
+		unsigned char c1 = *run_ptr;
+		if (c1 == '\0')
+			return run_ptr - s;
+		++run_ptr;
+	}
 
-  const op_t *x = (const op_t *)run_ptr;
+	const op_t *x = (const op_t *)run_ptr;
 
-  /* searches for zero byte within a register size */
-  while (!has_zero(*x))
-    ++x;
+	/* searches for zero byte within a register size */
+	while (!has_zero(*x))
+		++x;
 
-  run_ptr = (const char *)x;
+	run_ptr = (const char *)x;
 
-  while (*run_ptr != '\0')
-    ++run_ptr;
+	while (*run_ptr != '\0')
+		++run_ptr;
 
-  return run_ptr - s;
+	return run_ptr - s;
 }

@@ -17,17 +17,17 @@
 
 // Returns the first occurrence of the character 'c' in the string 's'
 // within size 'size'.
-char *ft_strnchr(const char *s, size_t size, int c) {
-  unsigned char ch = (unsigned char)c;
-  size_t src_len = ft_strlen(s);
+char *ft_strnchr(const char *s, size_t size, int c)
+{
+	unsigned char ch = (unsigned char)c;
+	size_t src_len = ft_strlen(s);
 
-  if (src_len < size)
-    size = src_len;
-  while (size-- > 0)
-  {
-    if (*s == ch)
-      return (char *)s;
-    ++s;
-  }
-  return NULL;
+	if (src_len < size)
+		size = src_len;
+	while (size-- > 0) {
+		if (*s == ch)
+			return (char *)s;
+		++s;
+	}
+	return NULL;
 }
