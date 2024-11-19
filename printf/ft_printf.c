@@ -28,218 +28,228 @@ static const char *const digit2[] = {
     "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95",
     "96", "97", "98", "99"};
 
-static int digit_to_char(int digit, int flags) {
-  if (digit <= 9) {
-    return '0' + digit;
-  } else if (digit >= 10 && digit <= 35) {
-    return (flags & F_UCASE) ? 'A' + (digit - 10) : 'a' + (digit - 10);
-  }
-  return -1;
+static int digit_to_char(int digit, int flags)
+{
+	if (digit <= 9) {
+		return '0' + digit;
+	} else if (digit >= 10 && digit <= 35) {
+		return (flags & F_UCASE) ? 'A' + (digit - 10)
+					 : 'a' + (digit - 10);
+	}
+	return -1;
 }
 
-int bufwriter(t_printf *work, void *add, size_t size) {
-  int diff = 0;
-  size_t i = 0;
+int bufwriter(struct s_printf *work, void *add, size_t size)
+{
+	int diff = 0;
+	size_t i = 0;
 
-  while (WORKBUFFER - work->to_print < size) {
-    diff = WORKBUFFER - work->to_print;
-    ft_memcpy((work->buff + work->to_print), (add + i), diff);
-    size -= diff;
-    i += diff;
-    work->to_print += diff;
-    work->done += diff;
-    if (write(work->fd, work->buff, work->to_print) == -1) {
-      work->done = -1;
-      return work->done;
-    }
-    work->to_print = 0;
-  }
-  ft_memcpy((work->buff + work->to_print), (add + i), size);
-  work->to_print += size;
-  work->done += size;
-  return work->done;
+	while (WORKBUFFER - work->to_print < size) {
+		diff = WORKBUFFER - work->to_print;
+		ft_memcpy((work->buff + work->to_print), (add + i), diff);
+		size -= diff;
+		i += diff;
+		work->to_print += diff;
+		work->done += diff;
+		if (write(work->fd, work->buff, work->to_print) == -1) {
+			work->done = -1;
+			return work->done;
+		}
+		work->to_print = 0;
+	}
+	ft_memcpy((work->buff + work->to_print), (add + i), size);
+	work->to_print += size;
+	work->done += size;
+	return work->done;
 }
 
-void format_int(intmax_t value, t_printf *work) {
-  char buff[21] = {0};
-  int index = 20;
-  uintmax_t abs_value = (value < 0) ? -value : value;
+void format_int(intmax_t value, struct s_printf *work)
+{
+	char buff[21] = {0};
+	int index = 20;
+	uintmax_t abs_value = (value < 0) ? -value : value;
 
-  while (abs_value >= 100) {
-    const char *tmp = digit2[abs_value % 100];
-    buff[index--] = tmp[1];
-    buff[index--] = tmp[0];
-    abs_value /= 100;
-  }
+	while (abs_value >= 100) {
+		const char *tmp = digit2[abs_value % 100];
+		buff[index--] = tmp[1];
+		buff[index--] = tmp[0];
+		abs_value /= 100;
+	}
 
-  if (abs_value < 10) {
-    buff[index] = '0' + abs_value;
-  } else {
-    const char *tmp = digit2[abs_value];
-    buff[index--] = tmp[1];
-    buff[index] = tmp[0];
-  }
-  if (value < 0) {
-    buff[--index] = '-';
-  }
-  bufwriter(work, (buff + index), 21 - index);
+	if (abs_value < 10) {
+		buff[index] = '0' + abs_value;
+	} else {
+		const char *tmp = digit2[abs_value];
+		buff[index--] = tmp[1];
+		buff[index] = tmp[0];
+	}
+	if (value < 0) {
+		buff[--index] = '-';
+	}
+	bufwriter(work, (buff + index), 21 - index);
 }
 
-void format_int_base(uintmax_t value, int base, t_printf *work) {
-  char buff[21] = {0};
-  int index = 20;
+void format_int_base(uintmax_t value, int base, struct s_printf *work)
+{
+	char buff[21] = {0};
+	int index = 20;
 
-  do {
-    const int digit = value % base;
-    int tmp = digit_to_char(digit, work->flags);
-    if (tmp == -1) {
-      work->done = -1;
-      return;
-    }
-    buff[index--] = tmp;
-    value /= base;
-  } while (value != 0);
-  ++index;
-  bufwriter(work, (buff + index), 21 - index);
+	do {
+		const int digit = value % base;
+		int tmp = digit_to_char(digit, work->flags);
+		if (tmp == -1) {
+			work->done = -1;
+			return;
+		}
+		buff[index--] = tmp;
+		value /= base;
+	} while (value != 0);
+	++index;
+	bufwriter(work, (buff + index), 21 - index);
 }
 
-static int parse_specifier(t_printf *work) {
-  switch (*work->f) {
-  case 'X':
-    work->flags |= F_UCASE;
-    prepare_nb_base(work, 16);
-    break;
-  case 'x':
-    work->flags |= F_LCASE;
-    prepare_nb_base(work, 16);
-    break;
-  case 'b':
-  case 'B':
-    prepare_nb_base(work, 2);
-    break;
-  case 'd':
-  case 'i':
-    prepare_nb(work);
-    break;
-  case 'P':
-    work->flags |= F_UCASE;
-    print_ptr_addr(work);
-    break;
-  case 'p':
-    work->flags |= F_LCASE;
-    print_ptr_addr(work);
-    break;
-  case 'c':
-    ft_put_char(work);
-    break;
-  case 's':
-    ft_put_string(work);
-    break;
-  case '%':
-    bufwriter(work, "%", 1);
-    break;
-  default:
-    if (write(2, "No supported specifier\n", 23) == -1) {
-      work->done = -1;
-    }
-  }
-  return work->done;
+static int parse_specifier(struct s_printf *work)
+{
+	switch (*work->f) {
+	case 'X':
+		work->flags |= F_UCASE;
+		prepare_nb_base(work, 16);
+		break;
+	case 'x':
+		work->flags |= F_LCASE;
+		prepare_nb_base(work, 16);
+		break;
+	case 'b':
+	case 'B':
+		prepare_nb_base(work, 2);
+		break;
+	case 'd':
+	case 'i':
+		prepare_nb(work);
+		break;
+	case 'P':
+		work->flags |= F_UCASE;
+		print_ptr_addr(work);
+		break;
+	case 'p':
+		work->flags |= F_LCASE;
+		print_ptr_addr(work);
+		break;
+	case 'c':
+		ft_put_char(work);
+		break;
+	case 's':
+		ft_put_string(work);
+		break;
+	case '%':
+		bufwriter(work, "%", 1);
+		break;
+	default:
+		if (write(2, "No supported specifier\n", 23) == -1) {
+			work->done = -1;
+		}
+	}
+	return work->done;
 }
 
-int ft_printf(const char *format, ...) {
-  /* initialize the working struct for printf */
-  t_printf work = {
-      .fd = 1,
-      .f = (const uchar_t *)format,
-      .end_fmt = NULL,
-      .flags = 0,
-      .buff = {0},
-      .to_print = 0,
-      .done = 0,
-  };
-  /* pointer to the end of the leading string literal */
-  const uchar_t *lead_str_end = NULL;
-  /* initialize the variadic arguments function */
-  va_start(work.args, format);
+int ft_printf(const char *format, ...)
+{
+	/* initialize the working struct for printf */
+	struct s_printf work = {
+	    .fd = 1,
+	    .f = (const uchar_t *)format,
+	    .end_fmt = NULL,
+	    .flags = 0,
+	    .buff = {0},
+	    .to_print = 0,
+	    .done = 0,
+	};
+	/* pointer to the end of the leading string literal */
+	const uchar_t *lead_str_end = NULL;
+	/* initialize the variadic arguments function */
+	va_start(work.args, format);
 
-  /* find the first format specifier */
-  work.f = lead_str_end = __find_spec((const uchar_t *)format);
+	/* find the first format specifier */
+	work.f = lead_str_end = __find_spec((const uchar_t *)format);
 
-  /* store the leading string into the internal buffer */
-  if (bufwriter(&work, (void *)format,
-                lead_str_end - (const uchar_t *)format) == -1)
-    goto all_done;
+	/* store the leading string into the internal buffer */
+	if (bufwriter(&work, (void *)format,
+		      lead_str_end - (const uchar_t *)format) == -1)
+		goto all_done;
 
-  /* check if only a string has to be printed */
-  if (*work.f++ == '\0')
-    goto final_flush;
+	/* check if only a string has to be printed */
+	if (*work.f++ == '\0')
+		goto final_flush;
 
-  do {
-    /* do all the specifier handling here */
-    if (parse_specifier(&work) == -1) {
-      goto all_done;
-    }
+	do {
+		/* do all the specifier handling here */
+		if (parse_specifier(&work) == -1) {
+			goto all_done;
+		}
 
-    work.f = __find_spec(work.end_fmt = ++work.f);
-    if (bufwriter(&work, (void *)work.end_fmt, work.f - work.end_fmt) == -1)
-      goto all_done;
-  } while (*work.f != '\0');
+		work.f = __find_spec(work.end_fmt = ++work.f);
+		if (bufwriter(&work, (void *)work.end_fmt,
+			      work.f - work.end_fmt) == -1)
+			goto all_done;
+	} while (*work.f != '\0');
 
 final_flush:
-  /* Flush buffer before exiting the function */
-  if (write(work.fd, work.buff, work.to_print) == -1) {
-    work.done = -1;
-  }
+	/* Flush buffer before exiting the function */
+	if (write(work.fd, work.buff, work.to_print) == -1) {
+		work.done = -1;
+	}
 all_done:
-  va_end(work.args);
-  return work.done;
+	va_end(work.args);
+	return work.done;
 }
 
-int ft_fprintf(int fd, const char *format, ...) {
-  /* initialize the working struct for printf */
-  t_printf work = {
-      .fd = fd,
-      .f = (const uchar_t *)format,
-      .end_fmt = NULL,
-      .flags = 0,
-      .buff = {0},
-      .to_print = 0,
-      .done = 0,
-  };
-  /* pointer to the end of the leading string literal */
-  const uchar_t *lead_str_end = NULL;
-  /* initialize the variadic arguments function */
-  va_start(work.args, format);
+int ft_fprintf(int fd, const char *format, ...)
+{
+	/* initialize the working struct for printf */
+	struct s_printf work = {
+	    .fd = fd,
+	    .f = (const uchar_t *)format,
+	    .end_fmt = NULL,
+	    .flags = 0,
+	    .buff = {0},
+	    .to_print = 0,
+	    .done = 0,
+	};
+	/* pointer to the end of the leading string literal */
+	const uchar_t *lead_str_end = NULL;
+	/* initialize the variadic arguments function */
+	va_start(work.args, format);
 
-  /* find the first format specifier */
-  work.f = lead_str_end = __find_spec((const uchar_t *)format);
+	/* find the first format specifier */
+	work.f = lead_str_end = __find_spec((const uchar_t *)format);
 
-  /* store the leading string into the internal buffer */
-  if (bufwriter(&work, (void *)format,
-                lead_str_end - (const uchar_t *)format) == -1)
-    goto all_done;
+	/* store the leading string into the internal buffer */
+	if (bufwriter(&work, (void *)format,
+		      lead_str_end - (const uchar_t *)format) == -1)
+		goto all_done;
 
-  /* check if only a string has to be printed */
-  if (*work.f++ == '\0')
-    goto final_flush;
+	/* check if only a string has to be printed */
+	if (*work.f++ == '\0')
+		goto final_flush;
 
-  do {
-    /* do all the specifier handling here */
-    if (parse_specifier(&work) == -1) {
-      goto all_done;
-    }
+	do {
+		/* do all the specifier handling here */
+		if (parse_specifier(&work) == -1) {
+			goto all_done;
+		}
 
-    work.f = __find_spec(work.end_fmt = ++work.f);
-    if (bufwriter(&work, (void *)work.end_fmt, work.f - work.end_fmt) == -1)
-      goto all_done;
-  } while (*work.f != '\0');
+		work.f = __find_spec(work.end_fmt = ++work.f);
+		if (bufwriter(&work, (void *)work.end_fmt,
+			      work.f - work.end_fmt) == -1)
+			goto all_done;
+	} while (*work.f != '\0');
 
 final_flush:
-  /* Flush buffer before exiting the function */
-  if (write(work.fd, work.buff, work.to_print) == -1) {
-    work.done = -1;
-  }
+	/* Flush buffer before exiting the function */
+	if (write(work.fd, work.buff, work.to_print) == -1) {
+		work.done = -1;
+	}
 all_done:
-  va_end(work.args);
-  return work.done;
+	va_end(work.args);
+	return work.done;
 }

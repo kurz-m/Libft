@@ -19,15 +19,14 @@
 // Returns the size of the list 'lst'.
 int ft_lstsize(t_list *lst)
 {
-  if (lst == NULL)
-    return 0;
+	if (lst == NULL)
+		return 0;
 
-  int size = 1;
-  t_list *it = lst;
-  while (NULL != it->next)
-  {
-    ++size;
-    it = it->next;
-  }
-  return size;
+	int size = 1;
+	t_list *it = lst;
+	while (NULL != it->next) {
+		++size;
+		it = it->next;
+	}
+	return size;
 }

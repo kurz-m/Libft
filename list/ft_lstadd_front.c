@@ -19,8 +19,8 @@
 // Add a 'new_list'-node to the beginning of a list.
 void ft_lstadd_front(t_list **lst, t_list *new_list)
 {
-  if (lst == NULL || new_list == NULL)
-    return;
-  new_list->next = *lst;
-  *lst = new_list;
+	if (lst == NULL || new_list == NULL)
+		return;
+	new_list->next = *lst;
+	*lst = new_list;
 }

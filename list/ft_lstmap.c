@@ -20,26 +20,25 @@
 // to the content of it. Frees the list if memory allocation fails.
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-  t_list *node = NULL;
-  t_list *tmp = NULL;
-  t_list *head = NULL;
+	t_list *node = NULL;
+	t_list *tmp = NULL;
+	t_list *head = NULL;
 
-  if (lst == NULL)
-    return (NULL);
-  head = ft_lstnew(NULL);
-  head->content = f(lst->content);
-  tmp = head;
-  lst = lst->next;
-  while (lst) {
-    node = ft_lstnew(f(lst->content));
-    if (node == NULL)
-    {
-      ft_lstclear(&head, del);
-      return NULL;
-    }
-    tmp->next = node;
-    tmp = node;
-    lst = lst->next;
-  }
-  return head;
+	if (lst == NULL)
+		return (NULL);
+	head = ft_lstnew(NULL);
+	head->content = f(lst->content);
+	tmp = head;
+	lst = lst->next;
+	while (lst) {
+		node = ft_lstnew(f(lst->content));
+		if (node == NULL) {
+			ft_lstclear(&head, del);
+			return NULL;
+		}
+		tmp->next = node;
+		tmp = node;
+		lst = lst->next;
+	}
+	return head;
 }

@@ -19,13 +19,12 @@
 // Add a 'new_node'-node to the end of a list.
 void ft_lstadd_back(t_list **lst, t_list *new_node)
 {
-  t_list *last = NULL;
+	t_list *last = NULL;
 
-  if (*lst == NULL)
-    *lst = new_node;
-  else
-  {
-    last = ft_lstlast(*lst);
-    last->next = new_node;
-  }
+	if (*lst == NULL)
+		*lst = new_node;
+	else {
+		last = ft_lstlast(*lst);
+		last->next = new_node;
+	}
 }
