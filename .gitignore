@@ -59,7 +59,7 @@ main*
 ft_isint.c
 .vscode
 .editorconfig
-zig-cache
+.zig-cache
 zig-out
 build-cache/
 build/
