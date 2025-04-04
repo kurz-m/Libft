@@ -28,7 +28,7 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 	/* only use fast forword copying if there are enough bytes */
 	if (n > 16) {
 		/* use this loop to align the pointer address */
-		uintptr_t align = -(uintptr_t)s & (FT_OPSIZE - 1);
+		uintptr_t align = -(uintptr_t)long_s & (FT_OPSIZE - 1);
 		n -= align;
 		byte_copy_fwd((void **)&long_d, (const void **)&long_s, align);
 
